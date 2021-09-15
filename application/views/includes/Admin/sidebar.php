@@ -39,6 +39,14 @@
 						</p>
 					</a>
 				</li>
+				<!-- <li class="nav-item">
+					<a href="<?= base_url('Admin/AssetSekolahController/pendaftaranSiswa') ?>" class="nav-link <?= (current_url() == base_url('Admin/AssetSekolahController/pendaftaranSiswa')) ? 'active' : '' ?>">
+						<i class="nav-icon fas fa-school"></i>
+						<p>
+							Pendaftaran siswa
+						</p>
+					</a>
+				</li> -->
 				<li class="nav-item has-treeview ">
 					<a href="<?= base_url('Admin/AssetSekolahController/visiMisi') ?>" class="nav-link <?= (current_url() == base_url('Admin/AssetSekolahController/visiMisi')) ? 'active' : '' ?>">
 						<i class="nav-icon fas fa-campground"></i>
@@ -52,6 +60,14 @@
 						<i class="nav-icon fas fa-info-circle"></i>
 						<p>
 							Data Informasi
+						</p>
+					</a>
+				</li>
+				<li class="nav-item has-treeview">
+					<a href="<?= base_url('Admin/AssetSekolahController/kegiatan') ?>" class="nav-link <?= (current_url() == base_url('Admin/AssetSekolahController/kegiatan')) ? 'active' : '' ?>">
+						<i class="nav-icon fas fa-chart-line"></i>
+						<p>
+							Data Kegiatan
 						</p>
 					</a>
 				</li>

@@ -3,12 +3,12 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1 class="m-0 text-dark">Data Admin</h1>
+					<h1 class="m-0 text-dark">Data Pendaftaran Siswa</h1>
 				</div>
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
 						<li class="breadcrumb-item"><a href="<?= base_url('DashboardController') ?>">Home</a></li>
-						<li class="breadcrumb-item active">Data Admin</li>
+						<li class="breadcrumb-item active">Data Pendaftaran Siswa</li>
 					</ol>
 				</div>
 			</div>
@@ -32,25 +32,23 @@
 												<thead>
 													<tr>
 														<th class="text-center">No</th>
-														<th>Nama</th>
-														<th>Alamat</th>
+														<th>Judul</th>
 														<th class="text-center">Foto</th>
 														<th class="text-center">Action</th>
 													</tr>
 												</thead>
 												<tbody>
-													<?php foreach ($getAdmin as $data) : ?>
+													<?php foreach ($getInformasi as $data) : ?>
 														<tr>
 															<td class="text-center"><?= $no++ ?></td>
-															<td><?= $data['nama']; ?></td>
-															<td><?= $data['alamat']; ?></td>
+															<td><?= $data['judul']; ?></td>
 															<td class="text-center">
-																<img src="<?= base_url('/assets/assetGambar/administrator/') . $data['foto'] ?>" alt="administrator" width="40px" class="rounded">
-															</td class="text-center">
+																<img src="<?= base_url('/assets/assetGambar/informasi/') . $data['foto'] ?>" alt="administrator" width="40px" class="rounded">
+															</td>
 															<td class="text-center">
 																<a href="#" data-toggle="modal" data-target="#modalUbahDataPenduduk<?= $data['id'] ?>" class="btn btn-primary"><i class="fas fa-pen-square"></i></a>
 
-																<a type="submit" href="<?= base_url('AdministratorController/hapusAdministrator/') . $data['id'] ?>" onclick=" return confirm('Yakin Ingin Menghapus.?')" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+																<a type="submit" href="<?= base_url('Admin/AssetSekolahController/destroyInformasi/') . $data['slug_judul'] ?>" onclick=" return confirm('Yakin Ingin Menghapus.?')" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
 
 																<a href="#" data-toggle="modal" data-target="#staticBackdrop<?= $data['id'] ?>" class="btn btn-info"><i class="fas fa-plus-square"></i></a>
 															</td>
@@ -72,12 +70,12 @@
 </div>
 
 
-<!-- Modal untuk tambah data admin -->
+<!-- Modal untuk tambah data Pndaftran Sekolah -->
 <div class="modal fade" id="exampleModalDataPenduduk" tabindex="-1" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Tambah Data Admin</h5>
+				<h5 class="modal-title" id="exampleModalLabel">Tambah Data Siswa Baru</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -85,37 +83,42 @@
 			<div class="modal-body">
 				<div class="row">
 					<div class="col">
-						<?= form_open_multipart('AdministratorController/tambahDataAdmin'); ?>
+						<?= form_open_multipart('Admin/AssetSekolahController/storeInformasi'); ?>
 						<div class="row">
 							<div class="col">
 								<div class="form-group">
 									<label for="nama">Nama</label>
-									<input type="text" name="nama" class="form-control" autocomplete="off" id="nama" placeholder="Masukan Nama" autofocus>
+									<input type="text" name="nama" class="form-control" autocomplete="off" id="nama" placeholder="Masukan nama">
 								</div>
 								<div class="form-group">
-									<label for="email">Email</label>
-									<input type="text" name="email" class="form-control" id="email" placeholder="Masukan Email">
+									<label for="gender">Jenis Kelamin</label>
+									<input type="text" name="gender" class="form-control" autocomplete="off" id="gender" placeholder="Masukan gender">
+								</div>
+								<div class="form-group">
+									<label for="asalSekolah">Asal Sekolah</label>
+									<input type="text" name="asal_sekolah" class="form-control" autocomplete="off" id="asalSekolah" placeholder="Masukan asal sekolah">
+								</div>
+								<div class="form-group">
+									<label for="tgl_lahir">Tanggal lahir</label>
+									<input type="date" name="tgl_lahir" class="form-control" autocomplete="off" id="tgl_lahir" placeholder="Masukan Tanggal Lahir">
+								</div>
+							</div>
+							<div class="col">
+								<div class="form-group">
+									<label for="nik">No Induk Keluarga</label>
+									<input type="number" name="nik" class="form-control" autocomplete="off" id="nik" placeholder="Masukan No Induk Keluarga">
 								</div>
 								<div class="form-group">
 									<label for="alamat">Alamat</label>
-									<input type="text" name="alamat" class="form-control" id="alamat" placeholder="Masukan Alamat">
+									<input type="text" name="alamat" class="form-control" autocomplete="off" id="alamat" placeholder="Masukan alamat">
 								</div>
 								<div class="form-group">
-									<label for="jabatan">Jabatan</label>
-									<select class="form-control" name="roles">
-										<option value="1">-- Pilih Posisi Jabatan --</option>
-										<option value="1">Admin</option>
-										<option value="2">Guru</option>
-										<option value="3">Pimpinan</option>
-									</select>
+									<label for="no_hp">No Hp</label>
+									<input type="number" name="no_hp" class="form-control" autocomplete="off" id="no_hp" placeholder="Masukan No Hp">
 								</div>
 								<div class="form-group">
-									<label for="foto">Photo</label>
-									<input type="file" name="foto" class="form-control" id="foto" placeholder="Masukan Tempat Tgl Lahir">
-								</div>
-								<div class="form-group">
-									<label for="deskripsi">Deskripsi</label>
-									<textarea name="deskripsi" id="deskripsi" class="form-control" rows="3" placeholder="Masukan Deskripsi"></textarea>
+									<label for="email">Email</label>
+									<input type="text" name="email" class="form-control" autocomplete="off" id="email" placeholder="Masukan Email">
 								</div>
 							</div>
 						</div>
@@ -129,13 +132,13 @@
 	</div>
 </div>
 
-<!-- Modal Untuk ubah data Admin -->
-<?php foreach ($getAdmin as $data) : ?>
+<!-- Modal Untuk Untuk Update Data Informasi -->
+<?php foreach ($getInformasi as $data) : ?>
 	<div class="modal fade" id="modalUbahDataPenduduk<?= $data['id'] ?>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="staticBackdropLabel">Ubah Data Administrator</h5>
+					<h5 class="modal-title" id="staticBackdropLabel">Ubah Data Penduduk</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -143,30 +146,34 @@
 				<div class="modal-body">
 					<div class="row">
 						<div class="col">
-							<form action="<?= base_url('AdministratorController/ubahDataAdmin/') . $data['id'] ?>" method="POST">
-								<div class="row">
-									<div class="col">
-										<div class="form-group">
-											<label for="nama">Nama</label>
-											<input type="text" name="nama" class="form-control" id="nama" value="<?= $data['nama'] ?>" disabled>
+							<?= form_open_multipart('Admin/AssetSekolahController/updateInformasi'); ?>
+							<div class="row">
+								<div class="col">
+									<div class="form-group">
+										<input type="hidden" name="id" value="<?= $data['id'] ?>">
+									</div>
+									<div class="form-group">
+										<label for="judul">Judul Informasi</label>
+										<input type="text" name="judul" class="form-control" id="judul" value="<?= $data['judul'] ?>">
+									</div>
+									<div class="form-group">
+										<label for="isi">Isi Informasi</label>
+										<textarea name="isi" id="isi" class="form-control" cols="20" rows="5" value="<?= $data['isi'] ?>"><?= $data['isi'] ?></textarea>
+									</div>
+									<div class="form-group">
+										<label for="foto">Photo</label>
+										<div class="row">
+											<div class="col mb-2">
+												<img src="<?= base_url('/assets/assetGambar/informasi/') . $data['foto'] ?>" width="120px" alt="" class="img-thumbnail">
+											</div>
 										</div>
-										<div class="form-group">
-											<label for="email">Email</label>
-											<input type="text" name="email" autocomplete="off" class="form-control" id="email" value="<?= $data['email'] ?>">
-										</div>
-										<div class="form-group">
-											<label for="alamat">Alamat</label>
-											<input type="text" name="alamat" autocomplete="off" class="form-control" id="alamat" value="<?= $data['alamat'] ?>">
-										</div>
-										<div class="form-group">
-											<label for="deskripsi">Deskripsi</label>
-											<textarea name="deskripsi" id="deskripsi" class="form-control" rows="3" value="<?= $data['deskripsi'] ?>"><?= $data['deskripsi'] ?></textarea>
-										</div>
+										<input type="file" name="foto" class="form-control" id="foto">
 									</div>
 								</div>
-								<button type="submit" class="btn btn-primary mt-2">Simpan</button>
-								<button type="resset" class="btn btn-dark px-4 ml-2 mt-2" data-dismiss="modal">Close</button>
-							</form>
+							</div>
+							<button type="submit" class="btn btn-primary mt-2">Simpan</button>
+							<button type="resset" class="btn btn-dark px-4 ml-2 mt-2" data-dismiss="modal">Close</button>
+							<?= form_close(); ?>
 						</div>
 					</div>
 				</div>
@@ -175,8 +182,9 @@
 	</div>
 <?php endforeach; ?>
 
-<!-- Modal Untuk Detail data Admin -->
-<?php foreach ($getAdmin as $data) : ?>
+
+<!-- Modal Unutk Detail Data Informasi -->
+<?php foreach ($getInformasi as $data) : ?>
 	<div class="modal fade" id="staticBackdrop<?= $data['id'] ?>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered">
 			<div class="modal-content">
@@ -190,29 +198,17 @@
 					<div class="card-body">
 						<div class="row">
 							<div class="col text-center mb-4">
-								<img src="<?= base_url('/assets/assetGambar/administrator/') . $data['foto'] ?>" width="120px" alt="" class="img-thumbnail">
+								<img src="<?= base_url('/assets/assetGambar/informasi/') . $data['foto'] ?>" width="120px" alt="" class="img-thumbnail">
 							</div>
 						</div>
 						<dl class="row justify-content-center">
-							<dt class="col-sm-6">Nama</dt>
-							<dd class="col-sm-6">: <?= $data['nama']; ?></dd>
-							<dt class="col-sm-6">Email</dt>
-							<dd class="col-sm-6">: <?= $data['email']; ?></dd>
-							<dt class="col-sm-6">Nama Desa</dt>
-							<dd class="col-sm-6">: <?= $data['alamat']; ?></dd>
-							<dt class="col-sm-6">Jabatan</dt>
-							<dd class="col-sm-6">:
-								<?php if ($data['roles'] == 1) {
-									print "Admin";
-								} else if ($data['roles'] == 2) {
-									print "Guru";
-								} else if ($data['roles'] == 3) {
-									print "Pimpinan";
-								} ?>
-							</dd>
-							<dt class="col-sm-6">Deskripsi</dt>
+							<dt class="col-sm-6">Judul Informasi</dt>
+							<dd class="col-sm-6">: <?= $data['judul']; ?></dd>
+							<dt class="col-sm-6">Tanggal Post</dt>
+							<dd class="col-sm-6">: <?= date("d/ m/ Y", $data['created_at'],); ?></dd>
+							<dt class="col-sm-6">Isi Informasi</dt>
 							<dd class="col-sm-6">:</dd>
-							<textarea name="isi" id="" class="form-control" disabled rows="5"> <?= $data['deskripsi']; ?></textarea>
+							<textarea name="isi" id="" class="form-control" disabled cols="20" rows="7"> <?= $data['isi']; ?></textarea>
 						</dl>
 					</div>
 				</div>

@@ -19,12 +19,7 @@
 			<div class="row">
 				<div class="col-12">
 					<div class="card">
-						<div class="card-header">
-							<h3 class="card-title">Table Data Siswa</h3>
-							<div class="status mt-5">
-								<?= $this->session->flashdata('status'); ?>
-							</div>
-						</div>
+						<?= $this->session->flashdata('status'); ?>
 						<div class="card-body">
 							<div class="row">
 								<div class="col">
@@ -38,8 +33,8 @@
 													<tr>
 														<th class="text-center">No</th>
 														<th>Nama</th>
+														<th>Email</th>
 														<th>No Nis</th>
-														<th>Tempat Lahir</th>
 														<th class="text-center">Action</th>
 													</tr>
 												</thead>
@@ -48,8 +43,8 @@
 														<tr>
 															<td class="text-center"><?= $no++ ?></td>
 															<td><?= $data['nama']; ?></td>
+															<td><?= $data['email']; ?></td>
 															<td><?= $data['nis']; ?></td>
-															<td><?= $data['tempat_lahir']; ?></td>
 															<td class="text-center">
 																<a href="#" data-toggle="modal" data-target="#modalUbahDataGuru<?= $data['id'] ?>" class="btn btn-primary"><i class="fas fa-pen-square"></i></a>
 
@@ -92,46 +87,38 @@
 						<div class="row">
 							<div class="col">
 								<div class="form-group">
-									<label for="nis">No Nis</label>
-									<input type="number" name="nis" class="form-control" autocomplete="off" id="nis" placeholder="Masukan No Nis" autofocus>
-								</div>
-								<div class="form-group">
-									<label for="nisn">No Nisn</label>
-									<input type="number" name="nisn" class="form-control" autocomplete="off" id="nisn" placeholder="Masukan No Nisn">
-								</div>
-								<div class="form-group">
 									<label for="nama">Nama</label>
-									<input type="text" name="nama" class="form-control" autocomplete="off" id="nama" placeholder="Masukan Nama">
+									<input type="text" name="nama" class="form-control" autocomplete="off" id="nama" placeholder="Masukan nama">
 								</div>
 								<div class="form-group">
-									<label for="jabatan">Jenis Kelamin</label>
-									<select class="form-control" name="jenisKelamin">
-										<option value="1">-- Pilih Jenis Kelamin --</option>
-										<option value="LAKI-LAKI">Laki-laki</option>
-										<option value="PEREMPUAN">Perempuan</option>
-									</select>
+									<label for="gender">Jenis Kelamin</label>
+									<input type="text" name="gender" class="form-control" autocomplete="off" id="gender" placeholder="Masukan gender">
 								</div>
 								<div class="form-group">
-									<label for="tempatTgl">Tempat Tanggal Lahir</label>
-									<input type="text" name="tempatLahir" class="form-control" id="tempatTgl" placeholder="Masukan Tempat Tanggal Lahir">
+									<label for="asalSekolah">Asal Sekolah</label>
+									<input type="text" name="asal_sekolah" class="form-control" autocomplete="off" id="asalSekolah" placeholder="Masukan asal sekolah">
+								</div>
+								<div class="form-group">
+									<label for="tgl_lahir">Tanggal lahir</label>
+									<input type="date" name="tgl_lahir" class="form-control" autocomplete="off" id="tgl_lahir" placeholder="Masukan Tanggal Lahir">
 								</div>
 							</div>
 							<div class="col">
 								<div class="form-group">
-									<label for="tglLahir">Tanggal Lahir</label>
-									<input type="date" name="tanggalLahir" class="form-control" id="tglLahir" placeholder="Masukan Tanggal Lahir">
+									<label for="nik">No Induk Keluarga</label>
+									<input type="number" name="nik" class="form-control" autocomplete="off" id="nik" placeholder="Masukan No Induk Keluarga">
 								</div>
 								<div class="form-group">
-									<label for="namaAyah">Nama Ayah</label>
-									<input type="text" name="namaAyah" class="form-control" id="namaAyah" placeholder="Masukan Nama Ayah">
+									<label for="alamat">Alamat</label>
+									<input type="text" name="alamat" class="form-control" autocomplete="off" id="alamat" placeholder="Masukan alamat">
 								</div>
 								<div class="form-group">
-									<label for="namaIbu">Nama Ibu</label>
-									<input type="text" name="namaIbu" class="form-control" id="namaIbu" placeholder="Masukan Nama Ibu">
+									<label for="no_hp">No Hp</label>
+									<input type="number" name="no_hp" class="form-control" autocomplete="off" id="no_hp" placeholder="Masukan No Hp">
 								</div>
 								<div class="form-group">
-									<label for="agama">Agama</label>
-									<input type="text" name="agama" class="form-control" id="agama" placeholder="Masukan Agama">
+									<label for="email">Email</label>
+									<input type="text" name="email" class="form-control" autocomplete="off" id="email" placeholder="Masukan Email">
 								</div>
 							</div>
 						</div>

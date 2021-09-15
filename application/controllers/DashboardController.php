@@ -26,4 +26,10 @@ class DashboardController extends CI_Controller
 		$this->load->view('pages/dashboard/viewDashboard', $data);
 		$this->load->view('includes/Admin/footer');
 	}
+
+	public function getData()
+	{
+		$result = $this->DataUserSekolahModel->getSiswa()->result_array();
+		echo json_encode($result);
+	}
 }

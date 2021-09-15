@@ -103,9 +103,9 @@
 													<tr>
 														<th>No</th>
 														<th>Nama</th>
-														<th>No Nis</th>
-														<th>No Nisn</th>
-														<th>Tempat Lahir</th>
+														<th>No Hp</th>
+														<th>Alamat</th>
+														<th>Jenis Kelmin</th>
 													</tr>
 												</thead>
 												<tbody>
@@ -113,9 +113,9 @@
 														<tr>
 															<td><?= $no++ ?></td>
 															<td><?= $data['nama']; ?></td>
-															<td><?= $data['nis']; ?></td>
-															<td><?= $data['nisn']; ?></td>
-															<td><?= $data['tempat_lahir']; ?></td>
+															<td><?= $data['no_hp']; ?></td>
+															<td><?= $data['alamat']; ?></td>
+															<td><?= $data['gender']; ?></td>
 														</tr>
 													<?php endforeach; ?>
 												</tbody>

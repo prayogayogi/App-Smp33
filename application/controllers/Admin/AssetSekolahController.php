@@ -211,4 +211,45 @@ class AssetSekolahController extends CI_Controller
   </div>');
 		redirect('Admin/AssetSekolahController/sosialMedia');
 	}
+
+	// Pendaftaran siswa baru
+	public function pendaftaranSiswa()
+	{
+		$data['title'] = "Data Pendaftran";
+		$data['no'] = 1;
+		$data['userLogin'] = $this->AuthModel->getUserLogin()->row_array();
+		$data['getInformasi'] = $this->AssetSekolahModel->getDataInformasi()->result_array();
+		$this->load->view('includes/Admin/header', $data);
+		$this->load->view('includes/Admin/sidebar', $data);
+		$this->load->view('pages/dashboard/assetSekolah/pendaftaranSiswa', $data);
+		$this->load->view('includes/Admin/footer');
+	}
+
+	// Sotore data pendaftran siswa baru
+	public function storePendaftranSiswa()
+	{
+		$this->AssetSekolahModel->storePendaftranSiswa();
+		$this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Data Siswa baru</strong> Berhasil Di Tambah..
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>');
+		redirect('Admin/AssetSekolahController/pendaftaranSiswa');
+	}
+
+
+
+	// Pendaftaran siswa baru
+	public function kegiatan()
+	{
+		$data['title'] = "Data Kegiatan";
+		$data['no'] = 1;
+		$data['userLogin'] = $this->AuthModel->getUserLogin()->row_array();
+		$data['getInformasi'] = $this->AssetSekolahModel->getDataInformasi()->result_array();
+		$this->load->view('includes/Admin/header', $data);
+		$this->load->view('includes/Admin/sidebar', $data);
+		$this->load->view('pages/dashboard/assetSekolah/kegiatan', $data);
+		$this->load->view('includes/Admin/footer');
+	}
 }

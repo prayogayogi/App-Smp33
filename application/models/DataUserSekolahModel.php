@@ -9,7 +9,7 @@ class DataUserSekolahModel extends CI_Model
 		return $this->db->get('db_guru');
 	}
 
-	// Get Data Pagination
+	// Get Data Pagination di front end
 	function getPagination($start, $mulai)
 	{
 		return $this->db->get('db_guru', $start, $mulai, 'DESC');
@@ -100,15 +100,14 @@ class DataUserSekolahModel extends CI_Model
 	function storeSiswa()
 	{
 		$data = [
-			'nis' => $this->input->post('nis'),
-			'nisn' => $this->input->post('nisn'),
 			'nama' => ucwords(trim($this->input->post('nama'))),
-			'jenis_kelamin' => $this->input->post('jenisKelamin'),
-			'tempat_lahir' => ucwords(trim($this->input->post('tempatLahir'))),
-			'tanggal_lahir' => $this->input->post('tanggalLahir'),
-			'nama_ayah' => ucwords(trim($this->input->post('namaAyah'))),
-			'nama_ibu' => ucwords(trim($this->input->post('namaIbu'))),
-			'agama' => ucwords(trim($this->input->post('agama')))
+			'gender' => $this->input->post('gender'),
+			'asal_sekolah' => $this->input->post('asal_sekolah'),
+			'tgl_lahir' => $this->input->post('tgl_lahir'),
+			'nik' => $this->input->post('nik'),
+			'alamat' => $this->input->post('alamat'),
+			'no_hp' => $this->input->post('no_hp'),
+			'email' => $this->input->post('email'),
 		];
 		$this->db->set($data);
 		$this->db->insert('db_siswa');

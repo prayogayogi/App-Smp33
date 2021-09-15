@@ -19,12 +19,7 @@
 			<div class="row">
 				<div class="col-12">
 					<div class="card">
-						<div class="card-header">
-							<h3 class="card-title">Table Data Guru</h3>
-							<div class="status mt-5">
-								<?= $this->session->flashdata('status'); ?>
-							</div>
-						</div>
+						<?= $this->session->flashdata('status'); ?>
 						<div class="card-body">
 							<div class="row">
 								<div class="col">

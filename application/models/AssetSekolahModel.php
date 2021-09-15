@@ -256,4 +256,21 @@ class AssetSekolahModel extends CI_Model
 		$this->db->set($data);
 		$this->db->update('db_sosial_media');
 	}
+
+	// PENDAFTRAN SISWA BARU
+	function storePendaftranSiswa()
+	{
+		$data = [
+			'nama' => $this->input->post('nama'),
+			'gender' => $this->input->post('gender'),
+			'asal_sekolah' => $this->input->post('asal_sekolah'),
+			'tgl_lahir' => $this->input->post('tgl_lahir'),
+			'nik' => $this->input->post('nik'),
+			'alamat' => $this->input->post('alamat'),
+			'no_hp' => $this->input->post('no_hp'),
+			'email' => $this->input->post('email'),
+		];
+		$this->db->set($data);
+		$this->db->insert('db_siswa');
+	}
 }
