@@ -34,23 +34,35 @@
 														<th class="text-center">No</th>
 														<th>Judul</th>
 														<th class="text-center">Foto</th>
+														<th class="text-center">Tgl Post</th>
 														<th class="text-center">Action</th>
 													</tr>
 												</thead>
 												<tbody>
-													<?php foreach ($getInformasi as $data) : ?>
+													<?php foreach ($getKegiatan as $data) : ?>
 														<tr>
 															<td class="text-center"><?= $no++ ?></td>
 															<td><?= $data['judul']; ?></td>
 															<td class="text-center">
-																<img src="<?= base_url('/assets/assetGambar/informasi/') . $data['foto'] ?>" alt="administrator" width="40px" class="rounded">
+																<img src="<?= base_url('/assets/assetGambar/Kegiatan/') . $data['photo'] ?>" alt="administrator" width="40px" class="rounded">
 															</td>
+															<td><?= date("d/ m/ Y", $data['created_at']) ?></td>
 															<td class="text-center">
-																<a href="#" data-toggle="modal" data-target="#modalUbahDataPenduduk<?= $data['id'] ?>" class="btn btn-primary"><i class="fas fa-pen-square"></i></a>
-
-																<a type="submit" href="<?= base_url('Admin/AssetSekolahController/destroyInformasi/') . $data['slug_judul'] ?>" onclick=" return confirm('Yakin Ingin Menghapus.?')" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
-
-																<a href="#" data-toggle="modal" data-target="#staticBackdrop<?= $data['id'] ?>" class="btn btn-info"><i class="fas fa-plus-square"></i></a>
+																<div calass="btn-group">
+																	<div class="dropdown">
+																		<button class="btn btn-primary dropdown-toggle mr-1 mb-1" type="button" data-toggle="dropdown">
+																			Aksi
+																		</button>
+																		<div class="dropdown-menu">
+																			<a href="<?= base_url('Admin/AssetSekolahController/createKegiatan/') . $data['slug'] ?>" class="dropdown-item text-success">
+																				Edit
+																			</a>
+																			<a href="<?= base_url('Admin/AssetSekolahController/destroyKegiatan/') . $data['slug'] ?>" class="dropdown-item text-danger" onclick="return confirm('Apakah anda yakin ingin menghapus.?')">
+																				Hapus
+																			</a>
+																		</div>
+																	</div>
+																</div>
 															</td>
 														</tr>
 													<?php endforeach; ?>
@@ -70,12 +82,12 @@
 </div>
 
 
-<!-- Modal untuk tambah data admin -->
+<!-- Modal untuk tambah data kegaitan -->
 <div class="modal fade" id="exampleModalDataPenduduk" tabindex="-1" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Tambah Data Admin</h5>
+				<h5 class="modal-title" id="exampleModalLabel">Tambah Data Kegiatan</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -83,20 +95,23 @@
 			<div class="modal-body">
 				<div class="row">
 					<div class="col">
-						<?= form_open_multipart('Admin/AssetSekolahController/storeInformasi'); ?>
+						<?= form_open_multipart('Admin/AssetSekolahController/storeKegiatan'); ?>
 						<div class="row">
 							<div class="col">
 								<div class="form-group">
-									<label for="judul">Judul Informasi</label>
-									<input type="text" name="judul" class="form-control" autocomplete="off" id="judul" placeholder="Masukan Judul">
+									<label for="judul">Judul Kegiatan</label>
+									<input type="text" name="judul" class="form-control" autocomplete="off" id="judul" placeholder="Masukan Judul Kegiatan">
 								</div>
 								<div class="form-group">
-									<label for="isi">Isi Informasi</label>
-									<textarea name="isi" id="isi" class="form-control" placeholder="Masukan Isi Informasi"></textarea>
+									<label for="isi">Isi Kegiatan</label>
+									<textarea name="isi" id="isi" class="form-control" placeholder="Masukan Isi Kegiatan"></textarea>
+									<script>
+										CKEDITOR.replace('isi');
+									</script>
 								</div>
 								<div class="form-group">
 									<label for="foto">Photo</label>
-									<input type="file" name="foto" class="form-control" id="foto">
+									<input type="file" name="photo" class="form-control" id="foto">
 								</div>
 							</div>
 						</div>
@@ -110,13 +125,13 @@
 	</div>
 </div>
 
-<!-- Modal Untuk Untuk Update Data Informasi -->
-<?php foreach ($getInformasi as $data) : ?>
+<!-- Modal Untuk Untuk Update Data Kegiatan -->
+<?php foreach ($getKegiatan as $data) : ?>
 	<div class="modal fade" id="modalUbahDataPenduduk<?= $data['id'] ?>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="staticBackdropLabel">Ubah Data Penduduk</h5>
+					<h5 class="modal-title" id="staticBackdropLabel">Ubah Data Kegaitan</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -124,28 +139,31 @@
 				<div class="modal-body">
 					<div class="row">
 						<div class="col">
-							<?= form_open_multipart('Admin/AssetSekolahController/updateInformasi'); ?>
+							<?= form_open_multipart('Admin/AssetSekolahController/updateKegiatan'); ?>
 							<div class="row">
 								<div class="col">
 									<div class="form-group">
 										<input type="hidden" name="id" value="<?= $data['id'] ?>">
 									</div>
 									<div class="form-group">
-										<label for="judul">Judul Informasi</label>
+										<label for="judul">Judul Kegiatan</label>
 										<input type="text" name="judul" class="form-control" id="judul" value="<?= $data['judul'] ?>">
 									</div>
 									<div class="form-group">
-										<label for="isi">Isi Informasi</label>
-										<textarea name="isi" id="isi" class="form-control" cols="20" rows="5" value="<?= $data['isi'] ?>"><?= $data['isi'] ?></textarea>
+										<label for="kegiatan">Isi Kegiatan</label>
+										<textarea name="kegiatan" id="kegiatan" class="form-control" cols="20" rows="5"><?= $data['keterangan'] ?></textarea>
+										<script>
+											CKEDITOR.replace('kegiatan');
+										</script>
 									</div>
 									<div class="form-group">
 										<label for="foto">Photo</label>
 										<div class="row">
 											<div class="col mb-2">
-												<img src="<?= base_url('/assets/assetGambar/informasi/') . $data['foto'] ?>" width="120px" alt="" class="img-thumbnail">
+												<img src="<?= base_url('/assets/assetGambar/kegiatan/') . $data['photo'] ?>" width="120px" alt="" class="img-thumbnail">
 											</div>
 										</div>
-										<input type="file" name="foto" class="form-control" id="foto">
+										<input type="file" name="photo" class="form-control" id="foto">
 									</div>
 								</div>
 							</div>
@@ -161,8 +179,8 @@
 <?php endforeach; ?>
 
 
-<!-- Modal Unutk Detail Data Informasi -->
-<?php foreach ($getInformasi as $data) : ?>
+<!-- Modal Unutk Detail Data Kegiatan -->
+<?php foreach ($getKegiatan as $data) : ?>
 	<div class="modal fade" id="staticBackdrop<?= $data['id'] ?>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered">
 			<div class="modal-content">
@@ -176,15 +194,15 @@
 					<div class="card-body">
 						<div class="row">
 							<div class="col text-center mb-4">
-								<img src="<?= base_url('/assets/assetGambar/informasi/') . $data['foto'] ?>" width="120px" alt="" class="img-thumbnail">
+								<img src="<?= base_url('/assets/assetGambar/Kegiatan/') . $data['foto'] ?>" width="120px" alt="" class="img-thumbnail">
 							</div>
 						</div>
 						<dl class="row justify-content-center">
-							<dt class="col-sm-6">Judul Informasi</dt>
+							<dt class="col-sm-6">Judul Kegiatan</dt>
 							<dd class="col-sm-6">: <?= $data['judul']; ?></dd>
 							<dt class="col-sm-6">Tanggal Post</dt>
 							<dd class="col-sm-6">: <?= date("d/ m/ Y", $data['created_at'],); ?></dd>
-							<dt class="col-sm-6">Isi Informasi</dt>
+							<dt class="col-sm-6">Isi Kegiatan</dt>
 							<dd class="col-sm-6">:</dd>
 							<textarea name="isi" id="" class="form-control" disabled cols="20" rows="7"> <?= $data['isi']; ?></textarea>
 						</dl>

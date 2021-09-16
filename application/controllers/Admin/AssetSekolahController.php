@@ -246,10 +246,61 @@ class AssetSekolahController extends CI_Controller
 		$data['title'] = "Data Kegiatan";
 		$data['no'] = 1;
 		$data['userLogin'] = $this->AuthModel->getUserLogin()->row_array();
-		$data['getInformasi'] = $this->AssetSekolahModel->getDataInformasi()->result_array();
+		$data['getKegiatan'] = $this->AssetSekolahModel->getDataKegiatan()->result_array();
 		$this->load->view('includes/Admin/header', $data);
 		$this->load->view('includes/Admin/sidebar', $data);
-		$this->load->view('pages/dashboard/assetSekolah/kegiatan', $data);
+		$this->load->view('pages/dashboard/assetSekolah/kegiatan/index', $data);
 		$this->load->view('includes/Admin/footer');
+	}
+
+	// create kegaitan
+	public function createKegiatan($slug)
+	{
+		$data['title'] = "Edit Data kegiatan";
+		$data['userLogin'] = $this->AuthModel->getUserLogin()->row_array();
+		$data['createKegiatan'] = $this->AssetSekolahModel->createKegiatan($slug)->row_array();
+		$this->load->view('includes/Admin/header', $data);
+		$this->load->view('includes/Admin/sidebar', $data);
+		$this->load->view('pages/dashboard/assetSekolah/kegiatan/edit', $data);
+		$this->load->view('includes/Admin/footer');
+	}
+
+	// Store kegiatan
+	public function updateKegiatan($slug)
+	{
+		$this->AssetSekolahModel->updateKegiatan($slug);
+		$this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Data Kegiatan</strong> Berhasil Di Update..
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>');
+		redirect('Admin/AssetSekolahController/kegiatan');
+	}
+
+	// Store kegiatan
+	public function storeKegiatan()
+	{
+		$this->AssetSekolahModel->storeKegiatan();
+		$this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Data Kegiatan</strong> Berhasil Di Tambah..
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>');
+		redirect('Admin/AssetSekolahController/kegiatan');
+	}
+
+	// Store kegiatan
+	public function destroyKegiatan($slug)
+	{
+		$this->AssetSekolahModel->destroyKegiatan($slug);
+		$this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Data Kegiatan</strong> Berhasil Di Hapus..
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>');
+		redirect('Admin/AssetSekolahController/kegiatan');
 	}
 }

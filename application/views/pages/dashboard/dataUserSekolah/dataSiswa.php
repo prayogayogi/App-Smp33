@@ -33,8 +33,9 @@
 													<tr>
 														<th class="text-center">No</th>
 														<th>Nama</th>
+														<th>Jenis Kelamin</th>
 														<th>Email</th>
-														<th>No Nis</th>
+														<th>No Nik</th>
 														<th class="text-center">Action</th>
 													</tr>
 												</thead>
@@ -43,8 +44,9 @@
 														<tr>
 															<td class="text-center"><?= $no++ ?></td>
 															<td><?= $data['nama']; ?></td>
+															<td><?= $data['gender']; ?></td>
 															<td><?= $data['email']; ?></td>
-															<td><?= $data['nis']; ?></td>
+															<td><?= $data['nik']; ?></td>
 															<td class="text-center">
 																<a href="#" data-toggle="modal" data-target="#modalUbahDataGuru<?= $data['id'] ?>" class="btn btn-primary"><i class="fas fa-pen-square"></i></a>
 
@@ -88,37 +90,41 @@
 							<div class="col">
 								<div class="form-group">
 									<label for="nama">Nama</label>
-									<input type="text" name="nama" class="form-control" autocomplete="off" id="nama" placeholder="Masukan nama">
+									<input type="text" name="nama" class="form-control" autocomplete="off" id="nama" placeholder="Masukan nama" required>
 								</div>
 								<div class="form-group">
-									<label for="gender">Jenis Kelamin</label>
-									<input type="text" name="gender" class="form-control" autocomplete="off" id="gender" placeholder="Masukan gender">
+									<label for="jabatan">Jabatan</label>
+									<select class="form-control" name="gender">
+										<option value="1">-- Pilih Jenis Kelamin --</option>
+										<option value="LAKI-LAKI">Laki-laki</option>
+										<option value="PEREMPUAN">Perempuan</option>
+									</select>
 								</div>
 								<div class="form-group">
 									<label for="asalSekolah">Asal Sekolah</label>
-									<input type="text" name="asal_sekolah" class="form-control" autocomplete="off" id="asalSekolah" placeholder="Masukan asal sekolah">
+									<input type="text" name="asal_sekolah" class="form-control" autocomplete="off" id="asalSekolah" placeholder="Masukan asal sekolah" required>
 								</div>
 								<div class="form-group">
 									<label for="tgl_lahir">Tanggal lahir</label>
-									<input type="date" name="tgl_lahir" class="form-control" autocomplete="off" id="tgl_lahir" placeholder="Masukan Tanggal Lahir">
+									<input type="date" name="tgl_lahir" class="form-control" autocomplete="off" id="tgl_lahir" placeholder="Masukan Tanggal Lahir" required>
 								</div>
 							</div>
 							<div class="col">
 								<div class="form-group">
 									<label for="nik">No Induk Keluarga</label>
-									<input type="number" name="nik" class="form-control" autocomplete="off" id="nik" placeholder="Masukan No Induk Keluarga">
+									<input type="number" name="nik" class="form-control" autocomplete="off" id="nik" placeholder="Masukan No Induk Keluarga" required>
 								</div>
 								<div class="form-group">
 									<label for="alamat">Alamat</label>
-									<input type="text" name="alamat" class="form-control" autocomplete="off" id="alamat" placeholder="Masukan alamat">
+									<input type="text" name="alamat" class="form-control" autocomplete="off" id="alamat" placeholder="Masukan alamat" required>
 								</div>
 								<div class="form-group">
 									<label for="no_hp">No Hp</label>
-									<input type="number" name="no_hp" class="form-control" autocomplete="off" id="no_hp" placeholder="Masukan No Hp">
+									<input type="number" name="no_hp" class="form-control" autocomplete="off" id="no_hp" placeholder="Masukan No Hp" required>
 								</div>
 								<div class="form-group">
 									<label for="email">Email</label>
-									<input type="text" name="email" class="form-control" autocomplete="off" id="email" placeholder="Masukan Email">
+									<input type="email" name="email" class="form-control" autocomplete="off" id="email" placeholder="Masukan Email" required>
 								</div>
 							</div>
 						</div>
@@ -150,38 +156,42 @@
 								<div class="row">
 									<div class="col">
 										<div class="form-group">
-											<label for="nis">No Nis</label>
-											<input type="number" name="nis" class="form-control" autocomplete="off" id="nis" value="<?= $data['nis']; ?>">
-										</div>
-										<div class="form-group">
-											<label for="nisn">No Nisn</label>
-											<input type="number" name="nisn" class="form-control" autocomplete="off" id="nisn" value="<?= $data['nisn']; ?>">
-										</div>
-										<div class="form-group">
 											<label for="nama">Nama</label>
-											<input type="text" name="nama" class="form-control" autocomplete="off" id="nama" value="<?= $data['nama']; ?>">
+											<input type="text" name="nama" class="form-control" autocomplete="off" id="nama" value="<?= $data['nama'] ?>" required>
 										</div>
 										<div class="form-group">
-											<label for="tempatTgl">Tempat Tanggal Lahir</label>
-											<input type="text" name="tempatLahir" class="form-control" id="tempatTgl" value="<?= $data['tempat_lahir']; ?>">
+											<label for="jabatan">Jabatan</label>
+											<select class="form-control" name="gender">
+												<option value="<?= $data['gender'] ?>"> <?= $data['gender'] ?></option>
+												<option value="LAKI-LAKI">Laki-laki</option>
+												<option value="PEREMPUAN">Perempuan</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="asalSekolah">Asal Sekolah</label>
+											<input type="text" name="asal_sekolah" class="form-control" autocomplete="off" id="asalSekolah" value="<?= $data['asal_sekolah'] ?>" required>
+										</div>
+										<div class="form-group">
+											<label for="tgl_lahir">Tanggal lahir</label>
+											<input type="date" name="tgl_lahir" class="form-control" autocomplete="off" id="tgl_lahir" value="<?= $data['tgl_lahir'] ?>" required>
 										</div>
 									</div>
 									<div class="col">
 										<div class="form-group">
-											<label for="tglLahir">Tanggal Lahir</label>
-											<input type="date" name="tanggalLahir" class="form-control" id="tglLahir" value="<?= $data['tanggal_lahir']; ?>">
+											<label for="nik">No Induk Keluarga</label>
+											<input type="number" name="nik" class="form-control" autocomplete="off" id="nik" value="<?= $data['nik'] ?>" required>
 										</div>
 										<div class="form-group">
-											<label for="namaAyah">Nama Ayah</label>
-											<input type="text" name="namaAyah" class="form-control" id="namaAyah" value="<?= $data['nama_ayah']; ?>">
+											<label for="alamat">Alamat</label>
+											<input type="text" name="alamat" class="form-control" autocomplete="off" id="alamat" value="<?= $data['alamat'] ?>" required>
 										</div>
 										<div class="form-group">
-											<label for="namaIbu">Nama Ibu</label>
-											<input type="text" name="namaIbu" class="form-control" id="namaIbu" value="<?= $data['nama_ibu']; ?>">
+											<label for="no_hp">No Hp</label>
+											<input type="number" name="no_hp" class="form-control" autocomplete="off" id="no_hp" value="<?= $data['no_hp'] ?>" required>
 										</div>
 										<div class="form-group">
-											<label for="agama">Agama</label>
-											<input type="text" name="agama" class="form-control" id="agama" value="<?= $data['agama']; ?>">
+											<label for="email">Email</label>
+											<input type="email" name="email" class="form-control" autocomplete="off" id="email" value="<?= $data['email'] ?>" required>
 										</div>
 									</div>
 								</div>
@@ -219,17 +229,19 @@
 							<dt class="col-sm-6">Nama</dt>
 							<dd class="col-sm-6">: <?= $data['nama']; ?></dd>
 							<dt class="col-sm-6">Jenis Kelamin</dt>
-							<dd class="col-sm-6">: <?= $data['jenis_kelamin']; ?></dd>
-							<dt class="col-sm-6">Tempat Tanggal Lahir</dt>
-							<dd class="col-sm-6">: <?= $data['tempat_lahir']; ?></dd>
+							<dd class="col-sm-6">: <?= $data['gender']; ?></dd>
+							<dt class="col-sm-6">Asal Sekolah</dt>
+							<dd class="col-sm-6">: <?= $data['asal_sekolah']; ?></dd>
 							<dt class="col-sm-6">Tanggal Lahir</dt>
-							<dd class="col-sm-6">: <?= $data['tanggal_lahir']; ?></dd>
-							<dt class="col-sm-6">Nama Ayah</dt>
-							<dd class="col-sm-6">: <?= $data['nama_ayah']; ?></dd>
-							<dt class="col-sm-6">Nama Ibu</dt>
-							<dd class="col-sm-6">: <?= $data['nama_ibu']; ?></dd>
-							<dt class="col-sm-6">Agama</dt>
-							<dd class="col-sm-6">: <?= $data['agama']; ?></dd>
+							<dd class="col-sm-6">: <?= $data['tgl_lahir']; ?></dd>
+							<dt class="col-sm-6">No induk keluarga</dt>
+							<dd class="col-sm-6">: <?= $data['nik']; ?></dd>
+							<dt class="col-sm-6">Alamat</dt>
+							<dd class="col-sm-6">: <?= $data['alamat']; ?></dd>
+							<dt class="col-sm-6">No Hp</dt>
+							<dd class="col-sm-6">: <?= $data['no_hp']; ?></dd>
+							<dt class="col-sm-6">Email</dt>
+							<dd class="col-sm-6">: <?= $data['email']; ?></dd>
 						</dl>
 					</div>
 				</div>

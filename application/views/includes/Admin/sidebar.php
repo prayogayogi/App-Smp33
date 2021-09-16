@@ -109,6 +109,14 @@
 
 				<li class="nav-header">Action</li>
 				<li class="nav-item">
+					<a href="#" class="nav-link">
+						<i class="nav-icon far fa-id-card"></i>
+						<p>
+							Profil
+						</p>
+					</a>
+				</li>
+				<li class="nav-item">
 					<a href="#" class="nav-link" data-toggle="modal" data-target="#ubahPassword">
 						<i class="nav-icon fas fa-unlock-alt"></i>
 						<p>

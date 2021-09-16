@@ -273,4 +273,94 @@ class AssetSekolahModel extends CI_Model
 		$this->db->set($data);
 		$this->db->insert('db_siswa');
 	}
+
+
+	// KRGIATAN
+	function getDataKegiatan()
+	{
+		return $this->db->get('db_kegiatan');
+	}
+
+	// Store kegitan
+	function storeKegiatan()
+	{
+		$file = $_FILES['photo'];
+		if ($file) {
+			$config['allowed_types']  = 'gif|jpg|png|jpeg';
+			$config['max_size']       = '2048';
+			$config['upload_path']    = './assets/assetGambar/kegiatan/';
+			$this->load->library('upload', $config);
+
+			if ($this->upload->do_upload('photo')) {
+				$files = $this->upload->data('file_name', TRUE);
+			} else {
+				echo "error";
+			}
+		}
+		$judul =  ucwords($this->input->post('judul'));
+		$slug_judul = trim(strtolower($judul));
+		$out = explode(" ", $slug_judul);
+		$slug = implode("-", $out);
+		$data = [
+			'judul' => $judul,
+			'photo' => $files,
+			'keterangan' => $this->input->post('isi'),
+			'slug' => $slug,
+			'created_at' => time()
+		];
+		$this->db->set($data);
+		$this->db->insert('db_kegiatan');
+	}
+
+	// create kegiatan
+	function createKegiatan($slug)
+	{
+		$this->db->where('slug', $slug);
+		return $this->db->get('db_kegiatan');
+	}
+
+	// update kegatan
+	function updateKegiatan($slug)
+	{
+		$file = $_FILES['photo'];
+		if ($file) {
+			$config['allowed_types']  = 'gif|jpg|png';
+			$config['max_size']       = '2048';
+			$config['upload_path']    = './assets/assetGambar/kegiatan/';
+			$this->load->library('upload', $config);
+
+			if ($this->upload->do_upload('photo')) {
+				$files = $this->upload->data('file_name', TRUE);
+				$this->db->set('photo', $files);
+
+				$foto = $this->db->get_where('db_kegiatan', ['slug' => $slug])->row_array();
+				unlink(FCPATH . './assets/assetGambar/kegiatan/' . $foto['photo']);
+			} else {
+				echo "error";
+			}
+		}
+
+		$judul =  ucwords($this->input->post('judul'));
+		$slug_judul = trim(strtolower($judul));
+		$out = explode(" ", $slug_judul);
+		$slugid = implode("-", $out);
+
+		$data = [
+			'judul' => $this->input->post('judul'),
+			'keterangan' => $this->input->post('kegiatan'),
+			'slug' => $slugid,
+		];
+		$this->db->where('slug', $slug);
+		$this->db->set($data);
+		$this->db->update('db_kegiatan');
+	}
+
+	// Destroy kegaitan
+	function destroyKegiatan($slug)
+	{
+		$foto = $this->db->get_where('db_kegiatan', ['slug' => $slug])->row_array();
+		unlink(FCPATH . './assets/assetGambar/kegiatan/' . $foto['photo']);
+		$this->db->where('slug', $slug);
+		$this->db->delete('db_kegiatan');
+	}
 }
