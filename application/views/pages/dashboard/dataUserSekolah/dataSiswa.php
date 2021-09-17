@@ -93,7 +93,7 @@
 									<input type="text" name="nama" class="form-control" autocomplete="off" id="nama" placeholder="Masukan nama" required>
 								</div>
 								<div class="form-group">
-									<label for="jabatan">Jabatan</label>
+									<label for="jabatan">Gender</label>
 									<select class="form-control" name="gender">
 										<option value="1">-- Pilih Jenis Kelamin --</option>
 										<option value="LAKI-LAKI">Laki-laki</option>

@@ -69,10 +69,11 @@ class AssetSekolahController extends CI_Controller
 	// Untuk Visi & Misi
 	public function visiMisi()
 	{
-		$data['title'] = "Visi Misi";
+		$data['title'] = "Visi Misi | Profile";
 		$data['no'] = 1;
 		$data['userLogin'] = $this->AuthModel->getUserLogin()->row_array();
 		$data['getVisiMisi'] = $this->AssetSekolahModel->getVisiMisi()->result_array();
+		$data['getProfile'] = $this->AssetSekolahModel->getProfile()->row_array();
 		$this->load->view('includes/Admin/header', $data);
 		$this->load->view('includes/Admin/sidebar', $data);
 		$this->load->view('pages/dashboard/assetSekolah/visiMisi', $data);
@@ -109,7 +110,7 @@ class AssetSekolahController extends CI_Controller
 	public function destroyVisiMisi($id)
 	{
 		$this->AssetSekolahModel->destroyVisiMisi($id);
-		$this->session->set_flashdata('status', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+		$this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
     <strong>Data Visi Misi</strong> Berhasil Di Hapus..
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
@@ -117,6 +118,49 @@ class AssetSekolahController extends CI_Controller
   </div>');
 		redirect('Admin/AssetSekolahController/visiMisi');
 	}
+
+
+	// PROFILE
+	// Destroy Profile
+	public function storeProfile()
+	{
+		$this->AssetSekolahModel->storeProfile();
+		$this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Data Profile</strong> Berhasil Di Tambah..
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>');
+		redirect('Admin/AssetSekolahController/visiMisi');
+	}
+
+	// Destroy Profile
+	public function updateProfile($id)
+	{
+		$this->AssetSekolahModel->updateProfile($id);
+		$this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Data Profile</strong> Berhasil Di Ubah..
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>');
+		redirect('Admin/AssetSekolahController/visiMisi');
+	}
+	// Destroy Profile
+	public function destroyProfile($id)
+	{
+		$this->AssetSekolahModel->destroyProfile($id);
+		$this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Data Profile</strong> Berhasil Di Hapus..
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>');
+		redirect('Admin/AssetSekolahController/visiMisi');
+	}
+
+
+
 
 	// UNTUK DATA INFORMASI
 	// Untuk Data Informasi
@@ -218,7 +262,7 @@ class AssetSekolahController extends CI_Controller
 		$data['title'] = "Data Pendaftran";
 		$data['no'] = 1;
 		$data['userLogin'] = $this->AuthModel->getUserLogin()->row_array();
-		$data['getInformasi'] = $this->AssetSekolahModel->getDataInformasi()->result_array();
+		$data['getSiswaBaru'] = $this->AssetSekolahModel->getSiswaBaru()->result_array();
 		$this->load->view('includes/Admin/header', $data);
 		$this->load->view('includes/Admin/sidebar', $data);
 		$this->load->view('pages/dashboard/assetSekolah/pendaftaranSiswa', $data);

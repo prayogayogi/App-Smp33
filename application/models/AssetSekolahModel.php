@@ -112,6 +112,41 @@ class AssetSekolahModel extends CI_Model
 		$this->db->delete('db_visimisi');
 	}
 
+	//  UNTUK PROFILE
+	function getProfile()
+	{
+		return $this->db->get('db_profile');
+	}
+
+	// store profile
+	public function storeProfile()
+	{
+		$data = [
+			'isi_profile' => $this->input->post('store_profile'),
+			'created_at' =>  time()
+		];
+		$this->db->set($data);
+		$this->db->insert('db_profile');
+	}
+
+	// store profile
+	public function updateProfile($id)
+	{
+		$data = [
+			'isi_profile' => $this->input->post('update_Profile'),
+		];
+		$this->db->where('id', $id);
+		$this->db->set($data);
+		$this->db->update('db_profile');
+	}
+
+	// Destroy Profile
+	function destroyProfile($id)
+	{
+		$this->db->where(['id' => $id]);
+		$this->db->delete('db_profile');
+	}
+
 
 	// UNTUK DATA INFORMASI
 	// Get Data Informasi Di Admin
@@ -258,12 +293,21 @@ class AssetSekolahModel extends CI_Model
 	}
 
 	// PENDAFTRAN SISWA BARU
+
+	// getSiswaBaru 
+	function getSiswaBaru()
+	{
+		return $this->db->get('db_siswabaru');
+	}
+
+	// Store Siswa Baru
 	function storePendaftranSiswa()
 	{
 		$data = [
 			'nama' => $this->input->post('nama'),
 			'gender' => $this->input->post('gender'),
 			'asal_sekolah' => $this->input->post('asal_sekolah'),
+			'tempat_lahir' => $this->input->post('tempat_lahir'),
 			'tgl_lahir' => $this->input->post('tgl_lahir'),
 			'nik' => $this->input->post('nik'),
 			'alamat' => $this->input->post('alamat'),
@@ -271,7 +315,7 @@ class AssetSekolahModel extends CI_Model
 			'email' => $this->input->post('email'),
 		];
 		$this->db->set($data);
-		$this->db->insert('db_siswa');
+		$this->db->insert('db_siswabaru');
 	}
 
 

@@ -39,19 +39,19 @@
 						</p>
 					</a>
 				</li>
-				<!-- <li class="nav-item">
+				<li class="nav-item">
 					<a href="<?= base_url('Admin/AssetSekolahController/pendaftaranSiswa') ?>" class="nav-link <?= (current_url() == base_url('Admin/AssetSekolahController/pendaftaranSiswa')) ? 'active' : '' ?>">
 						<i class="nav-icon fas fa-school"></i>
 						<p>
-							Pendaftaran siswa
+							Data Pendaftaran siswa
 						</p>
 					</a>
-				</li> -->
+				</li>
 				<li class="nav-item has-treeview ">
 					<a href="<?= base_url('Admin/AssetSekolahController/visiMisi') ?>" class="nav-link <?= (current_url() == base_url('Admin/AssetSekolahController/visiMisi')) ? 'active' : '' ?>">
 						<i class="nav-icon fas fa-campground"></i>
 						<p>
-							Visi & Misi
+							Profil
 						</p>
 					</a>
 				</li>
@@ -108,14 +108,6 @@
 				</li>
 
 				<li class="nav-header">Action</li>
-				<li class="nav-item">
-					<a href="#" class="nav-link">
-						<i class="nav-icon far fa-id-card"></i>
-						<p>
-							Profil
-						</p>
-					</a>
-				</li>
 				<li class="nav-item">
 					<a href="#" class="nav-link" data-toggle="modal" data-target="#ubahPassword">
 						<i class="nav-icon fas fa-unlock-alt"></i>

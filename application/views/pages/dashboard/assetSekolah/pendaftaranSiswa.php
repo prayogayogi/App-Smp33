@@ -32,25 +32,41 @@
 												<thead>
 													<tr>
 														<th class="text-center">No</th>
-														<th>Judul</th>
-														<th class="text-center">Foto</th>
+														<th>Nama</th>
+														<th class="text-center">Gender</th>
+														<th class="text-center">No Hp</th>
+														<th class="text-center">Email</th>
 														<th class="text-center">Action</th>
 													</tr>
 												</thead>
 												<tbody>
-													<?php foreach ($getInformasi as $data) : ?>
+													<?php foreach ($getSiswaBaru as $data) : ?>
 														<tr>
 															<td class="text-center"><?= $no++ ?></td>
-															<td><?= $data['judul']; ?></td>
+															<td><?= $data['nama']; ?></td>
+															<td><?= $data['gender']; ?></td>
+															<td><?= $data['no_hp']; ?></td>
+															<td><?= $data['email']; ?></td>
 															<td class="text-center">
-																<img src="<?= base_url('/assets/assetGambar/informasi/') . $data['foto'] ?>" alt="administrator" width="40px" class="rounded">
-															</td>
-															<td class="text-center">
-																<a href="#" data-toggle="modal" data-target="#modalUbahDataPenduduk<?= $data['id'] ?>" class="btn btn-primary"><i class="fas fa-pen-square"></i></a>
 
-																<a type="submit" href="<?= base_url('Admin/AssetSekolahController/destroyInformasi/') . $data['slug_judul'] ?>" onclick=" return confirm('Yakin Ingin Menghapus.?')" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
-
-																<a href="#" data-toggle="modal" data-target="#staticBackdrop<?= $data['id'] ?>" class="btn btn-info"><i class="fas fa-plus-square"></i></a>
+																<div calass="btn-group">
+																	<div class="dropdown">
+																		<button class="btn btn-primary dropdown-toggle mr-1 mb-1" type="button" data-toggle="dropdown">
+																			Aksi
+																		</button>
+																		<div class="dropdown-menu">
+																			<a href="#" data-toggle="modal" data-target="#modalUbahDataPenduduk<?= $data['id'] ?>" class="dropdown-item text-success">
+																				Edit
+																			</a>
+																			<a href="<?= base_url('Admin/AssetSekolahController/destroyInformasi/') . $data['id'] ?>" class="dropdown-item text-danger" onclick="return confirm('Apakah anda yakin ingin menghapus.?')">
+																				Hapus
+																			</a>
+																			<a href="#" class="dropdown-item text-info" data-toggle="modal" data-target="#staticBackdrop<?= $data['id'] ?>">
+																				sunting
+																			</a>
+																		</div>
+																	</div>
+																</div>
 															</td>
 														</tr>
 													<?php endforeach; ?>
@@ -83,7 +99,7 @@
 			<div class="modal-body">
 				<div class="row">
 					<div class="col">
-						<?= form_open_multipart('Admin/AssetSekolahController/storeInformasi'); ?>
+						<?= form_open_multipart('Admin/AssetSekolahController/storePendaftranSiswa'); ?>
 						<div class="row">
 							<div class="col">
 								<div class="form-group">
@@ -91,12 +107,20 @@
 									<input type="text" name="nama" class="form-control" autocomplete="off" id="nama" placeholder="Masukan nama">
 								</div>
 								<div class="form-group">
-									<label for="gender">Jenis Kelamin</label>
-									<input type="text" name="gender" class="form-control" autocomplete="off" id="gender" placeholder="Masukan gender">
+									<label for="jabatan">Gender</label>
+									<select class="form-control" name="gender">
+										<option value="1">-- Pilih Jenis Kelamin --</option>
+										<option value="LAKI-LAKI">Laki-laki</option>
+										<option value="PEREMPUAN">Perempuan</option>
+									</select>
 								</div>
 								<div class="form-group">
 									<label for="asalSekolah">Asal Sekolah</label>
 									<input type="text" name="asal_sekolah" class="form-control" autocomplete="off" id="asalSekolah" placeholder="Masukan asal sekolah">
+								</div>
+								<div class="form-group">
+									<label for="tempat_lahir">Tempat lahir</label>
+									<input type="text" name="tempat_lahir" class="form-control" autocomplete="off" id="tempat_lahir" placeholder="Masukan Tempat Lahir">
 								</div>
 								<div class="form-group">
 									<label for="tgl_lahir">Tanggal lahir</label>
@@ -133,7 +157,7 @@
 </div>
 
 <!-- Modal Untuk Untuk Update Data Informasi -->
-<?php foreach ($getInformasi as $data) : ?>
+<!-- <?php foreach ($getInformasi as $data) : ?>
 	<div class="modal fade" id="modalUbahDataPenduduk<?= $data['id'] ?>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
@@ -180,11 +204,11 @@
 			</div>
 		</div>
 	</div>
-<?php endforeach; ?>
+<?php endforeach; ?> -->
 
 
 <!-- Modal Unutk Detail Data Informasi -->
-<?php foreach ($getInformasi as $data) : ?>
+<!-- <?php foreach ($getInformasi as $data) : ?>
 	<div class="modal fade" id="staticBackdrop<?= $data['id'] ?>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered">
 			<div class="modal-content">
@@ -218,4 +242,4 @@
 			</div>
 		</div>
 	</div>
-<?php endforeach; ?>
+<?php endforeach; ?> -->
