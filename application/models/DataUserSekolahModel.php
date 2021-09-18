@@ -40,13 +40,18 @@ class DataUserSekolahModel extends CI_Model
 		}
 		$data = [
 			'nama' => $this->input->post('nama'),
+			'nip' => $this->input->post('nip'),
+			'lulusan' => $this->input->post('lulusan'),
+			'email' => $this->input->post('email'),
 			'jabatan' => $this->input->post('jabatan'),
 			'mengajar' => $this->input->post('mengajar'),
 			'foto' => $files,
-			'deskripsi' => $this->input->post('deskripsi'),
+			'alamat' => $this->input->post('alamat'),
+			'no_hp' => $this->input->post('no_hp'),
 			'created_at' => time()
 		];
-		$this->db->insert('db_guru', $data);
+		$this->db->set($data);
+		$this->db->insert('db_guru');
 	}
 
 	// Update Data Guru
@@ -61,8 +66,9 @@ class DataUserSekolahModel extends CI_Model
 
 			if ($this->upload->do_upload('foto')) {
 				$files = $this->upload->data('file_name', TRUE);
+
 				$this->db->set(['foto' => $files]);
-				$this->db->select('foto');
+				// $this->db->select('foto');
 				$foto = $this->db->get_where('db_guru', ['id' => $id])->row_array();
 				unlink(FCPATH . './assets/assetGambar/guru/' . $foto['foto']);
 			} else {
@@ -71,12 +77,16 @@ class DataUserSekolahModel extends CI_Model
 		}
 		$data = [
 			'nama' => $this->input->post('nama'),
+			'nip' => $this->input->post('nip'),
+			'lulusan' => $this->input->post('lulusan'),
+			'email' => $this->input->post('email'),
 			'jabatan' => $this->input->post('jabatan'),
 			'mengajar' => $this->input->post('mengajar'),
-			'deskripsi' => $this->input->post('deskripsi')
+			'alamat' => $this->input->post('alamat'),
+			'no_hp' => $this->input->post('no_hp'),
 		];
-		$this->db->set($data);
 		$this->db->where(['id' => $id]);
+		$this->db->set($data);
 		$this->db->update('db_guru');
 	}
 

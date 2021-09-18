@@ -51,8 +51,6 @@
 																<a href="#" data-toggle="modal" data-target="#modalUbahDataPenduduk<?= $data['id'] ?>" class="btn btn-primary"><i class="fas fa-pen-square"></i></a>
 
 																<a type="submit" href="<?= base_url('Admin/DataUserSekolahController/destroy/') . $data['id'] ?>" onclick=" return confirm('Yakin Ingin Menghapus.?')" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
-
-																<a href="#" data-toggle="modal" data-target="#staticBackdrop<?= $data['id'] ?>" class="btn btn-info"><i class="fas fa-plus-square"></i></a>
 															</td>
 														</tr>
 													<?php endforeach; ?>
@@ -93,6 +91,18 @@
 									<input type="text" name="nama" class="form-control" autocomplete="off" id="nama" placeholder="Masukan Nama" autofocus>
 								</div>
 								<div class="form-group">
+									<label for="nip">nip</label>
+									<input type="text" name="nip" class="form-control" autocomplete="off" id="nip" placeholder="Masukan nip" autofocus>
+								</div>
+								<div class="form-group">
+									<label for="lulusan">lulusan</label>
+									<input type="text" name="lulusan" class="form-control" autocomplete="off" id="lulusan" placeholder="Masukan lulusan" autofocus>
+								</div>
+								<div class="form-group">
+									<label for="email">email</label>
+									<input type="email" name="email" class="form-control" autocomplete="off" id="email" placeholder="Masukan email" autofocus>
+								</div>
+								<div class="form-group">
 									<label for="jabatan">Jabatan</label>
 									<select class="form-control" name="jabatan">
 										<option value="1">-- Pilih Posisi Jabatan --</option>
@@ -102,17 +112,23 @@
 										<option value="KARYAWAN SEKOLAH">Karyawan Sekolah</option>
 									</select>
 								</div>
+							</div>
+							<div class="col">
 								<div class="form-group">
 									<label for="Mengajar">Mengajar</label>
 									<input type="text" name="mengajar" class="form-control" id="Mengajar" placeholder="Masukan Mengajar">
 								</div>
 								<div class="form-group">
-									<label for="deskripsi">Deskripsi</label>
-									<textarea name="deskripsi" class="form-control" placeholder="Masukan Deskripsi" id="deskripsi"></textarea>
-								</div>
-								<div class="form-group">
 									<label for="foto">Photo</label>
 									<input type="file" name="foto" class="form-control" id="foto">
+								</div>
+								<div class="form-group">
+									<label for="alamat">alamat</label>
+									<input type="text" name="alamat" class="form-control" autocomplete="off" id="alamat" placeholder="Masukan alamat">
+								</div>
+								<div class="form-group">
+									<label for="no_hp">no_hp</label>
+									<input type="text" name="no_hp" class="form-control" autocomplete="off" id="no_hp" placeholder="Masukan no_hp">
 								</div>
 							</div>
 						</div>
@@ -145,12 +161,24 @@
 									<div class="col">
 										<div class="form-group">
 											<label for="nama">Nama</label>
-											<input type="text" name="nama" class="form-control" id="nama" value="<?= $data['nama'] ?>">
+											<input type="text" name="nama" class="form-control" autocomplete="off" id="nama" value="<?= $data['nama'] ?>">
 										</div>
 										<div class="form-group">
+											<label for="nip">nip</label>
+											<input type="text" name="nip" class="form-control" autocomplete="off" id="nip" value="<?= $data['nip'] ?>">
+										</div>
+										<div class=" form-group">
+											<label for="lulusan">lulusan</label>
+											<input type="text" name="lulusan" class="form-control" autocomplete="off" id="lulusan" value="<?= $data['lulusan'] ?>">
+										</div>
+										<div class=" form-group">
+											<label for="email">email</label>
+											<input type="email" name="email" class="form-control" autocomplete="off" id="email" value="<?= $data['email'] ?>">
+										</div>
+										<div class=" form-group">
 											<label for="jabatan">Jabatan</label>
 											<select class="form-control" name="jabatan">
-												<option value="<?= $data['jabatan'] ?>"><?= $data['jabatan']; ?></option>
+												<option value="<?= $data['jabatan'] ?>"><?= $data['jabatan'] ?></option>
 												<option value="KEPALA SEKOLAH">Kepala Sekolah</option>
 												<option value="WAKIL KEPALA SEKOLAH">Wakil Kepala Sekolah</option>
 												<option value="GURU">Guru</option>
@@ -160,10 +188,6 @@
 										<div class="form-group">
 											<label for="Mengajar">Mengajar</label>
 											<input type="text" name="mengajar" class="form-control" id="Mengajar" value="<?= $data['mengajar'] ?>">
-										</div>
-										<div class="form-group">
-											<label for="deskripsi">Deskripsi</label>
-											<textarea name="deskripsi" class="form-control" rows="4" id="deskripsi"><?= $data['deskripsi'] ?></textarea>
 										</div>
 									</div>
 									<div class="col">
@@ -177,6 +201,14 @@
 											<input type="file" name="foto" class="form-control" id="foto">
 											<small id="passwordHelpBlock" class="form-text text-muted">Jika Tidak Inggin Mengubah Foto Kosongkan Saja</small>
 										</div>
+										<div class="form-group">
+											<label for="alamat">alamat</label>
+											<input type="text" name="alamat" class="form-control" autocomplete="off" id="alamat" value="<?= $data['alamat'] ?>">
+										</div>
+										<div class="form-group">
+											<label for="no_hp">no_hp</label>
+											<input type="text" name="no_hp" class="form-control" autocomplete="off" id="no_hp" value="<?= $data['no_hp'] ?>">
+										</div>
 									</div>
 								</div>
 								<button type="submit" class="btn btn-primary mt-2">Simpan</button>
@@ -184,46 +216,6 @@
 							</form>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-<?php endforeach; ?>
-
-
-<!-- Modal Unutk Detail data Admin -->
-<?php foreach ($getGuru as $data) : ?>
-	<div class="modal fade" id="staticBackdrop<?= $data['id'] ?>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="staticBackdropLabel">Detail Data Guru</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<div class="card-body">
-						<div class="row">
-							<div class="col text-center mb-4">
-								<img src="<?= base_url('/assets/assetGambar/guru/') . $data['foto'] ?>" width="120px" alt="" class="img-thumbnail">
-							</div>
-						</div>
-						<dl class="row justify-content-center">
-							<dt class="col-sm-6">Nama</dt>
-							<dd class="col-sm-6">: <?= $data['nama']; ?></dd>
-							<dt class="col-sm-6">Jabatan</dt>
-							<dd class="col-sm-6">: <?= $data['jabatan']; ?></dd>
-							<dt class="col-sm-6">Mengajar</dt>
-							<dd class="col-sm-6">: <?= $data['mengajar']; ?></dd>
-							<dt class="col-sm-6">Isi Informasi</dt>
-							<dd class="col-sm-6">:</dd>
-							<textarea name="isi" id="" class="form-control" disabled rows="4"> <?= $data['deskripsi']; ?></textarea>
-						</dl>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-dark px-4 ml-2 mt-2" data-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>
