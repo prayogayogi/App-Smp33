@@ -55,7 +55,7 @@
 																			Aksi
 																		</button>
 																		<div class="dropdown-menu">
-																			<a href="#" data-toggle="modal" data-target="#modalUbahDataPenduduk<?= $data['id'] ?>" class="dropdown-item text-success">
+																			<a href="#" data-toggle="modal" data-target="#modalUbahDataPenduduk<?= $data['id'] ?>" class="dropdown-item text-primary">
 																				Edit
 																			</a>
 																			<a href="<?= base_url('Admin/AssetSekolahController/destroyInformasi/') . $data['id'] ?>" class="dropdown-item text-danger" onclick="return confirm('Apakah anda yakin ingin menghapus.?')">

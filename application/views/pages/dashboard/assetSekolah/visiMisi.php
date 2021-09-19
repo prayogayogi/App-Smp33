@@ -23,23 +23,25 @@
 						<div class="card-header">
 							<nav aria-label="breadcrumb">
 								<ol class="breadcrumb">
-									<a class="btn btn-primary" data-toggle="collapse" href="#misiMisi" role="button" aria-expanded="false" aria-controls="misiMisi">
+									<a class="btn btn-warning" data-toggle="collapse" href="#misiMisi" role="button" aria-expanded="false" aria-controls="misiMisi">
 										Visi & misi
 									</a>
-									<a class="btn btn-primary ml-3 px-4" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+									<a class="btn btn-danger ml-3 px-4" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
 										Profil
 									</a>
 								</ol>
 							</nav>
 						</div>
 						<div class="card-body">
+
+
 							<!-- Visi dan misi -->
 							<div class="collapse" id="misiMisi">
 								<div class="row">
 									<div class="col">
 										<div class="card">
 											<div class="card-header">
-												<a href="#" data-toggle="modal" data-target="#exampleModalDataPenduduk" class="btn btn-primary"><i class="fas fa-plus mr-2"></i> Tambah Data</a>
+												<a href="#" data-toggle="modal" data-target="#exampleModalDataPenduduk" class="btn btn-warning"><i class="fas fa-plus mr-2"></i> Tambah Data</a>
 											</div>
 											<div class="card-body">
 												<table id="example1" class="table table-bordered table-striped">
@@ -58,9 +60,21 @@
 																<td><?= $data['isi']; ?></td>
 																<td><?= $data['jenis']; ?></td>
 																<td class="text-center">
-																	<a href="#" data-toggle="modal" data-target="#modalUbahDataPenduduk<?= $data['id'] ?>" class="btn btn-primary"><i class="fas fa-pen-square"></i></a>
-
-																	<a type="submit" href="<?= base_url('Admin/AssetSekolahController/destroyVisiMisi/') . $data['id'] ?>" onclick=" return confirm('Yakin Ingin Menghapus.?')" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+																	<div calass="btn-group">
+																		<div class="dropdown">
+																			<button class="btn btn-warning dropdown-toggle mr-1 mb-1" type="button" data-toggle="dropdown">
+																				Aksi
+																			</button>
+																			<div class="dropdown-menu">
+																				<a href="#" data-toggle="modal" data-target="#modalUbahDataPenduduk<?= $data['id'] ?>" class="dropdown-item text-success">
+																					Edit
+																				</a>
+																				<a type="submit" href="<?= base_url('Admin/AssetSekolahController/destroyVisiMisi/') . $data['id'] ?>" class="dropdown-item text-danger" onclick="return confirm('Apakah anda yakin ingin menghapus.?')">
+																					Hapus
+																				</a>
+																			</div>
+																		</div>
+																	</div>
 																</td>
 															</tr>
 														<?php endforeach; ?>
@@ -79,7 +93,7 @@
 										<div class="card">
 											<?php if (!$getProfile['id']) : ?>
 												<div class="card-header">
-													<a href="#" data-toggle="modal" data-target="#profile" class="btn btn-primary"><i class="fas fa-plus mr-2"></i> Tambah Data</a>
+													<a href="#" data-toggle="modal" data-target="#profile" class="btn btn-danger"><i class="fas fa-plus mr-2"></i> Tambah Data</a>
 												</div>
 											<?php endif; ?>
 											<div class="card-body">
@@ -96,9 +110,21 @@
 																<textarea name="isi_profile" id="" cols="30" rows="10"><?= $getProfile['isi_profile'] ?></textarea>
 															</td>
 															<td class="text-center">
-																<a href="#" data-toggle="modal" data-target="#ubahProfile<?= $getProfile['id'] ?>" class="btn btn-primary"><i class="fas fa-pen-square"></i></a>
-
-																<a type="submit" href="<?= base_url('Admin/AssetSekolahController/destroyProfile/') . $getProfile['id'] ?>" onclick=" return confirm('Yakin Ingin Menghapus.?')" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+																<div calass="btn-group">
+																	<div class="dropdown">
+																		<button class="btn btn-danger dropdown-toggle mr-1 mb-1" type="button" data-toggle="dropdown">
+																			Aksi
+																		</button>
+																		<div class="dropdown-menu">
+																			<a href="#" data-toggle="modal" data-target="#ubahProfile<?= $getProfile['id'] ?>" class="dropdown-item text-success">
+																				Edit
+																			</a>
+																			<a type="submit" href="<?= base_url('Admin/AssetSekolahController/destroyProfile/') . $getProfile['id'] ?>" class="dropdown-item text-danger" onclick="return confirm('Apakah anda yakin ingin menghapus.?')">
+																				Hapus
+																			</a>
+																		</div>
+																	</div>
+																</div>
 															</td>
 														</tr>
 													</tbody>
@@ -108,6 +134,7 @@
 									</div>
 								</div>
 							</div>
+
 						</div>
 					</div>
 				</div>
@@ -148,7 +175,7 @@
 									</div>
 								</div>
 							</div>
-							<button type="submit" class="btn btn-primary mt-2">Simpan</button>
+							<button type="submit" class="btn btn-warning mt-2">Simpan</button>
 							<button type="resset" class="btn btn-dark px-4 ml-2 mt-2" data-dismiss="modal">Close</button>
 						</form>
 					</div>
@@ -181,7 +208,7 @@
 										</div>
 									</div>
 								</div>
-								<button type="submit" class="btn btn-primary mt-2">Simpan</button>
+								<button type="submit" class="btn btn-warning mt-2">Simpan</button>
 								<button type="resset" class="btn btn-dark px-4 ml-2 mt-2" data-dismiss="modal">Close</button>
 							</form>
 						</div>
@@ -215,7 +242,7 @@
 									</div>
 								</div>
 							</div>
-							<button type="submit" class="btn btn-primary mt-2">Simpan</button>
+							<button type="submit" class="btn btn-danger mt-2">Simpan</button>
 							<button type="resset" class="btn btn-dark px-4 ml-2 mt-2" data-dismiss="modal">Close</button>
 						</form>
 					</div>
@@ -247,7 +274,7 @@
 									</div>
 								</div>
 							</div>
-							<button type="submit" class="btn btn-primary mt-2">Simpan</button>
+							<button type="submit" class="btn btn-danger mt-2">Simpan</button>
 							<button type="resset" class="btn btn-dark px-4 ml-2 mt-2" data-dismiss="modal">Close</button>
 						</form>
 					</div>

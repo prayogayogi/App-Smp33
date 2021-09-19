@@ -48,9 +48,21 @@
 																<img src="<?= base_url('/assets/assetGambar/guru/') . $data['foto'] ?>" class="rounded" alt="administrator" width="40px">
 															</td>
 															<td class="text-center">
-																<a href="#" data-toggle="modal" data-target="#modalUbahDataPenduduk<?= $data['id'] ?>" class="btn btn-primary"><i class="fas fa-pen-square"></i></a>
-
-																<a type="submit" href="<?= base_url('Admin/DataUserSekolahController/destroy/') . $data['id'] ?>" onclick=" return confirm('Yakin Ingin Menghapus.?')" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+																<div calass="btn-group">
+																	<div class="dropdown">
+																		<button class="btn btn-primary dropdown-toggle mr-1 mb-1" type="button" data-toggle="dropdown">
+																			Aksi
+																		</button>
+																		<div class="dropdown-menu">
+																			<a href="#" data-toggle="modal" data-target="#modalUbahDataPenduduk<?= $data['id'] ?>" class="dropdown-item text-success">
+																				Edit
+																			</a>
+																			<a type="submit" href="<?= base_url('Admin/DataUserSekolahController/destroy/') . $data['id'] ?>" class="dropdown-item text-danger" onclick="return confirm('Apakah anda yakin ingin menghapus.?')">
+																				Hapus
+																			</a>
+																		</div>
+																	</div>
+																</div>
 															</td>
 														</tr>
 													<?php endforeach; ?>

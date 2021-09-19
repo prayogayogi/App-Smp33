@@ -48,11 +48,24 @@
 															<td><?= $data['email']; ?></td>
 															<td><?= $data['nik']; ?></td>
 															<td class="text-center">
-																<a href="#" data-toggle="modal" data-target="#modalUbahDataGuru<?= $data['id'] ?>" class="btn btn-primary"><i class="fas fa-pen-square"></i></a>
-
-																<a type="submit" href="<?= base_url('Admin/DataUserSekolahController/destroySiswa/') . $data['id'] ?>" onclick=" return confirm('Yakin Ingin Menghapus.?')" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
-
-																<a href="#" data-toggle="modal" data-target="#staticBackdrop<?= $data['id'] ?>" class="btn btn-info"><i class="fas fa-plus-square"></i></a>
+																<div calass="btn-group">
+																	<div class="dropdown">
+																		<button class="btn btn-primary dropdown-toggle mr-1 mb-1" type="button" data-toggle="dropdown">
+																			Aksi
+																		</button>
+																		<div class="dropdown-menu">
+																			<a href="#" data-toggle="modal" data-target="#modalUbahDataGuru<?= $data['id'] ?>" class="dropdown-item text-success">
+																				Edit
+																			</a>
+																			<a type="submit" href="<?= base_url('Admin/DataUserSekolahController/destroySiswa/') . $data['id'] ?>" class="dropdown-item text-danger" onclick="return confirm('Apakah anda yakin ingin menghapus.?')">
+																				Hapus
+																			</a>
+																			<a href="#" data-toggle="modal" data-target="#staticBackdrop<?= $data['id'] ?>" class="dropdown-item text-info">
+																				Sunting
+																			</a>
+																		</div>
+																	</div>
+																</div>
 															</td>
 														</tr>
 													<?php endforeach; ?>
