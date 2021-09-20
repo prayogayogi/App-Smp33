@@ -256,7 +256,9 @@ class AssetSekolahController extends CI_Controller
 		redirect('Admin/AssetSekolahController/sosialMedia');
 	}
 
-	// Pendaftaran siswa baru
+
+	// PENDAFTARAN SISWA BARU
+	// Get pendaftaran siswa baru
 	public function pendaftaranSiswa()
 	{
 		$data['title'] = "Data Pendaftran";
@@ -265,14 +267,14 @@ class AssetSekolahController extends CI_Controller
 		$data['getSiswaBaru'] = $this->AssetSekolahModel->getSiswaBaru()->result_array();
 		$this->load->view('includes/Admin/header', $data);
 		$this->load->view('includes/Admin/sidebar', $data);
-		$this->load->view('pages/dashboard/assetSekolah/pendaftaranSiswa', $data);
+		$this->load->view('pages/dashboard/assetSekolah/pendaftaran/pendaftaranSiswa', $data);
 		$this->load->view('includes/Admin/footer');
 	}
 
 	// Sotore data pendaftran siswa baru
-	public function storePendaftranSiswa()
+	public function storePendaftaranSiswa()
 	{
-		$this->AssetSekolahModel->storePendaftranSiswa();
+		$this->AssetSekolahModel->storePendaftaranSiswa();
 		$this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
     <strong>Data Siswa baru</strong> Berhasil Di Tambah..
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -280,6 +282,45 @@ class AssetSekolahController extends CI_Controller
     </button>
   </div>');
 		redirect('Admin/AssetSekolahController/pendaftaranSiswa');
+	}
+
+	// Update data pendaftran siswa baru
+	public function updatePendaftaranSiswa($id)
+	{
+		$this->AssetSekolahModel->updatePendaftaranSiswa($id);
+		$this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Data Siswa baru</strong> Berhasil Di Ubah..
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>');
+		redirect('Admin/AssetSekolahController/pendaftaranSiswa');
+	}
+
+	// Destroy data pendaftran siswa baru
+	public function destroyPendaftaranSiswa($id)
+	{
+		$this->AssetSekolahModel->destroyPendaftaranSiswa($id);
+		$this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Data Siswa baru</strong> Berhasil Di Hapus..
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>');
+		redirect('Admin/AssetSekolahController/pendaftaranSiswa');
+	}
+
+	// Show atau sunting pendaftran siswa baru
+	public function showPendaftaranSiswa($id)
+	{
+		$data['title'] = "Suntung Pendaftran";
+		$data['no'] = 1;
+		$data['userLogin'] = $this->AuthModel->getUserLogin()->row_array();
+		$data['getShowSiswaBaru'] = $this->AssetSekolahModel->getShowSiswaBaru($id)->row_array();
+		$this->load->view('includes/Admin/header', $data);
+		$this->load->view('includes/Admin/sidebar', $data);
+		$this->load->view('pages/dashboard/assetSekolah/pendaftaran/sunting', $data);
+		$this->load->view('includes/Admin/footer');
 	}
 
 

@@ -293,15 +293,14 @@ class AssetSekolahModel extends CI_Model
 	}
 
 	// PENDAFTRAN SISWA BARU
-
-	// getSiswaBaru 
+	// get pendaftran SiswaBaru 
 	function getSiswaBaru()
 	{
 		return $this->db->get('db_siswabaru');
 	}
 
 	// Store Siswa Baru
-	function storePendaftranSiswa()
+	function storePendaftaranSiswa()
 	{
 		$data = [
 			'nama' => $this->input->post('nama'),
@@ -316,6 +315,39 @@ class AssetSekolahModel extends CI_Model
 		];
 		$this->db->set($data);
 		$this->db->insert('db_siswabaru');
+	}
+
+	// Store Siswa Baru
+	function updatePendaftaranSiswa($id)
+	{
+		$data = [
+			'nama' => $this->input->post('nama'),
+			'gender' => $this->input->post('gender'),
+			'asal_sekolah' => $this->input->post('asal_sekolah'),
+			'tempat_lahir' => $this->input->post('tempat_lahir'),
+			'tgl_lahir' => $this->input->post('tgl_lahir'),
+			'nik' => $this->input->post('nik'),
+			'alamat' => $this->input->post('alamat'),
+			'no_hp' => $this->input->post('no_hp'),
+			'email' => $this->input->post('email'),
+		];
+		$this->db->where('id', $id);
+		$this->db->set($data);
+		$this->db->update('db_siswabaru');
+	}
+
+	// Destroy data pendaftaran
+	function destroyPendaftaranSiswa($id)
+	{
+		$this->db->where('id', $id);
+		$this->db->delete('db_siswabaru');
+	}
+
+	// Show pendaftran siswa baru
+	function getShowSiswaBaru($id)
+	{
+		$this->db->where('id', $id);
+		return $this->db->get('db_siswabaru');
 	}
 
 

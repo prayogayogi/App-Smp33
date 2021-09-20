@@ -55,13 +55,13 @@
 																			Aksi
 																		</button>
 																		<div class="dropdown-menu">
-																			<a href="#" data-toggle="modal" data-target="#modalUbahDataPenduduk<?= $data['id'] ?>" class="dropdown-item text-primary">
+																			<a href="#" data-toggle="modal" data-target="#modalUbahDataPenduduk<?= $data['id'] ?>" class="dropdown-item text-success">
 																				Edit
 																			</a>
-																			<a href="<?= base_url('Admin/AssetSekolahController/destroyInformasi/') . $data['id'] ?>" class="dropdown-item text-danger" onclick="return confirm('Apakah anda yakin ingin menghapus.?')">
+																			<a href="<?= base_url('Admin/AssetSekolahController/destroyPendaftaranSiswa/') . $data['id'] ?>" class="dropdown-item text-danger" onclick="return confirm('Apakah anda yakin ingin menghapus.?')">
 																				Hapus
 																			</a>
-																			<a href="#" class="dropdown-item text-info" data-toggle="modal" data-target="#staticBackdrop<?= $data['id'] ?>">
+																			<a href="<?= base_url('Admin/AssetSekolahController/showPendaftaranSiswa/') . $data['id']; ?>" class="dropdown-item text-info">
 																				sunting
 																			</a>
 																		</div>
@@ -86,7 +86,7 @@
 </div>
 
 
-<!-- Modal untuk tambah data Pndaftran Sekolah -->
+<!-- Modal untuk tambah data Pendaftran Sekolah -->
 <div class="modal fade" id="exampleModalDataPenduduk" tabindex="-1" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
@@ -99,7 +99,7 @@
 			<div class="modal-body">
 				<div class="row">
 					<div class="col">
-						<?= form_open_multipart('Admin/AssetSekolahController/storePendaftranSiswa'); ?>
+						<?= form_open_multipart('Admin/AssetSekolahController/storePendaftaranSiswa'); ?>
 						<div class="row">
 							<div class="col">
 								<div class="form-group">
@@ -157,7 +157,7 @@
 </div>
 
 <!-- Modal Untuk Untuk Update Data Informasi -->
-<!-- <?php foreach ($getInformasi as $data) : ?>
+<?php foreach ($getSiswaBaru as $data) : ?>
 	<div class="modal fade" id="modalUbahDataPenduduk<?= $data['id'] ?>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
@@ -170,41 +170,63 @@
 				<div class="modal-body">
 					<div class="row">
 						<div class="col">
-							<?= form_open_multipart('Admin/AssetSekolahController/updateInformasi'); ?>
-							<div class="row">
-								<div class="col">
-									<div class="form-group">
-										<input type="hidden" name="id" value="<?= $data['id'] ?>">
-									</div>
-									<div class="form-group">
-										<label for="judul">Judul Informasi</label>
-										<input type="text" name="judul" class="form-control" id="judul" value="<?= $data['judul'] ?>">
-									</div>
-									<div class="form-group">
-										<label for="isi">Isi Informasi</label>
-										<textarea name="isi" id="isi" class="form-control" cols="20" rows="5" value="<?= $data['isi'] ?>"><?= $data['isi'] ?></textarea>
-									</div>
-									<div class="form-group">
-										<label for="foto">Photo</label>
-										<div class="row">
-											<div class="col mb-2">
-												<img src="<?= base_url('/assets/assetGambar/informasi/') . $data['foto'] ?>" width="120px" alt="" class="img-thumbnail">
-											</div>
+							<form action="<?= base_url('Admin/AssetSekolahController/updatePendaftaranSiswa/') . $data['id'] ?>" method="post">
+								<div class="row">
+									<div class="col">
+										<div class="form-group">
+											<label for="nama">Nama</label>
+											<input type="text" name="nama" class="form-control" autocomplete="off" id="nama" value="<?= $data['nama']; ?>">
 										</div>
-										<input type="file" name="foto" class="form-control" id="foto">
+										<div class="form-group">
+											<label for="jabatan">Gender</label>
+											<select class="form-control" name="gender">
+												<option value="<?= $data['gender']; ?>"><?= $data['gender']; ?></option>
+												<option value="LAKI-LAKI">Laki-laki</option>
+												<option value="PEREMPUAN">Perempuan</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="asalSekolah">Asal Sekolah</label>
+											<input type="text" name="asal_sekolah" class="form-control" autocomplete="off" id="asalSekolah" value="<?= $data['asal_sekolah']; ?>">
+										</div>
+										<div class="form-group">
+											<label for="tempat_lahir">Tempat lahir</label>
+											<input type="text" name="tempat_lahir" class="form-control" autocomplete="off" id="tempat_lahir" value="<?= $data['tempat_lahir']; ?>">
+										</div>
+										<div class="form-group">
+											<label for="tgl_lahir">Tanggal lahir</label>
+											<input type="date" name="tgl_lahir" class="form-control" autocomplete="off" id="tgl_lahir" value="<?= $data['tgl_lahir']; ?>">
+										</div>
+									</div>
+									<div class="col">
+										<div class="form-group">
+											<label for="nik">No Induk Keluarga</label>
+											<input type="number" name="nik" class="form-control" autocomplete="off" id="nik" value="<?= $data['nik']; ?>">
+										</div>
+										<div class="form-group">
+											<label for="alamat">Alamat</label>
+											<input type="text" name="alamat" class="form-control" autocomplete="off" id="alamat" value="<?= $data['alamat']; ?>">
+										</div>
+										<div class="form-group">
+											<label for="no_hp">No Hp</label>
+											<input type="number" name="no_hp" class="form-control" autocomplete="off" id="no_hp" value="<?= $data['no_hp']; ?>">
+										</div>
+										<div class="form-group">
+											<label for="email">Email</label>
+											<input type="text" name="email" class="form-control" autocomplete="off" id="email" value="<?= $data['email']; ?>">
+										</div>
 									</div>
 								</div>
-							</div>
-							<button type="submit" class="btn btn-primary mt-2">Simpan</button>
-							<button type="resset" class="btn btn-dark px-4 ml-2 mt-2" data-dismiss="modal">Close</button>
-							<?= form_close(); ?>
+								<button type="submit" class="btn btn-primary mt-2">Simpan</button>
+								<button type="resset" class="btn btn-dark px-4 ml-2 mt-2" data-dismiss="modal">Close</button>
+							</form>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-<?php endforeach; ?> -->
+<?php endforeach; ?>
 
 
 <!-- Modal Unutk Detail Data Informasi -->
