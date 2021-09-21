@@ -22,7 +22,7 @@ class UserAppModel extends CI_Model
 			'nama' => $this->input->post('nama'),
 			'email' => $this->input->post('email'),
 			'alamat' => $this->input->post('alamat'),
-			'foto' => $files,
+			'foto_userapp' => $files,
 			'deskripsi' => $this->input->post('deskripsi'),
 			'roles' => $this->input->post('roles'),
 			'password' => password_hash(('admin'), PASSWORD_DEFAULT)

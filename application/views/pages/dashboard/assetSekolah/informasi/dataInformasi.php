@@ -34,6 +34,7 @@
 														<th class="text-center">No</th>
 														<th>Judul</th>
 														<th class="text-center">Foto</th>
+														<th>Tanggal Post</th>
 														<th class="text-center">Action</th>
 													</tr>
 												</thead>
@@ -45,7 +46,8 @@
 															<td class="text-center">
 																<img src="<?= base_url('/assets/assetGambar/informasi/') . $data['foto'] ?>" alt="administrator" width="40px" class="rounded">
 															</td>
-															<td class="text-center">
+															<td><?= tgl_indo(date('Y-m-d', $data['created_at']));  ?></td>
+															<td class=" text-center">
 																<div calass="btn-group">
 																	<div class="dropdown">
 																		<button class="btn btn-primary dropdown-toggle mr-1 mb-1" type="button" data-toggle="dropdown">
@@ -58,7 +60,7 @@
 																			<a type="submit" href="<?= base_url('Admin/AssetSekolahController/destroyInformasi/') . $data['slug_judul'] ?>" class="dropdown-item text-danger" onclick="return confirm('Apakah anda yakin ingin menghapus.?')">
 																				Hapus
 																			</a>
-																			<a href="#" data-toggle="modal" data-target="#staticBackdrop<?= $data['id'] ?>" class="dropdown-item text-info">
+																			<a href="<?= base_url('Admin/AssetSekolahController/dataMoreInformasi/') . $data['slug_judul'] ?>" class="dropdown-item text-info">
 																				Sunting
 																			</a>
 																		</div>
@@ -167,44 +169,6 @@
 							<?= form_close(); ?>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-<?php endforeach; ?>
-
-
-<!-- Modal Unutk Detail Data Informasi -->
-<?php foreach ($getInformasi as $data) : ?>
-	<div class="modal fade" id="staticBackdrop<?= $data['id'] ?>" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="staticBackdropLabel">Detail Data Admin</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<div class="card-body">
-						<div class="row">
-							<div class="col text-center mb-4">
-								<img src="<?= base_url('/assets/assetGambar/informasi/') . $data['foto'] ?>" width="120px" alt="" class="img-thumbnail">
-							</div>
-						</div>
-						<dl class="row justify-content-center">
-							<dt class="col-sm-6">Judul Informasi</dt>
-							<dd class="col-sm-6">: <?= $data['judul']; ?></dd>
-							<dt class="col-sm-6">Tanggal Post</dt>
-							<dd class="col-sm-6">: <?= date("d/ m/ Y", $data['created_at'],); ?></dd>
-							<dt class="col-sm-6">Isi Informasi</dt>
-							<dd class="col-sm-6">:</dd>
-							<textarea name="isi" id="" class="form-control" disabled cols="20" rows="7"> <?= $data['isi']; ?></textarea>
-						</dl>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-dark px-4 ml-2 mt-2" data-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>

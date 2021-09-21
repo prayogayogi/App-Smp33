@@ -45,7 +45,7 @@
 															<td><?= $data['nama']; ?></td>
 															<td><?= $data['alamat']; ?></td>
 															<td class="text-center">
-																<img src="<?= base_url('/assets/assetGambar/administrator/') . $data['foto'] ?>" alt="administrator" width="40px" class="rounded">
+																<img src="<?= base_url('/assets/assetGambar/administrator/') . $data['foto_userapp'] ?>" alt="administrator" width="40px" class="rounded">
 															</td class="text-center">
 															<td class="text-center">
 																<div calass="btn-group">
@@ -203,7 +203,7 @@
 					<div class="card-body">
 						<div class="row">
 							<div class="col text-center mb-4">
-								<img src="<?= base_url('/assets/assetGambar/administrator/') . $data['foto'] ?>" width="120px" alt="" class="img-thumbnail">
+								<img src="<?= base_url('/assets/assetGambar/administrator/') . $data['foto_userapp'] ?>" width="120px" alt="" class="img-thumbnail">
 							</div>
 						</div>
 						<dl class="row justify-content-center">

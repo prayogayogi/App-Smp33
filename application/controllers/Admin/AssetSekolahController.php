@@ -6,7 +6,7 @@ class AssetSekolahController extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model(['AssetSekolahModel', 'AuthModel']);
+		$this->load->model(['AssetSekolahModel', 'AuthModel', 'FrontModel']);
 		if (!$this->session->userdata('email')) {
 			redirect('AuthController');
 		}
@@ -172,7 +172,19 @@ class AssetSekolahController extends CI_Controller
 		$data['getInformasi'] = $this->AssetSekolahModel->getDataInformasi()->result_array();
 		$this->load->view('includes/Admin/header', $data);
 		$this->load->view('includes/Admin/sidebar', $data);
-		$this->load->view('pages/dashboard/assetSekolah/dataInformasi', $data);
+		$this->load->view('pages/dashboard/assetSekolah/informasi/dataInformasi', $data);
+		$this->load->view('includes/Admin/footer');
+	}
+	// Untuk Data Informasi
+	public function dataMoreInformasi($slug)
+	{
+		$data['title'] = "Detail Informasi";
+		$data['no'] = 1;
+		$data['userLogin'] = $this->AuthModel->getUserLogin()->row_array();
+		$data['dataMoreInformasi'] = $this->FrontModel->fotoOunerPost($slug)->row_array();
+		$this->load->view('includes/Admin/header', $data);
+		$this->load->view('includes/Admin/sidebar', $data);
+		$this->load->view('pages/dashboard/assetSekolah/informasi/MoreInformasi', $data);
 		$this->load->view('includes/Admin/footer');
 	}
 

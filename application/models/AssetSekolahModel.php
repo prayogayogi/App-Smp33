@@ -156,6 +156,21 @@ class AssetSekolahModel extends CI_Model
 		return $this->db->get('db_informasi');
 	}
 
+	// Get Data Informasi Di Admin
+	function dataMoreInformasi($slug)
+	{
+		$this->db->where('slug_judul', $slug);
+		return $this->db->get('db_informasi');
+	}
+
+	// Get Data Informasi Di Front End
+	public function getInformasiDashboard()
+	{
+		$this->db->order_by('id', 'DESC');
+		$this->db->limit(3);
+		return $this->db->get('db_informasi');
+	}
+
 	// Get Data Informasi Di Front End
 	public function getInformasi()
 	{

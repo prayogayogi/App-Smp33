@@ -4,7 +4,7 @@
 		<!-- Sidebar user panel (optional) -->
 		<div class="user-panel mt-3 pb-3 mb-3 d-flex">
 			<div class="image">
-				<img src="<?= base_url('/assets/assetGambar/administrator/') . $userLogin['foto'] ?>" class="img-circle elevation-2" alt="User Image">
+				<img src="<?= base_url('/assets/assetGambar/administrator/') . $userLogin['foto_userapp'] ?>" class="img-circle elevation-2" alt="User Image">
 			</div>
 			<div class="info">
 				<a href="#" class="d-block text-uppercase"><?= $userLogin['nama']; ?></a>
@@ -97,8 +97,7 @@
 					</a>
 				</li>
 
-				<li class="nav-header">Administrator</li>
-				<li class="nav-item" style="margin-bottom: -10px;">
+				<li class="nav-item mt-2" style="margin-bottom: -10px;">
 					<a href="<?= base_url('AdministratorController') ?>" class="nav-link <?= (current_url() == base_url('AdministratorController')) ? 'active' : '' ?>">
 						<i class="nav-icon fas fa-user-cog"></i>
 						<p>
@@ -117,7 +116,7 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="<?= base_url('AuthController/logout') ?>" onclick="return confirm('Apakah Anda Inggin Keluar.??')" class="nav-link">
+					<a href="#" data-toggle="modal" data-target="#modal-log-out" class="nav-link">
 						<i class="nav-icon fas fa-sign-out-alt"></i>
 						<p>
 							Log Out
@@ -163,3 +162,27 @@
 	</div>
 </div>
 <!-- akhir modal ubah password -->
+
+<!-- Modal log out -->
+<div class="modal fade" id="modal-log-out" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content bg-danger">
+			<div class="modal-header">
+				<h4 class="modal-title">Warning.!!</h4>
+				<div class="spinner-border ml-3 mt-1" role="status">
+					<span class="sr-only">Loading...</span>
+				</div>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<p>Kamu Yakin, Ingin Meningalkan Aplikasi..?</p>
+			</div>
+			<div class="modal-footer justify-content-between">
+				<a href="<?= base_url('AuthController/logout') ?>" class="btn btn-outline-light">Oke</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- akhir modal log out -->

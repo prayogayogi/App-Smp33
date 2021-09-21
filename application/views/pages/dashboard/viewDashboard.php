@@ -39,7 +39,7 @@
 				<div class="col-lg-3 col-6">
 					<div class="small-box bg-success">
 						<div class="inner">
-							<h5>Jumlah Data Siswa Baru</h5>
+							<h5>Jumlah Data Siswa</h5>
 
 							<h4 class="font-weight-bold"><?= $numSiswa; ?></h4>
 						</div>
@@ -54,9 +54,9 @@
 				<div class="col-lg-3 col-6">
 					<div class="small-box bg-warning">
 						<div class="inner">
-							<h5>Jumlah Data Siswa</h5>
+							<h5>Jumlah Data Siswa Baru</h5>
 
-							<h4 class="font-weight-bold"><?= $numAdmin; ?></h4>
+							<h4 class="font-weight-bold"><?= $numSiswaBaru; ?></h4>
 						</div>
 
 						<div class="icon">
@@ -95,8 +95,8 @@
 
 						<div class="info-box-content">
 							<span class="info-box-text">Informai</span>
-							<span class="info-box-number">200</span>
-							<a href="<?= base_url('Admin/DataUserSekolahController/dataGuru') ?>" class="small-box-footer mt-2" style="color:aliceblue;">More info <i class="fas fa-arrow-circle-right"></i></a>
+							<span class="info-box-number"><?= $numInformmasi; ?></span>
+							<a href="<?= base_url('Admin/AssetSekolahController/dataInformasi') ?>" class="small-box-footer mt-2" style="color:aliceblue;">More info <i class="fas fa-arrow-circle-right"></i></a>
 						</div>
 					</div>
 					<div class="info-box mb-3 bg-danger">
@@ -104,8 +104,8 @@
 
 						<div class="info-box-content">
 							<span class="info-box-text">Kegiatan</span>
-							<span class="info-box-number">90</span>
-							<a href="<?= base_url('Admin/DataUserSekolahController/dataGuru') ?>" class="small-box-footer mt-2" style="color:aliceblue;">More info <i class="fas fa-arrow-circle-right"></i></a>
+							<span class="info-box-number"><?= $numKegiatan; ?></span>
+							<a href="<?= base_url('Admin/AssetSekolahController/kegiatan') ?>" class="small-box-footer mt-2" style="color:aliceblue;">More info <i class="fas fa-arrow-circle-right"></i></a>
 						</div>
 					</div>
 
@@ -120,41 +120,24 @@
 									<div class="card">
 										<div class="card-body p-0">
 											<ul class="products-list product-list-in-card pl-2 pr-2">
-												<li class="item">
-													<div class="product-img">
-														<img src="<?= base_url('/assets/assetGambar/administrator/') . $userLogin['foto'] ?>" alt="Product Image" class="img-size-50">
-													</div>
-													<div class="product-info">
-														<a href="javascript:void(0)" class="product-title">Sekolah libur
-															<span class="badge badge-warning float-right">More</span></a>
-														<span class="product-description">
-															Samsung 32" 1080p 60Hz LED Smart HDTV.
-														</span>
-													</div>
-												</li>
-												<li class="item">
-													<div class="product-img">
-														<img src="<?= base_url('/assets/assetGambar/administrator/') . $userLogin['foto'] ?>" alt="Product Image" class="img-size-50">
-													</div>
-													<div class="product-info">
-														<a href="javascript:void(0)" class="product-title">Belajar daring
-															<span class="badge badge-info float-right">More</span></a>
-														<span class="product-description">
-															26" Mongoose Dolomite Men's 7-speed, Navy Blue.
-														</span>
-													</div>
-												</li>
-												<li class="item">
-													<div class="product-img">
-														<img src="<?= base_url('/assets/assetGambar/administrator/') . $userLogin['foto'] ?>" alt="Product Image" class="img-size-50">
-													</div>
-													<div class="product-info">
-														<a href="javascript:void(0)" class="product-title">Senam tiap pagi <span class="badge badge-danger float-right">More</span></a>
-														<span class="product-description">
-															Xbox One Console Bundle with Halo Master Chief Collection.
-														</span>
-													</div>
-												</li>
+												<?php foreach ($newInformmasi as $newInformmasis) : ?>
+													<li class="item">
+														<div class="product-img">
+															<img src="<?= base_url('/assets/assetGambar/informasi/') . $newInformmasis['foto'] ?>" alt="Product Image" class="img-size-50">
+														</div>
+														<div class="product-info">
+															<p class="product-title text-primary"><?= $newInformmasis['judul'] ?>
+																<a href="<?= base_url('Admin/AssetSekolahController/dataMoreInformasi/') . $newInformmasis['slug_judul'] ?>" class="badge badge-warning float-right">More</a>
+															</p>
+															<span class="product-description">
+																<?= $newInformmasis['isi'] ?>
+															</span>
+															<span class="product-description text-dark">
+																<?= tgl_indo(date('Y-m-d', $newInformmasis['created_at']));  ?>
+															</span>
+														</div>
+													</li>
+												<?php endforeach; ?>
 											</ul>
 										</div>
 										<div class="card-footer text-center bg-info mt-4">
@@ -167,6 +150,7 @@
 					</div>
 				</div>
 
+				<!-- Ini bagian tabel siswa -->
 				<div class="col col-8">
 					<div class="card">
 						<div class="card-header">
@@ -181,16 +165,20 @@
 												<thead>
 													<tr>
 														<th>No</th>
-														<th>Nama</th>
-														<th>No Hp</th>
+														<th class="text-left">Nama</th>
+														<th class="text-left">Alamat</th>
+														<th class="text-left">Gender</th>
+														<th class="text-left">No Hp</th>
 													</tr>
 												</thead>
 												<tbody>
 													<?php foreach ($getSiswa as $data) : ?>
 														<tr>
 															<td><?= $no++ ?></td>
-															<td><?= $data['nama']; ?></td>
-															<td><?= $data['no_hp']; ?></td>
+															<td class="text-left"><?= $data['nama']; ?></td>
+															<td class="text-left"><?= $data['alamat']; ?></td>
+															<td class="text-left"><?= $data['gender']; ?></td>
+															<td class="text-left"><?= $data['no_hp']; ?></td>
 														</tr>
 													<?php endforeach; ?>
 												</tbody>
