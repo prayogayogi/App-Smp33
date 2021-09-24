@@ -12,7 +12,7 @@ class FrontController extends CI_Controller
 	// Untuk Halaman Home
 	public function index()
 	{
-		$data['title'] = "Home | Smk 05 Ujan Mas";
+		$data['title'] = "Home | Smp 33 Rejang Lebong";
 		$data['start'] = $this->uri->segment(3);
 		$data['getKepsek'] = $this->FrontModel->getKepsek()->row_array();
 		$data['getWakilKepsek'] = $this->FrontModel->getWakilKepsek()->row_array();
@@ -23,7 +23,7 @@ class FrontController extends CI_Controller
 		$data['getNewFooterInformasi'] = $this->AssetSekolahModel->getNewFooterInformasi()->result_array();
 		$data['getSosialMedia'] = $this->FrontModel->getSosialMedia();
 		$this->load->view('includes/Front/header', $data);
-		$this->load->view('pages/Front/beranda', $data);
+		$this->load->view('pages/Front/V-dashboard', $data);
 		$this->load->view('includes/Front/footer', $data);
 	}
 
