@@ -149,6 +149,14 @@ class AssetSekolahModel extends CI_Model
 
 
 	// UNTUK DATA INFORMASI
+	// Get Data Informasi Di Front End
+	public function getInformasiOne()
+	{
+		$this->db->order_by('id', 'DESC');
+		$this->db->limit(1);
+		return $this->db->get('db_informasi');
+	}
+
 	// Get Data Informasi Di Admin
 	function getDataInformasi()
 	{

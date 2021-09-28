@@ -1,86 +1,118 @@
-<!-- Start footer -->
-<footer id="mu-footer">
-	<!-- start footer top -->
-	<div class="mu-footer-top">
-		<div class="container">
-			<div class="mu-footer-top-area">
-				<div class="row">
-					<div class="col-lg-3 col-md-3 col-sm-3">
-						<div class="mu-footer-widget">
-							<h4>Smp 33 Lebong</h4>
-							<p style="line-height: 30px;">Smp N 33 Lebong Merupakan Smp Yang Sanggat Mementingkan Kualitas dan Menghasilkan Lulusan Terbaik.</p>
+<footer class="ftco-footer ftco-bg-dark ftco-section">
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="row mb-5">
+			<div class="col-md-3">
+				<div class="ftco-footer-widget mb-4">
+					<h2><a class="navbar-brand" href="<?= base_url('FrontController') ?>">SMK N 33 Lebong</a></h2>
+					<p>Smp 33 Lebong merupakan Smp Yang Sanggat Mementingkan Kualitas dan Menghasilkan Lulusan Terbaik.</p>
+					<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+						<li class="ftco-animate"><a href="<?= $getSosialMedia['twitter'] ?>" target="blank"><span class="icon-twitter"></span></a></li>
+						<li class="ftco-animate"><a href="<?= $getSosialMedia['facebook'] ?>" target="blank"><span class="icon-facebook"></span></a></li>
+						<li class="ftco-animate"><a href="<?= $getSosialMedia['instagram'] ?>" target="blank"><span class="icon-instagram"></span></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="ftco-footer-widget mb-4">
+					<h2 class="ftco-heading-2">Berita Terbaru</h2>
+					<?php foreach ($getNewFooterInformasi as $data) : ?>
+						<div class="block-21 mb-4 d-flex">
+							<a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
+							<div class="text">
+								<h3 class="heading"><a href="<?= base_url('FrontDetailController/getDetaiInformasi/') . $data['slug_judul'] ?>"><?= $data['judul']; ?></a></h3>
+								<div class="meta">
+									<div><a href="#"><span class="icon-calendar"></span> <?= date("d/ M/ Y", $data['created_at'],); ?></a></div>
+									<div><a href="#"><span class="icon-person"></span> <?= $data['ouner_post']; ?></a></div>
+									<div><a href="#"><span class="icon-chat"></span> Berita Terbaru</a></div>
+								</div>
+							</div>
 						</div>
-					</div>
-					<div class="col-lg-3 col-md-3 col-sm-3">
-						<div class="mu-footer-widget">
-							<h4>Tauntan situs</h4>
-							<ul>
-								<li><a href="">Facebook</a></li>
-								<li><a href="#">Instagram</a></li>
-								<li><a href="">Twitter</a></li>
-								<li><a href="">Tik Tok</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-3 col-sm-3">
-						<div class="mu-footer-widget">
-							<h4>Berita Terbaru</h4>
-							<ul>
-								<li><a href="">Senam akan dilakukan dalam sekat</a></li>
-								<p>Tgl : 20-03-2021</p>
-								<li><a href="#">Orang akan segera berubah</a></li>
-								<p>Tgl : 20-03-2021</p>
-								<li><a href="">Ujian semester akan segera dialakasanakan</a></li>
-								<p>Tgl : 20-03-2021</p>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-3 col-sm-3">
-						<div class="mu-footer-widget">
-							<h4>Contact</h4>
-							<address>
-								<p>P.O. Box 320, Ross, California 9495, USA</p>
-								<p>Phone: (415) 453-1568 </p>
-								<p>Website: www.markups.io</p>
-								<p>Email: info@markups.io</p>
-							</address>
-						</div>
+					<?php endforeach; ?>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div class="ftco-footer-widget mb-4 ml-md-4">
+					<h2 class="ftco-heading-2">Tautan Situs</h2>
+					<ul class="list-unstyled">
+						<li><a href="<?= $getSosialMedia['facebook'] ?>" target="blank" class="py-2 d-block">Facebook</a></li>
+						<li><a href="<?= $getSosialMedia['instagram'] ?>" target="blank" class="py-2 d-block">Instagram</a></li>
+						<li><a href="<?= $getSosialMedia['twitter'] ?>" target="blank" class="py-2 d-block">Twitter</a></li>
+						<li><a href="<?= $getSosialMedia['tik-tok'] ?>" target="blank" class="py-2 d-block">Tik-Tok</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="ftco-footer-widget mb-4">
+					<h2 class="ftco-heading-2">Punya Pertanyaan?</h2>
+					<div class="block-23 mb-3">
+						<ul>
+							<li><span class="icon icon-map-marker"></span><span class="text">JL. RAYA KEPAHIANG-CURUP, Pekalongan, Kec. Ujan Mas, Kab. Kepahiang Prov. Bengkulu</span></li>
+							<li><a href="#"><span class="icon icon-phone"></span><span class="text">073222668</span></a></li>
+							<li><a href="#"><span class="icon icon-envelope"></span><span class="text">smknvkph@gmail.com</span></a></li>
+						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- end footer top -->
-
-	<!-- start footer bottom -->
-	<div class="mu-footer-bottom">
-		<div class="container">
-			<div class="mu-footer-bottom-area">
-				<p>&copy; All Right Reserved.<a href="#" rel="nofollow">Smp 33 Lebong</a></p>
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<p>
+					Copyright &copy;<script>
+						document.write(new Date().getFullYear());
+					</script> All rights reserved | <i class="icon-heart" aria-hidden="true"></i> by <a href="#" target="_blank">Smp N 33 Lebong</a>
+				</p>
 			</div>
 		</div>
 	</div>
-	<!-- end footer bottom -->
 </footer>
-<!-- End footer -->
 
-<!-- jQuery library -->
-<script src="<?= base_url('assets/') ?>FrontAssets/assets/js/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="<?= base_url('assets/') ?>FrontAssets/assets/js/bootstrap.js"></script>
-<!-- Slick slider -->
-<script type="text/javascript" src="<?= base_url('assets/') ?>FrontAssets/assets/js/slick.js"></script>
-<!-- Counter -->
-<script type="text/javascript" src="<?= base_url('assets/') ?>FrontAssets/assets/js/waypoints.js"></script>
-<script type="text/javascript" src="<?= base_url('assets/') ?>FrontAssets/assets/js/jquery.counterup.js"></script>
-<!-- Mixit slider -->
-<script type="text/javascript" src="<?= base_url('assets/') ?>FrontAssets/assets/js/jquery.mixitup.js"></script>
-<!-- Add fancyBox -->
-<script type="text/javascript" src="<?= base_url('assets/') ?>FrontAssets/assets/js/jquery.fancybox.pack.js"></script>
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+		<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+		<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
+	</svg></div>
 
 
-<!-- Custom js -->
-<script src="<?= base_url('assets/') ?>FrontAssets/assets/js/custom.js"></script>
+<script src="<?= base_url('assets/') ?>FrontAssets/js/jquery.min.js"></script>
+<script src="<?= base_url('assets/') ?>FrontAssets/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="<?= base_url('assets/') ?>FrontAssets/js/popper.min.js"></script>
+<script src="<?= base_url('assets/') ?>FrontAssets/js/bootstrap.min.js"></script>
+<script src="<?= base_url('assets/') ?>FrontAssets/js/jquery.easing.1.3.js"></script>
+<script src="<?= base_url('assets/') ?>FrontAssets/js/jquery.waypoints.min.js"></script>
+<script src="<?= base_url('assets/') ?>FrontAssets/js/jquery.stellar.min.js"></script>
+<script src="<?= base_url('assets/') ?>FrontAssets/js/owl.carousel.min.js"></script>
+<script src="<?= base_url('assets/') ?>FrontAssets/js/jquery.magnific-popup.min.js"></script>
+<script src="<?= base_url('assets/') ?>FrontAssets/js/aos.js"></script>
+<script src="<?= base_url('assets/') ?>FrontAssets/js/jquery.animateNumber.min.js"></script>
+<script src="<?= base_url('assets/') ?>FrontAssets/js/bootstrap-datepicker.js"></script>
+<script src="<?= base_url('assets/') ?>FrontAssets/js/jquery.timepicker.min.js"></script>
+<script src="<?= base_url('assets/') ?>FrontAssets/js/scrollax.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="<?= base_url('assets/') ?>FrontAssets/js/google-map.js"></script>
+<script src="<?= base_url('assets/') ?>FrontAssets/js/main.js"></script>
+<!-- Data Table -->
+<script src="<?= base_url('assets') ?>/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="<?= base_url('assets') ?>/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="<?= base_url('assets') ?>/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<!-- <script src="<?= base_url('assets') ?>/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script> -->
+<script>
+	$(function() {
+		$("#example1").DataTable({
+			"responsive": true,
+			"autoWidth": false,
+		});
+		$('#example2').DataTable({
+			"paging": true,
+			"lengthChange": false,
+			"searching": false,
+			"ordering": true,
+			"info": true,
+			"autoWidth": false,
+			"responsive": true,
+		});
+	});
+</script>
 
 </body>
 

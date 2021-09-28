@@ -1,4 +1,4 @@
-<div class="hero-wrap hero-wrap-2" style="background-image: url('<?= base_url('assets/FrontAssets/') ?>images/atas.jpg'); background-attachment:fixed;">
+<!-- <div class="hero-wrap hero-wrap-2" style="background-image: url('<?= base_url('assets/FrontAssets/') ?>images/atas.jpg'); background-attachment:fixed;">
 	<div class="overlay"></div>
 	<div class="container">
 		<div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
@@ -8,7 +8,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 
 <section class="ftco-section">
 	<div class="container">
