@@ -30,7 +30,7 @@ class FrontController extends CI_Controller
 	// Untuk Halaman Profile
 	public function profile()
 	{
-		$data['title'] = "Profile | Smk 05 Ujan Mas";
+		$data['title'] = "Profile | Smp 33 Rejang Lebong";
 		$data['start'] = $this->uri->segment(3);
 		$data['getStrukturOrganisasi'] = $this->FrontModel->getStrukturOrganisasi()->row_array();
 		$data['getNewFooterInformasi'] = $this->AssetSekolahModel->getNewFooterInformasi()->result_array();
@@ -38,7 +38,7 @@ class FrontController extends CI_Controller
 		$data['getWhereMisi'] = $this->AssetSekolahModel->getWhereMisi()->result_array();
 		$data['getSosialMedia'] = $this->FrontModel->getSosialMedia();
 		$this->load->view('includes/Front/header', $data);
-		$this->load->view('pages/Front/profile', $data);
+		$this->load->view('pages/Front/V-profile', $data);
 		$this->load->view('includes/Front/footer', $data);
 	}
 

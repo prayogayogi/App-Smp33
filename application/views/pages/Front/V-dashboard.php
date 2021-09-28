@@ -1,89 +1,6 @@
-<!-- Start header  -->
-<header id="mu-header">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 col-md-12">
-				<div class="mu-header-area">
-					<div class="row">
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-							<div class="mu-header-top-left">
-								<div class="mu-top-email">
-									<i class="fa fa-envelope"></i>
-									<span>info@markups.io</span>
-								</div>
-								<div class="mu-top-phone">
-									<i class="fa fa-phone"></i>
-									<span>(568) 986 652</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-							<div class="mu-header-top-right">
-								<nav>
-									<ul class="mu-top-social-nav">
-										<li><a href="#"><span class="fa fa-facebook"></span></a></li>
-										<li><a href="#"><span class="fa fa-twitter"></span></a></li>
-										<li><a href="#"><span class="fa fa-google-plus"></span></a></li>
-										<li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-										<li><a href="#"><span class="fa fa-youtube"></span></a></li>
-									</ul>
-								</nav>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</header>
-<!-- End header  -->
-<!-- Start menu -->
-<section id="mu-menu">
-	<nav class="navbar navbar-default" role="navigation">
-		<div class="container">
-			<div class="navbar-header">
-				<!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<!-- LOGO -->
-				<!-- TEXT BASED LOGO -->
-				<a class="navbar-brand" href="index.html"><i class="fa fa-university"></i><span>Varsity</span></a>
-				<!-- IMG BASED LOGO  -->
-			</div>
-			<div id="navbar" class="navbar-collapse collapse">
-				<ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
-					<li class="active"><a href="index.html">Home</a></li>
-					<li><a href="#">Profile</a> </li>
-					<li><a href="gallery.html">Data Siswa</a></li>
-					<li><a href="gallery.html">Organisasi</a></li>
-					<li><a href="gallery.html">Kegiatan</a></li>
-					<li><a href="gallery.html">Informasi</a></li>
-					<li><a href="<?= base_url('AuthController') ?>" target="blank">Login</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-</section>
-<!-- End menu -->
-<!-- Start search box -->
-<div id="mu-search">
-	<div class="mu-search-area">
-		<button class="mu-search-close"><span class="fa fa-close"></span></button>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<form class="mu-search-form">
-						<input type="search" placeholder="Type Your Keyword(s) & Hit Enter">
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+<?php
+defined('BASEPATH') or exit('No direct script access allowed');
+?>
 <!-- End search box -->
 <!-- Start Slider -->
 <section id="mu-slider">
@@ -147,18 +64,18 @@
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis quaerat harum facilis excepturi et? Mollitia!</p>
 							</div>
 						</div>
-						<div class="col-lg-6 col-md-6">
+
+						<!-- <div class="col-lg-6 col-md-6">
 							<div class="mu-about-us-left">
 								<div class="mu-title">
 									<h2>Kalender</h2>
 								</div>
 								<div class="card">
 									<div class="mu-title" id='calendar' style="box-shadow: 10px 10px 15px rgb(32, 31, 31);">
-
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
@@ -669,62 +586,3 @@
 	</div>
 </section>
 <!-- End from blog -->
-
-<!-- Start footer -->
-<footer id="mu-footer">
-	<!-- start footer top -->
-	<div class="mu-footer-top">
-		<div class="container">
-			<div class="mu-footer-top-area">
-				<div class="row">
-					<div class="col-lg-3 col-md-3 col-sm-3">
-						<div class="mu-footer-widget">
-							<h4>Information</h4>
-							<ul>
-								<li><a href="#">About Us</a></li>
-								<li><a href="">Features</a></li>
-								<li><a href="">Course</a></li>
-								<li><a href="">Event</a></li>
-								<li><a href="">Sitemap</a></li>
-								<li><a href="">Term Of Use</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-3 col-sm-3">
-						<div class="mu-footer-widget">
-							<h4>Student Help</h4>
-							<ul>
-								<li><a href="">Get Started</a></li>
-								<li><a href="#">My Questions</a></li>
-								<li><a href="">Download Files</a></li>
-								<li><a href="">Latest Course</a></li>
-								<li><a href="">Academic News</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-3 col-sm-3">
-						<div class="mu-footer-widget">
-							<h4>News letter</h4>
-							<p>Get latest update, news & academic offers</p>
-							<form class="mu-subscribe-form">
-								<input type="email" placeholder="Type your Email">
-								<button class="mu-subscribe-btn" type="submit">Subscribe!</button>
-							</form>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-3 col-sm-3">
-						<div class="mu-footer-widget">
-							<h4>Contact</h4>
-							<address>
-								<p>P.O. Box 320, Ross, California 9495, USA</p>
-								<p>Phone: (415) 453-1568 </p>
-								<p>Website: www.markups.io</p>
-								<p>Email: info@markups.io</p>
-							</address>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end footer top -->
