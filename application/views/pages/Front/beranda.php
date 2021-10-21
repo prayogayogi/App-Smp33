@@ -1,21 +1,22 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 	<div class="carousel-inner">
-		<div class="carousel-item active">
-			<div class="hero-wrapp" id="gm" style="background-image: url('<?= base_url('/assets/assetGambar/informasi/') . $getInformasiOne['foto'] ?>'); background-attachment:fixed; background-size: cover; height: 100%; background-position: center;">
+		<!-- <div class="carousel-item active">
+			<div class="hero-wrapp" id="gm" style="background-image: url('<?= base_url('/assets/assetGambar/informasi/') . $getInformasiOne['foto'] ?>'); background-attachment:fixed; background-size: cover; width:100%; height: 100%; background-position: center;">
 				<div class="overlay"></div>
 				<div class="container">
 					<div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
-						<div class="col-md-8 ftco-animate text-center">
+						<div class="col-12 col-md-12 ftco-animate text-center">
 							<h1 class="mb-4"><?= $getInformasiOne['judul']; ?></h1>
 							<p><a href="<?= base_url('FrontDetailController/getDetaiInformasi/') . $getInformasiOne['slug_judul'] ?>" class="btn btn-info px-4 py-3">Read More</a></p>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<?php foreach ($getInformasi as $index) : ?>
+			<?php var_dump($index) ?>
 			<div class="carousel-item">
-				<div class="hero-wrapp" style="background-image: url('<?= base_url('/assets/assetGambar/informasi/') . $index['foto'] ?>'); background-attachment:fixed; background-size: cover; height: 100%; background-position: center;">
+				<div class="hero-wrapp" style="background-image: url('<?= base_url('/assets/assetGambar/informasi/') . $index['foto'] ?>'); background-attachment:fixed; background-size: cover; width:100%; height: 100%; background-position: center;">
 					<div class="overlay"></div>
 					<div class="container">
 						<div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
@@ -37,61 +38,61 @@
 			<span class="sr-only">Next</span>
 		</a>
 	</div>
+</div>
 
-
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row justify-content-center mb-5 pb-3">
-				<div class="col-md-7 heading-section ftco-animate text-center">
-					<h2 class="mb-4">Pimpinan Sekolah</h2>
-				</div>
+<section class="ftco-section">
+	<div class="container">
+		<div class="row justify-content-center mb-5 pb-3">
+			<div class="col-md-7 heading-section ftco-animate text-center">
+				<h2 class="mb-4">Pimpinan Sekolah</h2>
 			</div>
-			<div class="row">
-				<div class="col-lg-6 mb-sm-4 ftco-animate">
-					<div class="staff">
-						<div class="d-flex mb-4">
-							<div class="img" style="background-image: url(<?= base_url('assets/assetGambar/guru/') . $getKepsek['foto'] ?>);"></div>
-							<div class="info ml-4">
-								<h3><a href="<?= base_url('FrontDetailController/getDetailGuru/') . $getKepsek['created_at'] ?>"><?= $getKepsek['nama']; ?></a></h3>
-								<span class="position"><?= $getKepsek['jabatan']; ?></span>
-								<p><?= $getWakilKepsek['lulusan']; ?></p>
-								<p class="ftco-social d-flex">
-									<a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-twitter"></span></a>
-									<a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-facebook"></span></a>
-									<a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-instagram"></span></a>
-								</p>
-							</div>
-						</div>
-						<div class="text">
-							<!-- <p><?= $getKepsek['alamat']; ?></p> -->
+		</div>
+		<div class="row">
+			<div class="col-lg-6 mb-sm-4 ftco-animate">
+				<div class="staff">
+					<div class="d-flex mb-4">
+						<div class="img" style="background-image: url(<?= base_url('assets/assetGambar/guru/') . $getKepsek['foto'] ?>);"></div>
+						<div class="info ml-4">
+							<h3><a href="<?= base_url('FrontDetailController/getDetailGuru/') . $getKepsek['created_at'] ?>"><?= $getKepsek['nama']; ?></a></h3>
+							<span class="position"><?= $getKepsek['jabatan']; ?></span>
+							<p><?= $getWakilKepsek['lulusan']; ?></p>
+							<p class="ftco-social d-flex">
+								<a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-twitter"></span></a>
+								<a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-facebook"></span></a>
+								<a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-instagram"></span></a>
+							</p>
 						</div>
 					</div>
+					<div class="text">
+						<!-- <p><?= $getKepsek['alamat']; ?></p> -->
+					</div>
 				</div>
-				<div class="col-lg-6 mb-sm-4 ftco-animate">
-					<div class="staff">
-						<div class="d-flex mb-4">
-							<div class="img" style="background-image: url(<?= base_url('assets/assetGambar/guru/') . $getWakilKepsek['foto'] ?>);"></div>
-							<div class="info ml-4">
-								<h3><a href="<?= base_url('FrontDetailController/getDetailGuru/') . $getWakilKepsek['created_at'] ?>"><?= $getWakilKepsek['nama']; ?></a></h3>
-								<span class="position"><?= $getWakilKepsek['jabatan']; ?></span>
-								<p><?= $getWakilKepsek['lulusan']; ?></p>
-								<p class="ftco-social d-flex">
-									<a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-twitter"></span></a>
-									<a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-facebook"></span></a>
-									<a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-instagram"></span></a>
-								</p>
-							</div>
+			</div>
+			<div class="col-lg-6 mb-sm-4 ftco-animate">
+				<div class="staff">
+					<div class="d-flex mb-4">
+						<div class="img" style="background-image: url(<?= base_url('assets/assetGambar/guru/') . $getWakilKepsek['foto'] ?>);"></div>
+						<div class="info ml-4">
+							<h3><a href="<?= base_url('FrontDetailController/getDetailGuru/') . $getWakilKepsek['created_at'] ?>"><?= $getWakilKepsek['nama']; ?></a></h3>
+							<span class="position"><?= $getWakilKepsek['jabatan']; ?></span>
+							<p><?= $getWakilKepsek['lulusan']; ?></p>
+							<p class="ftco-social d-flex">
+								<a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-twitter"></span></a>
+								<a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-facebook"></span></a>
+								<a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-instagram"></span></a>
+							</p>
 						</div>
-						<div class="text">
-							<!-- <p><?= $getWakilKepsek['alamat']; ?></p> -->
-						</div>
+					</div>
+					<div class="text">
+						<!-- <p><?= $getWakilKepsek['alamat']; ?></p> -->
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
+</section>
 
-	<!-- <section class="ftco-section-3 img" style="background-image: url(<?= base_url('assets/FrontAssets/') ?>images/lab.jpg);">
+<!-- <section class="ftco-section-3 img" style="background-image: url(<?= base_url('assets/FrontAssets/') ?>images/lab.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row d-md-flex justify-content-center">
@@ -133,25 +134,25 @@
 	</section> -->
 
 
-	<section class="ftco-freeTrial">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 col-12">
-					<div class="d-flex align-items-center">
-						<div class="free-trial ftco-animate">
-							<h3>Daftarkan dirimu sekarang</h3>
-							<p>Dapatkan pemngalaman belajar menyenangakan dan tentunya sangat luarbiasa.</p>
-						</div>
-						<div class="btn-join ftco-animate">
-							<p><a href="#" class="btn btn-info py-3 px-4">Pendaftaran</a></p>
-						</div>
+<section class="ftco-freeTrial">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-12">
+				<div class="d-flex align-items-center">
+					<div class="free-trial ftco-animate">
+						<h3>Daftarkan dirimu sekarang</h3>
+						<p>Dapatkan pemngalaman belajar menyenangakan dan tentunya sangat luarbiasa.</p>
+					</div>
+					<div class="btn-join ftco-animate">
+						<p><a href="#" class="btn btn-info py-3 px-4">Pendaftaran</a></p>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
+</section>
 
-	<!-- <section class="ftco-section testimony-section">
+<!-- <section class="ftco-section testimony-section">
 		<div class="container">
 			<div class="row justify-content-center mb-5 pb-3">
 				<div class="col-md-7 heading-section ftco-animate text-center">
@@ -183,36 +184,36 @@
 		</div>
 	</section> -->
 
-	<section class="ftco-section bg-light">
-		<div class="container">
-			<div class="row justify-content-center mb-5 pb-3">
-				<div class="col-md-7 heading-section ftco-animate text-center">
-					<h2 class="mb-4">Berita Terbaru</h2>
-				</div>
-			</div>
-			<div class="row d-flex">
-				<?php foreach ($getNewInformasi as $data) : ?>
-					<div class="col-md-4 d-flex ftco-animate">
-						<div class="blog-entry align-self-stretch">
-							<a href="<?= base_url('FrontDetailController/getDetaiInformasi/') . $data['slug_judul'] ?>" class="block-20" style="background-image: url('<?= base_url('/assets/assetGambar/informasi/') . $data['foto'] ?>');">
-							</a>
-							<div class="text p-4 d-block">
-								<div class="meta mb-3">
-									<div><a href="#"><?= date("d/ M/ Y", $data['created_at'],); ?></a></div>
-									<div><a href="#"><?= $data['ouner_post']; ?></a></div>
-									<div><a href="#" class="meta-chat"><span class="icon-chat"></span> Berita Terbaru</a></div>
-								</div>
-								<h3 class="heading mt-3"><a href="<?= base_url('FrontDetailController/getDetaiInformasi/') . $data['slug_judul'] ?>"><?= $data['judul']; ?></a></h3>
-								<p><?= $data['isi']; ?></p>
-							</div>
-						</div>
-					</div>
-				<?php endforeach; ?>
+<section class="ftco-section bg-light">
+	<div class="container">
+		<div class="row justify-content-center mb-5 pb-3">
+			<div class="col-md-7 heading-section ftco-animate text-center">
+				<h2 class="mb-4">Berita Terbaru</h2>
 			</div>
 		</div>
-	</section>
+		<div class="row d-flex">
+			<?php foreach ($getNewInformasi as $data) : ?>
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry align-self-stretch">
+						<a href="<?= base_url('FrontDetailController/getDetaiInformasi/') . $data['slug_judul'] ?>" class="block-20" style="background-image: url('<?= base_url('/assets/assetGambar/informasi/') . $data['foto'] ?>');">
+						</a>
+						<div class="text p-4 d-block">
+							<div class="meta mb-3">
+								<div><a href="#"><?= date("d/ M/ Y", $data['created_at'],); ?></a></div>
+								<div><a href="#"><?= $data['ouner_post']; ?></a></div>
+								<div><a href="#" class="meta-chat"><span class="icon-chat"></span> Berita Terbaru</a></div>
+							</div>
+							<h3 class="heading mt-3"><a href="<?= base_url('FrontDetailController/getDetaiInformasi/') . $data['slug_judul'] ?>"><?= $data['judul']; ?></a></h3>
+							<p><?= $data['isi']; ?></p>
+						</div>
+					</div>
+				</div>
+			<?php endforeach; ?>
+		</div>
+	</div>
+</section>
 
-	<!-- <section class="ftco-section">
+<!-- <section class="ftco-section">
   <div class="container">
     <div class="row justify-content-center mb-5 pb-3">
       <div class="col-md-7 heading-section ftco-animate text-center">
