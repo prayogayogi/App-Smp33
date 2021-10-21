@@ -26,8 +26,7 @@
 	<link rel="stylesheet" href="<?= base_url('assets/') ?>FrontAssets/css/icomoon.css">
 	<link rel="stylesheet" href="<?= base_url('assets/') ?>FrontAssets/css/style.css">
 	<!-- DataTables -->
-	<link rel="stylesheet" href="<?= base_url('assets') ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-	<!-- <link rel="stylesheet" href="<?= base_url('assets') ?>/plugins/datatables-responsive/css/responsive.bootstrap4.min.css"> -->
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
 </head>
 
 <body>

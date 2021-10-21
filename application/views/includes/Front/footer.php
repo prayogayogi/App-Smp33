@@ -91,29 +91,14 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 <script src="<?= base_url('assets/') ?>FrontAssets/js/google-map.js"></script>
 <script src="<?= base_url('assets/') ?>FrontAssets/js/main.js"></script>
+
 <!-- Data Table -->
-<script src="<?= base_url('assets') ?>/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="<?= base_url('assets') ?>/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="<?= base_url('assets') ?>/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<!-- <script src="<?= base_url('assets') ?>/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script> -->
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <script>
-	$(function() {
-		$("#example1").DataTable({
-			"responsive": true,
-			"autoWidth": false,
-		});
-		$('#example2').DataTable({
-			"paging": true,
-			"lengthChange": false,
-			"searching": false,
-			"ordering": true,
-			"info": true,
-			"autoWidth": false,
-			"responsive": true,
-		});
+	$(document).ready(function() {
+		$('#example2').DataTable();
 	});
 </script>
-
 </body>
 
 </html>

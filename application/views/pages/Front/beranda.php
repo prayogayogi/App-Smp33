@@ -1,21 +1,7 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 	<div class="carousel-inner">
-		<!-- <div class="carousel-item active">
-			<div class="hero-wrapp" id="gm" style="background-image: url('<?= base_url('/assets/assetGambar/informasi/') . $getInformasiOne['foto'] ?>'); background-attachment:fixed; background-size: cover; width:100%; height: 100%; background-position: center;">
-				<div class="overlay"></div>
-				<div class="container">
-					<div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
-						<div class="col-12 col-md-12 ftco-animate text-center">
-							<h1 class="mb-4"><?= $getInformasiOne['judul']; ?></h1>
-							<p><a href="<?= base_url('FrontDetailController/getDetaiInformasi/') . $getInformasiOne['slug_judul'] ?>" class="btn btn-info px-4 py-3">Read More</a></p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> -->
-		<?php foreach ($getInformasi as $index) : ?>
-			<?php var_dump($index) ?>
-			<div class="carousel-item">
+		<?php foreach ($getInformasi as $key => $index) : ?>
+			<div class="carousel-item <?= $key == 0 ? 'active' : '' ?>">
 				<div class="hero-wrapp" style="background-image: url('<?= base_url('/assets/assetGambar/informasi/') . $index['foto'] ?>'); background-attachment:fixed; background-size: cover; width:100%; height: 100%; background-position: center;">
 					<div class="overlay"></div>
 					<div class="container">
