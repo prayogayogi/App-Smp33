@@ -34,7 +34,7 @@
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
 			<!-- <i class="flaticon-university"></i> -->
-			<a class="navbar-brand" href="<?= base_url('FrontController') ?>">SMK N 33 Lebong</a>
+			<a class="navbar-brand" href="<?= base_url('FrontController') ?>">SMP N 33 Lebong</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
@@ -45,11 +45,11 @@
 
 					<li class="nav-item <?= (current_url() == base_url('FrontController/profile')) ? 'active' : '' ?>"><a href="<?= base_url('FrontController/profile') ?>" class="nav-link">Profile</a></li>
 
-					<li class="nav-item <?= (in_array(current_url(), [base_url('FrontController/guru'), (base_url('FrontController/guru/') . $start)])) ? 'active' : '' ?>"><a href="<?= base_url('FrontController/guru') ?>" class="nav-link">Guru</a></li>
+					<!-- <li class="nav-item <?= (in_array(current_url(), [base_url('FrontController/guru'), (base_url('FrontController/guru/') . $start)])) ? 'active' : '' ?>"><a href="<?= base_url('FrontController/guru') ?>" class="nav-link">Guru</a></li> -->
 
 					<li class="nav-item <?= (current_url() == base_url('FrontController/siswa')) ? 'active' : '' ?>"><a href="<?= base_url('FrontController/siswa') ?>" class="nav-link">Siswa</a></li>
 
-					<!-- <li class="nav-item <?= (current_url() == base_url('FrontController/ekskul')) ? 'active' : '' ?>"><a href="<?= base_url('FrontController/ekskul') ?>" class="nav-link">Ekskul</a></li> -->
+					<li class="nav-item <?= (current_url() == base_url('FrontController/kegiatan')) ? 'active' : '' ?>"><a href="<?= base_url('FrontController/kegiatan') ?>" class="nav-link">Kegiatan</a></li>
 
 					<li class="nav-item <?= (current_url() == base_url('FrontController/informasi')) ? 'active' : '' ?>"><a href="<?= base_url('FrontController/informasi') ?>" class="nav-link">Informasi</a></li>
 

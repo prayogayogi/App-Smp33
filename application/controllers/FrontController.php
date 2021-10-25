@@ -110,14 +110,15 @@ class FrontController extends CI_Controller
 	}
 
 	// Untuk Halaman Ekskul
-	public function ekskul()
+	public function kegiatan()
 	{
-		$data['title'] = "Ekskul | Smk 05 Ujan Mas";
+		$data['title'] = "Kegiatan | Smk 05 Ujan Mas";
 		$data['start'] = $this->uri->segment(3);
 		$data['getNewFooterInformasi'] = $this->AssetSekolahModel->getNewFooterInformasi()->result_array();
 		$data['getSosialMedia'] = $this->FrontModel->getSosialMedia();
+		$data['kegiatan'] = $this->AssetSekolahModel->getDataKegiatan()->result_array();
 		$this->load->view('includes/Front/header', $data);
-		$this->load->view('pages/Front/ekskul');
+		$this->load->view('pages/Front/kegiatan');
 		$this->load->view('includes/Front/footer', $data);
 	}
 

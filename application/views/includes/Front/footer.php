@@ -4,7 +4,7 @@
 		<div class="row mb-5">
 			<div class="col-md-3">
 				<div class="ftco-footer-widget mb-4">
-					<h2><a class="navbar-brand" href="<?= base_url('FrontController') ?>">SMK N 33 Lebong</a></h2>
+					<h2><a class="navbar-brand" href="<?= base_url('FrontController') ?>">SMP N 33 Lebong</a></h2>
 					<p>Smp 33 Lebong merupakan Smp Yang Sanggat Mementingkan Kualitas dan Menghasilkan Lulusan Terbaik.</p>
 					<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
 						<li class="ftco-animate"><a href="<?= $getSosialMedia['twitter'] ?>" target="blank"><span class="icon-twitter"></span></a></li>
