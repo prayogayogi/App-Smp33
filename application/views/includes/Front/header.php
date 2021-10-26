@@ -31,27 +31,27 @@
 
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light" id="ftco-navbar" style="background-color: #3B5897 !important; color: #FFFFFF;">
 		<div class="container">
 			<!-- <i class="flaticon-university"></i> -->
-			<a class="navbar-brand" href="<?= base_url('FrontController') ?>">SMP N 33 Lebong</a>
+			<a class="navbar-brand text-light" href="<?= base_url('FrontController') ?>">SMP N 33 Lebong</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item <?= (in_array(current_url(), [base_url('FrontController'), base_url('/')])) ? 'active' : '' ?>"><a href="<?= base_url('FrontController') ?>" class="nav-link">Beranda</a></li>
+					<li class="nav-item <?= (in_array(current_url(), [base_url('FrontController'), base_url('/')])) ? 'active' : '' ?>"><a href="<?= base_url('FrontController') ?>" class="nav-link text-light">Beranda</a></li>
 
-					<li class="nav-item <?= (current_url() == base_url('FrontController/profile')) ? 'active' : '' ?>"><a href="<?= base_url('FrontController/profile') ?>" class="nav-link">Profile</a></li>
+					<li class="nav-item <?= (current_url() == base_url('FrontController/profile')) ? 'active' : '' ?>"><a href="<?= base_url('FrontController/profile') ?>" class="nav-link text-light">Profile</a></li>
 
 					<!-- <li class="nav-item <?= (in_array(current_url(), [base_url('FrontController/guru'), (base_url('FrontController/guru/') . $start)])) ? 'active' : '' ?>"><a href="<?= base_url('FrontController/guru') ?>" class="nav-link">Guru</a></li> -->
 
-					<li class="nav-item <?= (current_url() == base_url('FrontController/siswa')) ? 'active' : '' ?>"><a href="<?= base_url('FrontController/siswa') ?>" class="nav-link">Siswa</a></li>
+					<li class="nav-item <?= (current_url() == base_url('FrontController/siswa')) ? 'active' : '' ?>"><a href="<?= base_url('FrontController/siswa') ?>" class="nav-link text-light">Siswa</a></li>
 
-					<li class="nav-item <?= (current_url() == base_url('FrontController/kegiatan')) ? 'active' : '' ?>"><a href="<?= base_url('FrontController/kegiatan') ?>" class="nav-link">Kegiatan</a></li>
+					<li class="nav-item <?= (current_url() == base_url('FrontController/kegiatan')) ? 'active' : '' ?>"><a href="<?= base_url('FrontController/kegiatan') ?>" class="nav-link text-light">Kegiatan</a></li>
 
-					<li class="nav-item <?= (current_url() == base_url('FrontController/informasi')) ? 'active' : '' ?>"><a href="<?= base_url('FrontController/informasi') ?>" class="nav-link">Informasi</a></li>
+					<li class="nav-item <?= (current_url() == base_url('FrontController/informasi')) ? 'active' : '' ?>"><a href="<?= base_url('FrontController/informasi') ?>" class="nav-link text-light">Informasi</a></li>
 
 					<li class="nav-item cta"><a href="<?= base_url('AuthController') ?>" target="blank" class="btn btn-info" style="background: #50A3B9; color:white; border:none;"><span class="mx-3">Log In</span></a></li>
 

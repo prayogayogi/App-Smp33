@@ -19,7 +19,7 @@
 			<?php foreach ($kegiatan as $index => $items) : ?>
 				<div class="col-md-4 d-flex ftco-animate">
 					<div class="blog-entry  <?= ($index % 2 == 0) ? 'align-self-stretch' : 'd-md-flex align-self-stretch flex-column-reverse' ?>">
-						<a href="blog-single.html" class="block-20" style="background-image: url('<?= base_url('assets/assetGambar/kegiatan/') . $items['photo'] ?>');">
+						<a href="#" class="block-20" style="background-image: url('<?= base_url('assets/assetGambar/kegiatan/') . $items['photo'] ?>');">
 						</a>
 						<div class="text p-4 d-block">
 							<div class="meta mb-3">
@@ -30,7 +30,7 @@
 							<h3 class="heading mb-4"><a href="#"><?= $items['judul']; ?></a></h3>
 							<!-- <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> 10:30AM-03:30PM</span> <span><i class="icon-map-o"></i> Venue Main Campus</span></p> -->
 							<p><?= $items['keterangan']; ?></p>
-							<p><a href="event.html">Read More <i class="ion-ios-arrow-forward"></i></a></p>
+							<p><a href="#">Read More <i class="ion-ios-arrow-forward"></i></a></p>
 						</div>
 					</div>
 				</div>
