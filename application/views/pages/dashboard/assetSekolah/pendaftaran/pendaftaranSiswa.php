@@ -126,8 +126,6 @@
 									<label for="tgl_lahir">Tanggal lahir</label>
 									<input type="date" name="tgl_lahir" class="form-control" autocomplete="off" id="tgl_lahir" placeholder="Masukan Tanggal Lahir">
 								</div>
-							</div>
-							<div class="col">
 								<div class="form-group">
 									<label for="nik">No Induk Keluarga</label>
 									<input type="number" name="nik" class="form-control" autocomplete="off" id="nik" placeholder="Masukan No Induk Keluarga">
@@ -136,6 +134,8 @@
 									<label for="alamat">Alamat</label>
 									<input type="text" name="alamat" class="form-control" autocomplete="off" id="alamat" placeholder="Masukan alamat">
 								</div>
+							</div>
+							<div class="col">
 								<div class="form-group">
 									<label for="no_hp">No Hp</label>
 									<input type="number" name="no_hp" class="form-control" autocomplete="off" id="no_hp" placeholder="Masukan No Hp">
@@ -143,6 +143,26 @@
 								<div class="form-group">
 									<label for="email">Email</label>
 									<input type="text" name="email" class="form-control" autocomplete="off" id="email" placeholder="Masukan Email">
+								</div>
+								<div class="form-group">
+									<label for="Nama Ayah">Nama Ayah</label>
+									<input type="text" name="nama_ayah" class="form-control" autocomplete="off" id="Nama Ayah" placeholder="Masukan Nama Ayah">
+								</div>
+								<div class="form-group">
+									<label for="Pekerjaan Ayah">Pekerjaan Ayah</label>
+									<input type="text" name="pekerjaan_ayah" class="form-control" autocomplete="off" id="Pekerjaan Ayah" placeholder="Masukan Pekerjaan Ayah">
+								</div>
+								<div class="form-group">
+									<label for="Nama Ibu">Nama Ibu</label>
+									<input type="text" name="nama_ibu" class="form-control" autocomplete="off" id="Nama Ibu" placeholder="Masukan Nama Ibu">
+								</div>
+								<div class="form-group">
+									<label for="Pekerjaan Ibu">Pekerjaan Ibu</label>
+									<input type="text" name="pekerjaan_ibu" class="form-control" autocomplete="off" id="Pekerjaan Ibu" placeholder="Masukan Pekerjaan Ibu">
+								</div>
+								<div class="form-group">
+									<label for="Nilai Un">Nilai Un</label>
+									<input type="text" name="nilai_un" class="form-control" autocomplete="off" id="Nilai Un" placeholder="Masukan Nilai Un">
 								</div>
 							</div>
 						</div>

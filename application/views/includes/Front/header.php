@@ -45,7 +45,7 @@
 
 					<li class="nav-item <?= (current_url() == base_url('FrontController/profile')) ? 'active' : '' ?>"><a href="<?= base_url('FrontController/profile') ?>" class="nav-link text-light">Profile</a></li>
 
-					<!-- <li class="nav-item <?= (in_array(current_url(), [base_url('FrontController/guru'), (base_url('FrontController/guru/') . $start)])) ? 'active' : '' ?>"><a href="<?= base_url('FrontController/guru') ?>" class="nav-link">Guru</a></li> -->
+					<li class="nav-item <?= (in_array(current_url(), [base_url('FrontController/guru'), (base_url('FrontController/guru/') . $start)])) ? 'active' : '' ?>"><a href="<?= base_url('FrontController/guru') ?>" class="nav-link text-light">Guru</a></li>
 
 					<li class="nav-item <?= (current_url() == base_url('FrontController/siswa')) ? 'active' : '' ?>"><a href="<?= base_url('FrontController/siswa') ?>" class="nav-link text-light">Siswa</a></li>
 

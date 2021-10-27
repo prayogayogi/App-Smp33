@@ -335,6 +335,11 @@ class AssetSekolahModel extends CI_Model
 			'alamat' => $this->input->post('alamat'),
 			'no_hp' => $this->input->post('no_hp'),
 			'email' => $this->input->post('email'),
+			'nama_ayah' => $this->input->post('nama_ayah'),
+			'pekerjaan_ayah' => $this->input->post('pekerjaan_ayah'),
+			'nama_ibu' => $this->input->post('nama_ibu'),
+			'pekerjaan_ibu' => $this->input->post('pekerjaan_ibu'),
+			'nilai_un' => $this->input->post('nilai_un'),
 		];
 		$this->db->set($data);
 		$this->db->insert('db_siswabaru');

@@ -127,7 +127,7 @@
 				<div class="d-flex align-items-center">
 					<div class="free-trial ftco-animate">
 						<h3>Daftarkan dirimu sekarang</h3>
-						<p>Dapatkan pemngalaman belajar menyenangakan dan tentunya sangat luarbiasa.</p>
+						<p>Dapatkan pengalaman belajar menyenangkan dan tentunya sangat luar biasa.</p>
 					</div>
 					<div class="btn-join ftco-animate">
 						<p><a href="#" class="btn btn-info py-3 px-4" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">Pendaftaran</a></p>
@@ -272,63 +272,99 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<form>
+				<h4 class="text-center">Silahan Dengan Hati-hati dan Benar</h4>
+				<form method="POST" action="<?= base_url('Admin/AssetSekolahController/storePendaftaranSiswa') ?>">
 					<div class="row">
 						<div class="col">
 							<div class="form-group row">
-								<label for="nama" class="col-sm-2 col-form-label">Nama</label>
+								<label for="nama" class="col-sm-6 col-form-label">Nama</label>
 								<div class="col-sm-10">
-									<input type="text" name="nama" class="form-control-plaintext" id="nama" placeholder="Masukan Nama" style="border: 1px solid black ;">
+									<input required type="text" name="nama" class="form-control-plaintext" id="nama" placeholder="Masukan Nama" style="border: 1px solid black ;">
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="Jenis Kelamin" class="col-sm-2 col-form-label">Jenis Kelamin</label>
+								<label for="Jenis Kelamin" class="col-sm-6 col-form-label">Jenis Kelamin</label>
 								<div class="col-sm-10">
-									<input type="text" name="jenis_kelamin" class="form-control-plaintext" id="Jenis Kelamin" placeholder="Masukan Jenis Kelamin" style="border: 1px solid black ;">
+									<input required type="text" name="gender" class="form-control-plaintext" id="Jenis Kelamin" placeholder="Masukan Jenis Kelamin" style="border: 1px solid black ;">
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="Asal Sekolah" class="col-sm-2 col-form-label">Asal Sekolah</label>
+								<label for="Asal Sekolah" class="col-sm-6 col-form-label">Asal Sekolah</label>
 								<div class="col-sm-10">
-									<input type="text" name="asal_sekolah" class="form-control-plaintext" id="Asal Sekolah" placeholder="Masukan Asal Sekolah" style="border: 1px solid black ;">
+									<input required type="text" name="asal_sekolah" class="form-control-plaintext" id="Asal Sekolah" placeholder="Masukan Asal Sekolah" style="border: 1px solid black ;">
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="Tempat Tanggal Lahir" class="col-sm-2 col-form-label">Tempat Lahir</label>
+								<label for="Tempat Tanggal Lahir" class="col-sm-6 col-form-label">Tempat Lahir</label>
 								<div class="col-sm-10">
-									<input type="text" name="tempat_tanggal_lahir" class="form-control-plaintext" id="Tempat Tanggal Lahir" placeholder="Masukan Tempat Tanggal Lahir" style="border: 1px solid black ;">
+									<input required type="text" name="tempat_lahir" class="form-control-plaintext" id="Tempat Tanggal Lahir" placeholder="Masukan Tempat Tanggal Lahir" style="border: 1px solid black ;">
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="Nik" class="col-sm-2 col-form-label">Nik</label>
+								<label for="Tempat Tanggal Lahir" class="col-sm-6 col-form-label">Tanggal Lahir</label>
 								<div class="col-sm-10">
-									<input type="text" name="nik" class="form-control-plaintext" id="Nik" placeholder="Masukan Nik" style="border: 1px solid black ;">
+									<input required type="text" name="tgl_lahir" class="form-control-plaintext" id="Tempat Tanggal Lahir" placeholder="Tanggal Lahir" style="border: 1px solid black ;">
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="Alamat" class="col-sm-2 col-form-label">Alamat</label>
+								<label for="Nik" class="col-sm-6 col-form-label">Nik</label>
 								<div class="col-sm-10">
-									<input type="text" name="alamat" class="form-control-plaintext" id="Alamat" placeholder="Masukan Alamat" style="border: 1px solid black ;">
+									<input required type="text" name="nik" class="form-control-plaintext" id="Nik" placeholder="Masukan Nik" style="border: 1px solid black ;">
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="No Hp" class="col-sm-2 col-form-label">No Hp</label>
+								<label for="Alamat" class="col-sm-6 col-form-label">Alamat</label>
 								<div class="col-sm-10">
-									<input type="text" name="no_hp" class="form-control-plaintext" id="No Hp" placeholder="Masukan No Hp" style="border: 1px solid black ;">
+									<input required type="text" name="alamat" class="form-control-plaintext" id="Alamat" placeholder="Masukan Alamat" style="border: 1px solid black ;">
 								</div>
 							</div>
 						</div>
 						<div class="col">
 							<div class="form-group row">
-								<label for="Email" class="col-sm-2 col-form-label">Email</label>
+								<label for="No Hp" class="col-sm-6 col-form-label">No Hp</label>
 								<div class="col-sm-10">
-									<input type="text" name="email" class="form-control-plaintext" id="Email" placeholder="Masukan Email" style="border: 1px solid black ;">
+									<input required type="text" name="no_hp" class="form-control-plaintext" id="No Hp" placeholder="Masukan No Hp" style="border: 1px solid black ;">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="Email" class="col-sm-6 col-form-label">Email</label>
+								<div class="col-sm-10">
+									<input required type="text" name="email" class="form-control-plaintext" id="Email" placeholder="Masukan Email" style="border: 1px solid black ;">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="nama ayah" class="col-sm-6 col-form-label">Nama ayah</label>
+								<div class="col-sm-10">
+									<input required type="text" name="nama_ayah" class="form-control-plaintext" id="nama ayah" placeholder="Masukan nama ayah" style="border: 1px solid black ;">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="pekerjaan_ayah" class="col-sm-6 col-form-label">Pekerjaan_ayah</label>
+								<div class="col-sm-10">
+									<input required type="text" name="pekerjaan_ayah" class="form-control-plaintext" id="pekerjaan_ayah" placeholder="Masukan pekerjaan_ayah" style="border: 1px solid black ;">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="nama ibu" class="col-sm-6 col-form-label">Nama ibu</label>
+								<div class="col-sm-10">
+									<input required type="text" name="nama_ibu" class="form-control-plaintext" id="nama_ibu" placeholder="Masukan nama ibu" style="border: 1px solid black ;">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="pekerjaan ibu" class="col-sm-6 col-form-label">Pekerjaan ibu</label>
+								<div class="col-sm-10">
+									<input required type="text" name="pekerjaan_ibu" class="form-control-plaintext" id="pekerjaan_ibu" placeholder="Masukan pekerjaan ibu" style="border: 1px solid black ;">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="nilai un" class="col-sm-6 col-form-label">Nilai un</label>
+								<div class="col-sm-10">
+									<input required type="text" name="nilai_un" class="form-control-plaintext" id="nilai un" placeholder="Masukan nilai un" style="border: 1px solid black ;">
 								</div>
 							</div>
 						</div>
 					</div>
-
-					<div class="modal-footer">
+					<div class="text-center mt-3">
 						<button type="resset" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
 						<button type="submit" class="btn btn-primary">Setuju</button>
 					</div>
