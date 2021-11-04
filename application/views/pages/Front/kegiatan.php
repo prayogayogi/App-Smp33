@@ -28,9 +28,8 @@
 								<div><a href="#" class="meta-chat"><span class="icon-chat"></span></a></div>
 							</div>
 							<h3 class="heading mb-4"><a href="#"><?= $items['judul']; ?></a></h3>
-							<!-- <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> 10:30AM-03:30PM</span> <span><i class="icon-map-o"></i> Venue Main Campus</span></p> -->
 							<p><?= $items['keterangan']; ?></p>
-							<p><a href="#">Read More <i class="ion-ios-arrow-forward"></i></a></p>
+							<!-- <p><a href="#">Read More <i class="ion-ios-arrow-forward"></i></a></p> -->
 						</div>
 					</div>
 				</div>

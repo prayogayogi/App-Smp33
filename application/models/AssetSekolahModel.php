@@ -326,20 +326,21 @@ class AssetSekolahModel extends CI_Model
 	function storePendaftaranSiswa()
 	{
 		$data = [
-			'nama' => $this->input->post('nama'),
-			'gender' => $this->input->post('gender'),
-			'asal_sekolah' => $this->input->post('asal_sekolah'),
-			'tempat_lahir' => $this->input->post('tempat_lahir'),
-			'tgl_lahir' => $this->input->post('tgl_lahir'),
-			'nik' => $this->input->post('nik'),
-			'alamat' => $this->input->post('alamat'),
-			'no_hp' => $this->input->post('no_hp'),
-			'email' => $this->input->post('email'),
-			'nama_ayah' => $this->input->post('nama_ayah'),
-			'pekerjaan_ayah' => $this->input->post('pekerjaan_ayah'),
-			'nama_ibu' => $this->input->post('nama_ibu'),
-			'pekerjaan_ibu' => $this->input->post('pekerjaan_ibu'),
-			'nilai_un' => $this->input->post('nilai_un'),
+			'nama' => $this->input->post('nama', TRUE),
+			'gender' => $this->input->post('gender', TRUE),
+			'asal_sekolah' => $this->input->post('asal_sekolah', TRUE),
+			'tempat_lahir' => $this->input->post('tempat_lahir', TRUE),
+			'tgl_lahir' => $this->input->post('tgl_lahir', TRUE),
+			'nik' => $this->input->post('nik', TRUE),
+			'alamat' => $this->input->post('alamat', TRUE),
+			'no_hp' => $this->input->post('no_hp', TRUE),
+			'email' => $this->input->post('email', TRUE),
+			'nama_ayah' => $this->input->post('nama_ayah', TRUE),
+			'pekerjaan_ayah' => $this->input->post('pekerjaan_ayah', TRUE),
+			'nama_ibu' => $this->input->post('nama_ibu', TRUE),
+			'pekerjaan_ibu' => $this->input->post('pekerjaan_ibu', TRUE),
+			'nilai_un' => $this->input->post('nilai_un', TRUE),
+			'author' => $this->input->post('nama', TRUE)
 		];
 		$this->db->set($data);
 		$this->db->insert('db_siswabaru');
@@ -349,15 +350,15 @@ class AssetSekolahModel extends CI_Model
 	function updatePendaftaranSiswa($id)
 	{
 		$data = [
-			'nama' => $this->input->post('nama'),
-			'gender' => $this->input->post('gender'),
-			'asal_sekolah' => $this->input->post('asal_sekolah'),
-			'tempat_lahir' => $this->input->post('tempat_lahir'),
-			'tgl_lahir' => $this->input->post('tgl_lahir'),
-			'nik' => $this->input->post('nik'),
-			'alamat' => $this->input->post('alamat'),
-			'no_hp' => $this->input->post('no_hp'),
-			'email' => $this->input->post('email'),
+			'nama' => $this->input->post('nama', TRUE),
+			'gender' => $this->input->post('gender', TRUE),
+			'asal_sekolah' => $this->input->post('asal_sekolah', TRUE),
+			'tempat_lahir' => $this->input->post('tempat_lahir', TRUE),
+			'tgl_lahir' => $this->input->post('tgl_lahir', TRUE),
+			'nik' => $this->input->post('nik', TRUE),
+			'alamat' => $this->input->post('alamat', TRUE),
+			'no_hp' => $this->input->post('no_hp', TRUE),
+			'email' => $this->input->post('email', TRUE),
 		];
 		$this->db->where('id', $id);
 		$this->db->set($data);

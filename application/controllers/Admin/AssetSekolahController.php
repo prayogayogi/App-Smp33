@@ -288,11 +288,11 @@ class AssetSekolahController extends CI_Controller
 	{
 		$this->AssetSekolahModel->storePendaftaranSiswa();
 		$this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-    <strong>Data Siswa baru</strong> Berhasil Di Tambah..
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>');
+			<strong>Data Siswa baru</strong> Berhasil Di Tambah..
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>');
 		redirect('Admin/AssetSekolahController/pendaftaranSiswa');
 	}
 

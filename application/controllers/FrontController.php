@@ -29,6 +29,43 @@ class FrontController extends CI_Controller
 		$this->load->view('includes/Front/footer', $data);
 	}
 
+	// Untuk Validasi tambah data siswa baru
+	public function storeSiswaBaruFront()
+	{
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('nama', 'Nama', 'required', ['required' => 'Nama Harus Di Isi']);
+		$this->form_validation->set_rules('gender', 'Gender', 'required', ['required' => 'Jenis Kelamin Harus Di Isi']);
+		$this->form_validation->set_rules('asal_sekolah', 'Asal Sekolah', 'required', ['required' => 'Asal Sekolah Harus Di Isi']);
+		$this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required', ['required' => 'Tempat lahir Harus Di Isi']);
+
+		if ($this->form_validation->run() == FALSE) {
+			$data['title'] = "Home | Smp 33 Rejang Lebong";
+			$data['start'] = $this->uri->segment(3);
+			$data['getKepsek'] = $this->FrontModel->getKepsek()->row_array();
+			$data['getWakilKepsek'] = $this->FrontModel->getWakilKepsek()->row_array();
+			$data['getGuru'] = $this->FrontModel->getGuru()->result_array();
+			$data['getJumlahGuru'] = $this->DataUserSekolahModel->getGuru()->num_rows();
+			$data['getJumlahSiswa'] = $this->DataUserSekolahModel->getSiswa()->num_rows();
+			$data['getNewInformasi'] = $this->AssetSekolahModel->getNewInformasi()->result_array();
+			$data['getInformasi'] = $this->AssetSekolahModel->getDataInformasi()->result_array();
+			$data['getInformasiOne'] = $this->AssetSekolahModel->getInformasiOne()->row_array();
+			$data['getNewFooterInformasi'] = $this->AssetSekolahModel->getNewFooterInformasi()->result_array();
+			$data['getSosialMedia'] = $this->FrontModel->getSosialMedia();
+			$this->load->view('includes/Front/header', $data);
+			$this->load->view('pages/Front/beranda', $data);
+			$this->load->view('includes/Front/footer', $data);
+		} else {
+			$this->AssetSekolahModel->storePendaftaranSiswa();
+			$this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+			<strong>Data Siswa baru</strong> Berhasil Di Tambah..
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>');
+			redirect('FrontController/index');
+		}
+	}
+
 	// Untuk Halaman Profile
 	public function profile()
 	{

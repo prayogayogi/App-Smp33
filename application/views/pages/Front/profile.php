@@ -25,10 +25,10 @@
 	</div>
 </section>
 
-<!-- <section class="ftco-counter bg-light" id="section-counter">
+<section class="ftco-counter bg-light" id="section-counter">
 	<div class="container">
 		<div class="row justify-content-center">
-			<div class="col-md-10">
+			<div class="col-12 col-md-10">
 				<div class="row">
 					<div class="col-md-12 d-flex justify-content-center counter-wrap ftco-animate">
 						<div class="block-18 text-center">
@@ -37,12 +37,12 @@
 							</div>
 						</div>
 					</div>
-					<img src="<?= base_url('assets/assetGambar/struktur/') . $getStrukturOrganisasi['struktur'] ?>" alt="Strutkru" style="width: 950px;">
+					<img src="<?= base_url('assets/assetGambar/struktur/') . $getStrukturOrganisasi['struktur'] ?>" alt="Strutkru" style="width: 100%;">
 				</div>
 			</div>
 		</div>
 	</div>
-</section> -->
+</section>
 
 <section class="ftco-section testimony-section">
 	<div class="container">

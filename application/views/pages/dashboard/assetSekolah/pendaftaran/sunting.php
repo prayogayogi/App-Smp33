@@ -33,9 +33,14 @@
 												<div class="form-group">
 													<label for="jabatan">Gender</label>
 													<select class="form-control" name="gender">
-														<option value="<?= $getShowSiswaBaru['nama']; ?>"><?= $getShowSiswaBaru['gender']; ?></option>
-														<option value="LAKI-LAKI">Laki-laki</option>
-														<option value="PEREMPUAN">Perempuan</option>
+														<option value="LAKI-LAKI" <?php if ($getShowSiswaBaru['nama'] == "LAKI-LAKI") {
+																												echo "selected";
+																											} ?>>Laki-laki
+														</option>
+														<option value="PEREMPUAN" <?php if ($getShowSiswaBaru['nama'] == "PEREMPUAN") {
+																												echo "selected";
+																											} ?>>Perempuan
+														</option>
 													</select>
 												</div>
 												<div class="form-group">
@@ -62,7 +67,7 @@
 											<div class="col">
 												<div class="form-group">
 													<label for="no_hp">No Hp</label>
-													<input type="number" name="no_hp" class="form-control" autocomplete="off" id="no_hp" value="<?= $getShowSiswaBaru['no_hp']; ?>">
+													<input type="text" name="no_hp" class="form-control" autocomplete="off" id="no_hp" value="<?= $getShowSiswaBaru['no_hp']; ?>">
 												</div>
 												<div class="form-group">
 													<label for="email">Email</label>
@@ -70,23 +75,23 @@
 												</div>
 												<div class="form-group">
 													<label for="Nama Ayah">Nama Ayah</label>
-													<input type="text" name="nama_ayah" class="form-control" autocomplete="off" id="Nama Ayah" placeholder="Masukan Nama Ayah">
+													<input type="text" name="nama_ayah" class="form-control" autocomplete="off" id="Nama Ayah" value="<?= $getShowSiswaBaru['nama_ayah']; ?>">
 												</div>
 												<div class="form-group">
 													<label for="Pekerjaan Ayah">Pekerjaan Ayah</label>
-													<input type="text" name="pekerjaan_ayah" class="form-control" autocomplete="off" id="Pekerjaan Ayah" placeholder="Masukan Pekerjaan Ayah">
+													<input type="text" name="pekerjaan_ayah" class="form-control" autocomplete="off" id="Pekerjaan Ayah" value="<?= $getShowSiswaBaru['pekerjaan_ayah']; ?>">
 												</div>
 												<div class="form-group">
 													<label for="Nama Ibu">Nama Ibu</label>
-													<input type="text" name="nama_ibu" class="form-control" autocomplete="off" id="Nama Ibu" placeholder="Masukan Nama Ibu">
+													<input type="text" name="nama_ibu" class="form-control" autocomplete="off" id="Nama Ibu" value="<?= $getShowSiswaBaru['nama_ibu']; ?>">
 												</div>
 												<div class="form-group">
 													<label for="Pekerjaan Ibu">Pekerjaan Ibu</label>
-													<input type="text" name="pekerjaan_ibu" class="form-control" autocomplete="off" id="Pekerjaan Ibu" placeholder="Masukan Pekerjaan Ibu">
+													<input type="text" name="pekerjaan_ibu" class="form-control" autocomplete="off" id="Pekerjaan Ibu" value="<?= $getShowSiswaBaru['pekerjaan_ibu']; ?>">
 												</div>
 												<div class="form-group">
 													<label for="Nilai Un">Nilai Un</label>
-													<input type="text" name="nilai_un" class="form-control" autocomplete="off" id="Nilai Un" placeholder="Masukan Nilai Un">
+													<input type="text" name="nilai_un" class="form-control" autocomplete="off" id="Nilai Un" value="<?= $getShowSiswaBaru['nilai_un']; ?>">
 												</div>
 											</div>
 										</div>
