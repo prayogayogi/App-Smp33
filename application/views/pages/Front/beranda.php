@@ -121,24 +121,25 @@
 
 
 
-
-<section class="ftco-freeTrial">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-12">
-				<div class="d-flex align-items-center">
-					<div class="free-trial ftco-animate">
-						<h3>Daftarkan dirimu sekarang</h3>
-						<p>Dapatkan pengalaman belajar menyenangkan dan tentunya sangat luar biasa.</p>
-					</div>
-					<div class="btn-join ftco-animate">
-						<p><a href="#" class="btn btn-info py-3 px-4" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">Pendaftaran</a></p>
+<?php if ($open['status']  == 'open') : ?>
+	<section class="ftco-freeTrial">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-12">
+					<div class="d-flex align-items-center">
+						<div class="free-trial ftco-animate">
+							<h3>Daftarkan dirimu sekarang</h3>
+							<p>Dapatkan pengalaman belajar menyenangkan dan tentunya sangat luar biasa.</p>
+						</div>
+						<div class="btn-join ftco-animate">
+							<p><a href="#" class="btn btn-info py-3 px-4" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">Pendaftaran</a></p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
+<?php endif; ?>
 
 <!-- <section class="ftco-section testimony-section">
 		<div class="container">
@@ -274,7 +275,7 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<h4 class="text-center">Silahan Dengan Hati-hati dan Benar</h4>
+				<h4 class="text-center">Silahkan isi dengan hati-hati dan data yang benar</h4>
 				<form method="POST" action="<?= base_url('FrontController/storeSiswaBaruFront') ?>">
 					<div class="row">
 						<div class="col">

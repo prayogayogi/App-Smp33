@@ -4,6 +4,8 @@
 			<div class="row mb-2">
 				<div class="col-sm-6">
 					<h1 class="m-0 text-dark">Data Pendaftaran Siswa</h1>
+					<a href="<?= base_url('Admin/AssetSekolahController/open') ?>" class="badge badge-success mt-2" onclick="return confirm('Yakin Ingin bukak Pendaftaran.?')">Buka Pendaftaran</a>
+					<a href="<?= base_url('Admin/AssetSekolahController/tutup') ?>" class="badge badge-warning ml-2 mt-2" onclick="return confirm('Yakin Ingin Tutup Pendaftaran.?')">Tutup Pendaftaran</a>
 				</div>
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
@@ -24,9 +26,11 @@
 							<div class="row">
 								<div class="col">
 									<div class="card">
-										<div class="card-header">
-											<a href="#" data-toggle="modal" data-target="#exampleModalDataPenduduk" class="btn btn-primary"><i class="fas fa-plus mr-2"></i> Tambah Data</a>
-										</div>
+										<?php if ($open['status'] == 'open') : ?>
+											<div class="card-header">
+												<a href="#" data-toggle="modal" data-target="#exampleModalDataPenduduk" class="btn btn-primary"><i class="fas fa-plus mr-2"></i> Tambah Data</a>
+											</div>
+										<?php endif; ?>
 										<div class="card-body">
 											<table id="example1" class="table table-bordered table-striped">
 												<thead>
@@ -36,6 +40,7 @@
 														<th class="text-center">Gender</th>
 														<th class="text-center">No Hp</th>
 														<th class="text-center">Email</th>
+														<th class="text-center">Status</th>
 														<th class="text-center">Action</th>
 													</tr>
 												</thead>
@@ -47,6 +52,13 @@
 															<td><?= $data['gender']; ?></td>
 															<td><?= $data['no_hp']; ?></td>
 															<td><?= $data['email']; ?></td>
+															<td class="text-left">
+																<?php if ($data['nilai_un'] >= 60) { ?>
+																	<p>LULUS</p>
+																<?php } else { ?>
+																	<P>TIDAK LULUS</P>
+																<?php } ?>
+															</td>
 															<td class="text-center">
 
 																<div calass="btn-group">

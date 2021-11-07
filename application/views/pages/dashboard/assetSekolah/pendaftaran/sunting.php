@@ -23,7 +23,7 @@
 						<div class="card-body">
 							<div class="row">
 								<div class="col">
-									<form action="" method="post">
+									<form action="<?= base_url('Admin/DataUserSekolahController/storeSiswa') ?>" method="post">
 										<div class="row">
 											<div class="col">
 												<div class="form-group">

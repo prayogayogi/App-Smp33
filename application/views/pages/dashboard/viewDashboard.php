@@ -168,7 +168,7 @@
 														<th class="text-left">Nama</th>
 														<th class="text-left">Alamat</th>
 														<th class="text-left">Gender</th>
-														<th class="text-left">No Hp</th>
+														<th class="text-left">Status</th>
 													</tr>
 												</thead>
 												<tbody>
@@ -178,7 +178,13 @@
 															<td class="text-left"><?= $data['nama']; ?></td>
 															<td class="text-left"><?= $data['alamat']; ?></td>
 															<td class="text-left"><?= $data['gender']; ?></td>
-															<td class="text-left"><?= $data['no_hp']; ?></td>
+															<td class="text-left">
+																<?php if ($data['nilai_un'] >= 60) { ?>
+																	<p>LULUS</p>
+																<?php } else { ?>
+																	<P>TIDAK LULUS</P>
+																<?php } ?>
+															</td>
 														</tr>
 													<?php endforeach; ?>
 												</tbody>

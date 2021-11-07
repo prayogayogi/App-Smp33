@@ -159,9 +159,6 @@ class AssetSekolahController extends CI_Controller
 		redirect('Admin/AssetSekolahController/visiMisi');
 	}
 
-
-
-
 	// UNTUK DATA INFORMASI
 	// Untuk Data Informasi
 	public function dataInformasi()
@@ -277,6 +274,7 @@ class AssetSekolahController extends CI_Controller
 		$data['no'] = 1;
 		$data['userLogin'] = $this->AuthModel->getUserLogin()->row_array();
 		$data['getSiswaBaru'] = $this->AssetSekolahModel->getSiswaBaru()->result_array();
+		$data['open'] = $this->db->get('open_pendaftaran')->row_array();
 		$this->load->view('includes/Admin/header', $data);
 		$this->load->view('includes/Admin/sidebar', $data);
 		$this->load->view('pages/dashboard/assetSekolah/pendaftaran/pendaftaranSiswa', $data);
@@ -399,5 +397,40 @@ class AssetSekolahController extends CI_Controller
     </button>
   </div>');
 		redirect('Admin/AssetSekolahController/kegiatan');
+	}
+
+
+	//Open pendaftran siswa
+	public function open()
+	{
+		$data = [
+			'status' => 'open'
+		];
+		$this->db->set($data);
+		$this->db->update('open_pendaftaran');
+		$this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Pendaftran</strong> Berhasil Di Buka..
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>');
+		redirect('Admin/AssetSekolahController/pendaftaranSiswa');
+	}
+
+	//Open pendaftran siswa
+	public function tutup()
+	{
+		$data = [
+			'status' => 'close'
+		];
+		$this->db->set($data);
+		$this->db->update('open_pendaftaran');
+		$this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Pendaftran</strong> Berhasil Di Tutup..
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>');
+		redirect('Admin/AssetSekolahController/pendaftaranSiswa');
 	}
 }
