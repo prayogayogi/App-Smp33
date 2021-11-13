@@ -48,6 +48,7 @@ class DataUserSekolahModel extends CI_Model
 			'foto' => $files,
 			'alamat' => $this->input->post('alamat'),
 			'no_hp' => $this->input->post('no_hp'),
+			'deskripsi' => $this->input->post('deskripsi'),
 			'created_at' => time()
 		];
 		$this->db->set($data);
@@ -84,6 +85,7 @@ class DataUserSekolahModel extends CI_Model
 			'mengajar' => $this->input->post('mengajar'),
 			'alamat' => $this->input->post('alamat'),
 			'no_hp' => $this->input->post('no_hp'),
+			'deskripsi' => $this->input->post('deskripsi'),
 		];
 		$this->db->where(['id' => $id]);
 		$this->db->set($data);
@@ -113,7 +115,6 @@ class DataUserSekolahModel extends CI_Model
 			'nama' => $this->input->post('nama', TRUE),
 			'gender' => $this->input->post('gender', TRUE),
 			'asal_sekolah' => $this->input->post('asal_sekolah', TRUE),
-			'tempat_lahir' => $this->input->post('tempat_lahir', TRUE),
 			'tgl_lahir' => $this->input->post('tgl_lahir', TRUE),
 			'nik' => $this->input->post('nik', TRUE),
 			'alamat' => $this->input->post('alamat', TRUE),
@@ -123,8 +124,6 @@ class DataUserSekolahModel extends CI_Model
 			'pekerjaan_ayah' => $this->input->post('pekerjaan_ayah', TRUE),
 			'nama_ibu' => $this->input->post('nama_ibu', TRUE),
 			'pekerjaan_ibu' => $this->input->post('pekerjaan_ibu', TRUE),
-			'nilai_un' => $this->input->post('nilai_un', TRUE),
-			'author' => $this->input->post('nama', TRUE)
 		];
 		$this->db->set($data);
 		$this->db->insert('db_siswa');
@@ -161,11 +160,9 @@ class DataUserSekolahModel extends CI_Model
 			'nis' => $this->input->post('nis'),
 			'nisn' => $this->input->post('nisn'),
 			'nama' => ucwords(trim($this->input->post('nama'))),
-			'tempat_lahir' => ucwords(trim($this->input->post('tempatLahir'))),
-			'tanggal_lahir' => $this->input->post('tanggalLahir'),
-			'nama_ayah' => ucwords(trim($this->input->post('namaAyah'))),
-			'nama_ibu' => ucwords(trim($this->input->post('namaIbu'))),
-			'agama' => ucwords(trim($this->input->post('agama')))
+			'tgl_lahir' => $this->input->post('tgl_lahir'),
+			'nama_ayah' => ucwords(trim($this->input->post('nama_ayah'))),
+			'nama_ibu' => ucwords(trim($this->input->post('nama_ibu'))),
 		];
 		$this->db->set($data);
 		$this->db->where(['id' => $id]);

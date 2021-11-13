@@ -121,16 +121,16 @@
 									<label for="tgl_lahir">Tanggal lahir</label>
 									<input type="date" name="tgl_lahir" class="form-control" autocomplete="off" id="tgl_lahir" placeholder="Masukan Tanggal Lahir" required>
 								</div>
-							</div>
-							<div class="col">
 								<div class="form-group">
 									<label for="nik">No Induk Keluarga</label>
 									<input type="number" name="nik" class="form-control" autocomplete="off" id="nik" placeholder="Masukan No Induk Keluarga" required>
 								</div>
-								<div class="form-group">
+									<div class="form-group">
 									<label for="alamat">Alamat</label>
 									<input type="text" name="alamat" class="form-control" autocomplete="off" id="alamat" placeholder="Masukan alamat" required>
 								</div>
+							</div>
+							<div class="col">
 								<div class="form-group">
 									<label for="no_hp">No Hp</label>
 									<input type="number" name="no_hp" class="form-control" autocomplete="off" id="no_hp" placeholder="Masukan No Hp" required>
@@ -138,6 +138,22 @@
 								<div class="form-group">
 									<label for="email">Email</label>
 									<input type="email" name="email" class="form-control" autocomplete="off" id="email" placeholder="Masukan Email" required>
+								</div>
+								<div class="form-group">
+									<label for="Nama ayah">Nama ayah</label>
+									<input type="Nama ayah" name="nama_ayah" class="form-control" autocomplete="off" id="Nama ayah" placeholder="Masukan Nama ayah" required>
+								</div>
+								<div class="form-group">
+									<label for="Pekerjaan ayah">Pekerjaan ayah</label>
+									<input type="Pekerjaan ayah" name="pekerjaan_ayah" class="form-control" autocomplete="off" id="Pekerjaan ayah" placeholder="Masukan Pekerjaan ayah" required>
+								</div>
+								<div class="form-group">
+									<label for="Nama ibu">Nama ibu</label>
+									<input type="Nama ibu" name="nama_ibu" class="form-control" autocomplete="off" id="Nama ibu" placeholder="Masukan Nama ibu" required>
+								</div>
+								<div class="form-group">
+									<label for="Pekerjaan ibu">Pekerjaan ibu</label>
+									<input type="Pekerjaan ibu" name="pekerjaan_ibu" class="form-control" autocomplete="off" id="Pekerjaan ibu" placeholder="Masukan Pekerjaan ibu" required>
 								</div>
 							</div>
 						</div>
@@ -167,47 +183,63 @@
 						<div class="col">
 							<form action="<?= base_url('Admin/DataUserSekolahController/updateSiswa/') . $data['id'] ?>" method="POST">
 								<div class="row">
-									<div class="col">
-										<div class="form-group">
-											<label for="nama">Nama</label>
-											<input type="text" name="nama" class="form-control" autocomplete="off" id="nama" value="<?= $data['nama'] ?>" required>
-										</div>
-										<div class="form-group">
-											<label for="jabatan">Jabatan</label>
-											<select class="form-control" name="gender">
-												<option value="<?= $data['gender'] ?>"> <?= $data['gender'] ?></option>
-												<option value="LAKI-LAKI">Laki-laki</option>
-												<option value="PEREMPUAN">Perempuan</option>
-											</select>
-										</div>
-										<div class="form-group">
-											<label for="asalSekolah">Asal Sekolah</label>
-											<input type="text" name="asal_sekolah" class="form-control" autocomplete="off" id="asalSekolah" value="<?= $data['asal_sekolah'] ?>" required>
-										</div>
-										<div class="form-group">
-											<label for="tgl_lahir">Tanggal lahir</label>
-											<input type="date" name="tgl_lahir" class="form-control" autocomplete="off" id="tgl_lahir" value="<?= $data['tgl_lahir'] ?>" required>
-										</div>
-									</div>
-									<div class="col">
-										<div class="form-group">
-											<label for="nik">No Induk Keluarga</label>
-											<input type="number" name="nik" class="form-control" autocomplete="off" id="nik" value="<?= $data['nik'] ?>" required>
-										</div>
-										<div class="form-group">
-											<label for="alamat">Alamat</label>
-											<input type="text" name="alamat" class="form-control" autocomplete="off" id="alamat" value="<?= $data['alamat'] ?>" required>
-										</div>
-										<div class="form-group">
-											<label for="no_hp">No Hp</label>
-											<input type="number" name="no_hp" class="form-control" autocomplete="off" id="no_hp" value="<?= $data['no_hp'] ?>" required>
-										</div>
-										<div class="form-group">
-											<label for="email">Email</label>
-											<input type="email" name="email" class="form-control" autocomplete="off" id="email" value="<?= $data['email'] ?>" required>
-										</div>
-									</div>
+							<div class="col">
+								<div class="form-group">
+									<label for="nama">Nama</label>
+									<input type="text" name="nama" class="form-control" autocomplete="off" id="nama" value="<?= $data['nama']; ?>" required>
 								</div>
+								<div class="form-group">
+									<label for="jabatan">Gender</label>
+									<select class="form-control" name="gender">
+										<option value="1">-- Pilih Jenis Kelamin --</option>
+										<option value="LAKI-LAKI">Laki-laki</option>
+										<option value="PEREMPUAN">Perempuan</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="asalSekolah">Asal Sekolah</label>
+									<input type="text" name="asal_sekolah" class="form-control" autocomplete="off" id="asalSekolah" value="<?= $data['asal_sekolah']; ?>" required>
+								</div>
+								<div class="form-group">
+									<label for="tgl_lahir">Tanggal lahir</label>
+									<input type="date" name="tgl_lahir" class="form-control" autocomplete="off" id="tgl_lahir" value="<?= $data['tgl_lahir']; ?>" required>
+								</div>
+								<div class="form-group">
+									<label for="nik">No Induk Keluarga</label>
+									<input type="number" name="nik" class="form-control" autocomplete="off" id="nik" value="<?= $data['nik']; ?>" required>
+								</div>
+									<div class="form-group">
+									<label for="alamat">Alamat</label>
+									<input type="text" name="alamat" class="form-control" autocomplete="off" id="alamat" value="<?= $data['alamat']; ?>" required>
+								</div>
+							</div>
+							<div class="col">
+								<div class="form-group">
+									<label for="no_hp">No Hp</label>
+									<input type="number" name="no_hp" class="form-control" autocomplete="off" id="no_hp" value="<?= $data['no_hp']; ?>" required>
+								</div>
+								<div class="form-group">
+									<label for="email">Email</label>
+									<input type="email" name="email" class="form-control" autocomplete="off" id="email" value="<?= $data['email']; ?>" required>
+								</div>
+								<div class="form-group">
+									<label for="Nama ayah">Nama ayah</label>
+									<input type="Nama ayah" name="nama_ayah" class="form-control" autocomplete="off" id="Nama ayah" value="<?= $data['nama_ayah']; ?>" required>
+								</div>
+								<div class="form-group">
+									<label for="Pekerjaan ayah">Pekerjaan ayah</label>
+									<input type="Pekerjaan ayah" name="pekerjaan_ayah" class="form-control" autocomplete="off" id="Pekerjaan ayah" value="<?= $data['pekerjaan_ayah']; ?>" required>
+								</div>
+								<div class="form-group">
+									<label for="Nama ibu">Nama ibu</label>
+									<input type="Nama ibu" name="nama_ibu" class="form-control" autocomplete="off" id="Nama ibu" value="<?= $data['nama_ibu']; ?>" required>
+								</div>
+								<div class="form-group">
+									<label for="Pekerjaan ibu">Pekerjaan ibu</label>
+									<input type="Pekerjaan ibu" name="pekerjaan_ibu" class="form-control" autocomplete="off" id="Pekerjaan ibu" value="<?= $data['pekerjaan_ibu']; ?>" required>
+								</div>
+							</div>
+						</div>
 								<button type="submit" class="btn btn-primary mt-2">Simpan</button>
 								<button type="resset" class="btn btn-dark px-4 ml-2 mt-2" data-dismiss="modal">Close</button>
 							</form>

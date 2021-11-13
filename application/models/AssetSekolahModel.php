@@ -468,4 +468,11 @@ class AssetSekolahModel extends CI_Model
 		$this->db->where('slug', $slug);
 		$this->db->delete('db_kegiatan');
 	}
+
+
+	public function getstatus($id)
+	{
+		$this->db->where(['id', $id]);
+		return $this->db->get('open_pendaftaran');
+	}
 }

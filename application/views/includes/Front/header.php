@@ -34,14 +34,14 @@
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light" id="ftco-navbar" style="background-color: #3B5897 !important; color: #FFFFFF;">
 		<div class="container">
 			<!-- <i class="flaticon-university"></i> -->
-			<a class="navbar-brand text-light" href="<?= base_url('FrontController') ?>">SMP N 33 Lebong</a>
+			<a class="navbar-brand text-light" href="<?= base_url('FrontController') ?>">SMP N 33 Rejang Lebong</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item <?= (in_array(current_url(), [base_url('FrontController'), base_url('/')])) ? 'active' : '' ?>"><a href="<?= base_url('FrontController') ?>" class="nav-link text-light">Beranda</a></li>
+					<li class="nav-item <?= (in_array(current_url(), [base_url('/'), base_url('/')])) ? 'active' : '' ?>"><a href="<?= base_url('/') ?>" class="nav-link text-light">Beranda</a></li>
 
 					<li class="nav-item <?= (current_url() == base_url('FrontController/profile')) ? 'active' : '' ?>"><a href="<?= base_url('FrontController/profile') ?>" class="nav-link text-light">Profile</a></li>
 

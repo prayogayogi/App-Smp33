@@ -4,8 +4,8 @@
 		<div class="row mb-5">
 			<div class="col-md-3">
 				<div class="ftco-footer-widget mb-4">
-					<h2><a class="navbar-brand" href="<?= base_url('FrontController') ?>">SMP N 33 Lebong</a></h2>
-					<p>Smp 33 Lebong merupakan Smp Yang Sanggat Mementingkan Kualitas dan Menghasilkan Lulusan Terbaik.</p>
+					<h2><a class="navbar-brand" href="<?= base_url('FrontController') ?>">Tentang Smp N 33 </a></h2>
+					<p>Smp 33 Rejang Lebong merupakan Smp Yang Sanggat Mementingkan Kualitas dan Menghasilkan Lulusan Terbaik.</p>
 					<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
 						<li class="ftco-animate"><a href="<?= $getSosialMedia['twitter'] ?>" target="blank"><span class="icon-twitter"></span></a></li>
 						<li class="ftco-animate"><a href="<?= $getSosialMedia['facebook'] ?>" target="blank"><span class="icon-facebook"></span></a></li>
@@ -47,9 +47,9 @@
 					<h2 class="ftco-heading-2">Punya Pertanyaan?</h2>
 					<div class="block-23 mb-3">
 						<ul>
-							<li><span class="icon icon-map-marker"></span><span class="text">JL. RAYA KEPAHIANG-CURUP, Pekalongan, Kec. Ujan Mas, Kab. Kepahiang Prov. Bengkulu</span></li>
+							<li><span class="icon icon-map-marker"></span><span class="text">Kecamatan Kec. Bermani Ulu Raya, Kabupaten Kab. Rejang Lebong, Provinsi Prov. Bengkulu</span></li>
 							<li><a href="#"><span class="icon icon-phone"></span><span class="text">073222668</span></a></li>
-							<li><a href="#"><span class="icon icon-envelope"></span><span class="text">smknvkph@gmail.com</span></a></li>
+							<li><a href="#"><span class="icon icon-envelope"></span><span class="text">smp33n@gmail.com</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -60,7 +60,7 @@
 				<p>
 					Copyright &copy;<script>
 						document.write(new Date().getFullYear());
-					</script> All rights reserved | <i class="icon-heart" aria-hidden="true"></i> by <a href="#" target="_blank">Smp N 33 Lebong</a>
+					</script> All rights reserved | <i class="icon-heart" aria-hidden="true"></i> by <a href="#" target="_blank">Smp Negri 33 Rejang Lebong</a>
 				</p>
 			</div>
 		</div>

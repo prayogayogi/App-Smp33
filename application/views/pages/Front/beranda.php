@@ -41,7 +41,8 @@
 						<div class="info ml-4">
 							<h3><a href="<?= base_url('FrontDetailController/getDetailGuru/') . $getKepsek['created_at'] ?>"><?= $getKepsek['nama']; ?></a></h3>
 							<span class="position"><?= $getKepsek['jabatan']; ?></span>
-							<p><?= $getWakilKepsek['lulusan']; ?></p>
+							<p><?= $getKepsek['lulusan']; ?></p>
+							<p><?= substr($getKepsek['deskripsi'], 0, 100); ?></p>
 							<p class="ftco-social d-flex">
 								<a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-twitter"></span></a>
 								<a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-facebook"></span></a>
@@ -62,6 +63,7 @@
 							<h3><a href="<?= base_url('FrontDetailController/getDetailGuru/') . $getWakilKepsek['created_at'] ?>"><?= $getWakilKepsek['nama']; ?></a></h3>
 							<span class="position"><?= $getWakilKepsek['jabatan']; ?></span>
 							<p><?= $getWakilKepsek['lulusan']; ?></p>
+							<p><?= substr($getWakilKepsek['deskripsi'], 0, 100); ?></p>
 							<p class="ftco-social d-flex">
 								<a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-twitter"></span></a>
 								<a href="#" class="d-flex justify-content-center align-items-center"><span class="icon-facebook"></span></a>
@@ -263,7 +265,7 @@
     </div>
   </div>
 </section> -->
-<?php if ($open['status'] == 'publish') { ?>
+<?php if ($open['status'] == 'open') { ?>
 	<div class="container">
 		<div class="row">
 			<div class="col text-center mb-4">

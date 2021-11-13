@@ -80,9 +80,9 @@ class DataUserSekolahController extends CI_Controller
 	}
 
 	// Tambah Data Siswa
-	public function storeSiswa($id)
+	public function storeSiswa()
 	{
-		$this->DataUserSekolahModel->store_siswa_seleksi($id);
+		$this->DataUserSekolahModel->storeSiswa();
 		$this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
     <strong>Data Siswa</strong> Berhasil Di Tambah..
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">

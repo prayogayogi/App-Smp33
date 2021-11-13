@@ -103,15 +103,15 @@
 									<input type="text" name="nama" class="form-control" autocomplete="off" id="nama" placeholder="Masukan Nama" autofocus>
 								</div>
 								<div class="form-group">
-									<label for="nip">nip</label>
+									<label for="nip">Nip</label>
 									<input type="text" name="nip" class="form-control" autocomplete="off" id="nip" placeholder="Masukan nip" autofocus>
 								</div>
 								<div class="form-group">
-									<label for="lulusan">lulusan</label>
+									<label for="lulusan">Lulusan</label>
 									<input type="text" name="lulusan" class="form-control" autocomplete="off" id="lulusan" placeholder="Masukan lulusan" autofocus>
 								</div>
 								<div class="form-group">
-									<label for="email">email</label>
+									<label for="email">Email</label>
 									<input type="email" name="email" class="form-control" autocomplete="off" id="email" placeholder="Masukan email" autofocus>
 								</div>
 								<div class="form-group">
@@ -135,12 +135,16 @@
 									<input type="file" name="foto" class="form-control" id="foto">
 								</div>
 								<div class="form-group">
-									<label for="alamat">alamat</label>
+									<label for="alamat">Alamat</label>
 									<input type="text" name="alamat" class="form-control" autocomplete="off" id="alamat" placeholder="Masukan alamat">
 								</div>
 								<div class="form-group">
-									<label for="no_hp">no_hp</label>
+									<label for="no_hp">No_Hp</label>
 									<input type="text" name="no_hp" class="form-control" autocomplete="off" id="no_hp" placeholder="Masukan no_hp">
+								</div>
+								<div class="form-group">
+									<label for="texarea">Deskripsi</label>
+									<textarea class="form-control" name="deskripsi" aria-label="With textarea"></textarea>
 								</div>
 							</div>
 						</div>
@@ -220,6 +224,10 @@
 										<div class="form-group">
 											<label for="no_hp">no_hp</label>
 											<input type="text" name="no_hp" class="form-control" autocomplete="off" id="no_hp" value="<?= $data['no_hp'] ?>">
+										</div>
+										<div class="form-group">
+											<label for="texarea">Deskrispsi</label>
+											<textarea class="form-control" name="deskripsi" aria-label="With textarea"><?= $data['deskripsi'] ?></textarea>
 										</div>
 									</div>
 								</div>

@@ -24,8 +24,10 @@ class FrontController extends CI_Controller
 		$data['getInformasiOne'] = $this->AssetSekolahModel->getInformasiOne()->row_array();
 		$data['getNewFooterInformasi'] = $this->AssetSekolahModel->getNewFooterInformasi()->result_array();
 		$data['getSosialMedia'] = $this->FrontModel->getSosialMedia();
-		$data['open'] = $this->db->get('open_pendaftaran')->row_array();
 		$data['getSiswa'] = $this->AssetSekolahModel->getSiswaBaru()->result_array();
+		$data['open'] = $this->AssetSekolahModel->getstatus(1)->row_array();
+		// var_dump($data['open']);
+		// die;
 		$this->load->view('includes/Front/header', $data);
 		$this->load->view('pages/Front/beranda', $data);
 		$this->load->view('includes/Front/footer', $data);
@@ -78,6 +80,7 @@ class FrontController extends CI_Controller
 		$data['getWhereVisi'] = $this->AssetSekolahModel->getWhereVisi()->result_array();
 		$data['getWhereMisi'] = $this->AssetSekolahModel->getWhereMisi()->result_array();
 		$data['getSosialMedia'] = $this->FrontModel->getSosialMedia();
+		$data['getProfile'] = $this->AssetSekolahModel->getProfile()->row_array();
 		$this->load->view('includes/Front/header', $data);
 		$this->load->view('pages/Front/profile', $data);
 		$this->load->view('includes/Front/footer', $data);

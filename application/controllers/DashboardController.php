@@ -24,7 +24,6 @@ class DashboardController extends CI_Controller
 		$data['numSiswa'] = $this->DataUserSekolahModel->getSiswa()->num_rows();
 		$data['numAdmin'] = $this->DataUserSekolahModel->getAdmin()->num_rows();
 		$data['newInformmasi'] = $this->AssetSekolahModel->getInformasiDashboard()->result_array();
-		// $data['getSiswa'] = $this->DataUserSekolahModel->getSiswa()->result_array();
 		$data['getSiswa'] = $this->AssetSekolahModel->getSiswaBaru()->result_array();
 		$this->load->view('includes/Admin/header', $data);
 		$this->load->view('includes/Admin/sidebar', $data);
