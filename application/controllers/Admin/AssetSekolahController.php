@@ -275,6 +275,7 @@ class AssetSekolahController extends CI_Controller
 		$data['userLogin'] = $this->AuthModel->getUserLogin()->row_array();
 		$data['getSiswaBaru'] = $this->AssetSekolahModel->getSiswaBaru()->result_array();
 		$data['open'] = $this->db->get('open_pendaftaran')->row_array();
+		$data['pengumuman'] = $this->db->get('db_pengumuman')->row_array();
 		$this->load->view('includes/Admin/header', $data);
 		$this->load->view('includes/Admin/sidebar', $data);
 		$this->load->view('pages/dashboard/assetSekolah/pendaftaran/pendaftaranSiswa', $data);
@@ -323,7 +324,7 @@ class AssetSekolahController extends CI_Controller
 	// Show atau sunting pendaftran siswa baru
 	public function showPendaftaranSiswa($id)
 	{
-		$data['title'] = "Suntung Pendaftran";
+		$data['title'] = "View Pendaftran";
 		$data['no'] = 1;
 		$data['userLogin'] = $this->AuthModel->getUserLogin()->row_array();
 		$data['getShowSiswaBaru'] = $this->AssetSekolahModel->getShowSiswaBaru($id)->row_array();
@@ -444,7 +445,7 @@ class AssetSekolahController extends CI_Controller
 		];
 		$this->db->set($data);
 		$this->db->where(['status' => $par]);
-		$this->db->update('open_pendaftaran');
+		$this->db->update('db_pengumuman');
 		$this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
     <strong>Pengumuman</strong> Berhasil Di Publish..
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -462,7 +463,7 @@ class AssetSekolahController extends CI_Controller
 		];
 		$this->db->set($data);
 		$this->db->where(['status' => $par]);
-		$this->db->update('open_pendaftaran');
+		$this->db->update('db_pengumuman');
 		$this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
     <strong>Pengumuman</strong> Berhasil Di Tutup..
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">

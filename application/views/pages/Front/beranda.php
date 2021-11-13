@@ -265,7 +265,7 @@
     </div>
   </div>
 </section> -->
-<?php if ($open['status'] == 'open') { ?>
+<?php if ($pengumuman['status'] == 'publish') { ?>
 	<div class="container">
 		<div class="row">
 			<div class="col text-center mb-4">

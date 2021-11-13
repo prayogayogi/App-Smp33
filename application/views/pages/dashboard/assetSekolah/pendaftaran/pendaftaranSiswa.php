@@ -9,9 +9,13 @@
 					<?php } elseif ($open['status'] == 'close') { ?>
 						<a href="<?= base_url('Admin/AssetSekolahController/open/') . 'close' ?>" class="badge badge-success mt-2" onclick="return confirm('Yakin Ingin bukak Pendaftaran.?')">Buka Pendaftaran</a>
 					<?php } ?>
+
 					<div class="daf  d-flex justify-content-end">
-						<a href="<?= base_url('Admin/AssetSekolahController/buka_pengumuman/') . 'not' ?>" class="badge badge-danger mr-3">Buka pengumuman</a>
-						<a href="<?= base_url('Admin/AssetSekolahController/tutup_pengumuman/') . 'publish' ?>" class="badge badge-warning">Tutup pengumuman</a>
+						<?php if ($pengumuman['status'] == 'not') { ?>
+							<a href="<?= base_url('Admin/AssetSekolahController/buka_pengumuman/') . 'not' ?>" class="badge badge-danger mr-3">Buka pengumuman</a>
+						<?php } elseif ($pengumuman['status'] == 'publish') { ?>
+							<a href="<?= base_url('Admin/AssetSekolahController/tutup_pengumuman/') . 'publish' ?>" class="badge badge-warning">Tutup pengumuman</a>
+						<?php } ?>
 					</div>
 				</div>
 				<div class="col-sm-6">

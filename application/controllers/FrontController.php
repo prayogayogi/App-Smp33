@@ -12,7 +12,7 @@ class FrontController extends CI_Controller
 	// Untuk Halaman Home
 	public function index()
 	{
-		$data['title'] = "Home | Smp 33 Rejang Lebong";
+		$data['title'] = "Home";
 		$data['start'] = $this->uri->segment(3);
 		$data['getKepsek'] = $this->FrontModel->getKepsek()->row_array();
 		$data['getWakilKepsek'] = $this->FrontModel->getWakilKepsek()->row_array();
@@ -26,6 +26,7 @@ class FrontController extends CI_Controller
 		$data['getSosialMedia'] = $this->FrontModel->getSosialMedia();
 		$data['getSiswa'] = $this->AssetSekolahModel->getSiswaBaru()->result_array();
 		$data['open'] = $this->AssetSekolahModel->getstatus(1)->row_array();
+		$data['pengumuman'] = $this->db->get('db_pengumuman')->row_array();
 		// var_dump($data['open']);
 		// die;
 		$this->load->view('includes/Front/header', $data);
@@ -43,7 +44,7 @@ class FrontController extends CI_Controller
 		$this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required', ['required' => 'Tempat lahir Harus Di Isi']);
 
 		if ($this->form_validation->run() == FALSE) {
-			$data['title'] = "Home | Smp 33 Rejang Lebong";
+			$data['title'] = "Home";
 			$data['start'] = $this->uri->segment(3);
 			$data['getKepsek'] = $this->FrontModel->getKepsek()->row_array();
 			$data['getWakilKepsek'] = $this->FrontModel->getWakilKepsek()->row_array();
@@ -73,7 +74,7 @@ class FrontController extends CI_Controller
 	// Untuk Halaman Profile
 	public function profile()
 	{
-		$data['title'] = "Profile | Smp 33 Rejang Lebong";
+		$data['title'] = "Profile";
 		$data['start'] = $this->uri->segment(3);
 		$data['getStrukturOrganisasi'] = $this->FrontModel->getStrukturOrganisasi()->row_array();
 		$data['getNewFooterInformasi'] = $this->AssetSekolahModel->getNewFooterInformasi()->result_array();
@@ -128,7 +129,7 @@ class FrontController extends CI_Controller
 		$this->pagination->initialize($config);
 		$data['start'] = $this->uri->segment(3);
 
-		$data['title'] = "Guru | Smk 05 Ujan Mas";
+		$data['title'] = "Guru";
 		$data['getGuru'] = $this->DataUserSekolahModel->getPagination($config['per_page'], $data['start'])->result_array();
 		$data['getNewFooterInformasi'] = $this->AssetSekolahModel->getNewFooterInformasi()->result_array();
 		$data['getSosialMedia'] = $this->FrontModel->getSosialMedia();
@@ -140,7 +141,7 @@ class FrontController extends CI_Controller
 	// Untuk Halaman Siswa
 	public function siswa()
 	{
-		$data['title'] = "Siswa | Smk 05 Ujan Mas";
+		$data['title'] = "Siswa";
 		$data['no'] = 1;
 		$data['start'] = $this->uri->segment(3);
 		$data['getSiswa'] = $this->DataUserSekolahModel->getSiswa()->result_array();
@@ -154,7 +155,7 @@ class FrontController extends CI_Controller
 	// Untuk Halaman Ekskul
 	public function kegiatan()
 	{
-		$data['title'] = "Kegiatan | Smk 05 Ujan Mas";
+		$data['title'] = "Kegiatan";
 		$data['start'] = $this->uri->segment(3);
 		$data['getNewFooterInformasi'] = $this->AssetSekolahModel->getNewFooterInformasi()->result_array();
 		$data['getSosialMedia'] = $this->FrontModel->getSosialMedia();
@@ -167,7 +168,7 @@ class FrontController extends CI_Controller
 	// Untuk Halaman Informasi
 	public function informasi()
 	{
-		$data['title'] = "Informasi | Smk 05 Ujan Mas";
+		$data['title'] = "Informasi";
 		$data['start'] = $this->uri->segment(3);
 		$data['getInformasi'] = $this->AssetSekolahModel->getInformasi()->result_array();
 		$data['getNewFooterInformasi'] = $this->AssetSekolahModel->getNewFooterInformasi()->result_array();
