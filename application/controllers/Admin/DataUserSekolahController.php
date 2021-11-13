@@ -80,9 +80,9 @@ class DataUserSekolahController extends CI_Controller
 	}
 
 	// Tambah Data Siswa
-	public function storeSiswa()
+	public function storeSiswa($id)
 	{
-		$this->DataUserSekolahModel->storeSiswa();
+		$this->DataUserSekolahModel->store_siswa_seleksi($id);
 		$this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
     <strong>Data Siswa</strong> Berhasil Di Tambah..
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -90,6 +90,19 @@ class DataUserSekolahController extends CI_Controller
     </button>
   </div>');
 		redirect('Admin/DataUserSekolahController/dataSiswa');
+	}
+
+	// Tambah Data Siswa
+	public function store_siswa_seleksi($id)
+	{
+		$this->DataUserSekolahModel->store_siswa_seleksi($id);
+		$this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Data Siswa</strong> Berhasil Di Tambah..
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>');
+		redirect('Admin/AssetSekolahController/pendaftaranSiswa');
 	}
 
 	// Update Data Siswa

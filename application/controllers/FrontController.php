@@ -25,6 +25,7 @@ class FrontController extends CI_Controller
 		$data['getNewFooterInformasi'] = $this->AssetSekolahModel->getNewFooterInformasi()->result_array();
 		$data['getSosialMedia'] = $this->FrontModel->getSosialMedia();
 		$data['open'] = $this->db->get('open_pendaftaran')->row_array();
+		$data['getSiswa'] = $this->AssetSekolahModel->getSiswaBaru()->result_array();
 		$this->load->view('includes/Front/header', $data);
 		$this->load->view('pages/Front/beranda', $data);
 		$this->load->view('includes/Front/footer', $data);

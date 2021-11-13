@@ -401,12 +401,13 @@ class AssetSekolahController extends CI_Controller
 
 
 	//Open pendaftran siswa
-	public function open()
+	public function open($par)
 	{
 		$data = [
 			'status' => 'open'
 		];
 		$this->db->set($data);
+		$this->db->where(['status' => $par]);
 		$this->db->update('open_pendaftaran');
 		$this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
     <strong>Pendaftran</strong> Berhasil Di Buka..
@@ -418,15 +419,52 @@ class AssetSekolahController extends CI_Controller
 	}
 
 	//Open pendaftran siswa
-	public function tutup()
+	public function tutup($par)
 	{
 		$data = [
 			'status' => 'close'
 		];
 		$this->db->set($data);
+		$this->db->where(['status' => $par]);
 		$this->db->update('open_pendaftaran');
 		$this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
     <strong>Pendaftran</strong> Berhasil Di Tutup..
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>');
+		redirect('Admin/AssetSekolahController/pendaftaranSiswa');
+	}
+
+	//Open buka_pengumuman
+	public function buka_pengumuman($par)
+	{
+		$data = [
+			'status' => 'publish'
+		];
+		$this->db->set($data);
+		$this->db->where(['status' => $par]);
+		$this->db->update('open_pendaftaran');
+		$this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Pengumuman</strong> Berhasil Di Publish..
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>');
+		redirect('Admin/AssetSekolahController/pendaftaranSiswa');
+	}
+
+	//Open tutup_pengumuman
+	public function tutup_pengumuman($par)
+	{
+		$data = [
+			'status' => 'not'
+		];
+		$this->db->set($data);
+		$this->db->where(['status' => $par]);
+		$this->db->update('open_pendaftaran');
+		$this->session->set_flashdata('status', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Pengumuman</strong> Berhasil Di Tutup..
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>

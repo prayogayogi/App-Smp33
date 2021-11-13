@@ -85,12 +85,12 @@
 </div>
 
 
-<!-- Modal untuk tambah data admin -->
+<!-- Modal untuk tambah data Informasi -->
 <div class="modal fade" id="exampleModalDataPenduduk" tabindex="-1" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Tambah Data Admin</h5>
+				<h5 class="modal-title" id="exampleModalLabel">Tambah Data Informasi</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -174,3 +174,7 @@
 		</div>
 	</div>
 <?php endforeach; ?>
+
+<script>
+	CKEDITOR.replace('isi');
+</script>

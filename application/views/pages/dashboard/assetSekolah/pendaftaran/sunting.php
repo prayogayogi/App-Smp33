@@ -23,7 +23,7 @@
 						<div class="card-body">
 							<div class="row">
 								<div class="col">
-									<form action="<?= base_url('Admin/DataUserSekolahController/storeSiswa') ?>" method="post">
+									<form action="<?= base_url('Admin/DataUserSekolahController/store_siswa_seleksi/') . $getShowSiswaBaru['id'] ?>" method="post">
 										<div class="row">
 											<div class="col">
 												<div class="form-group">
@@ -96,7 +96,9 @@
 											</div>
 										</div>
 										<a href="<?= base_url('Admin/AssetSekolahController/pendaftaranSiswa') ?>" class="btn btn-dark px-4 ml-2 mt-2">Keluar</a>
-										<button type="submit" class="btn btn-primary mt-2">Simpan</button>
+										<?php if ($getShowSiswaBaru['nilai_un'] >= 60) { ?>
+											<button type="submit" class="btn btn-primary mt-2">Simpan</button>
+										<?php } ?>
 									</form>
 								</div>
 							</div>

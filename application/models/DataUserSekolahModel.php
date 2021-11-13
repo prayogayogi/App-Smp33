@@ -130,6 +130,30 @@ class DataUserSekolahModel extends CI_Model
 		$this->db->insert('db_siswa');
 	}
 
+	// Store Data Siswa seleksi
+	function store_siswa_seleksi($id)
+	{
+		$data = [
+			'nama' => $this->input->post('nama', TRUE),
+			'gender' => $this->input->post('gender', TRUE),
+			'asal_sekolah' => $this->input->post('asal_sekolah', TRUE),
+			'tgl_lahir' => $this->input->post('tgl_lahir', TRUE),
+			'nik' => $this->input->post('nik', TRUE),
+			'alamat' => $this->input->post('alamat', TRUE),
+			'no_hp' => $this->input->post('no_hp', TRUE),
+			'email' => $this->input->post('email', TRUE),
+			'nama_ayah' => $this->input->post('nama_ayah', TRUE),
+			'pekerjaan_ayah' => $this->input->post('pekerjaan_ayah', TRUE),
+			'nama_ibu' => $this->input->post('nama_ibu', TRUE),
+			'pekerjaan_ibu' => $this->input->post('pekerjaan_ibu', TRUE),
+		];
+		$this->db->set($data);
+		$this->db->insert('db_siswa');
+
+		$this->db->where(['id' => $id]);
+		$this->db->delete('db_siswabaru');
+	}
+
 	// Update Data Siswa
 	function updateSiswa($id)
 	{

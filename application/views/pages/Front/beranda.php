@@ -175,7 +175,7 @@
 
 <section class="ftco-section bg-light">
 	<div class="container">
-		<div class="row justify-content-center mb-5 pb-3">
+		<div class="row justify-content-center  pb-3">
 			<div class="col-md-7 heading-section ftco-animate text-center">
 				<h2 class="mb-4">Berita Terbaru</h2>
 			</div>
@@ -263,6 +263,47 @@
     </div>
   </div>
 </section> -->
+<?php if ($open['status'] == 'publish') { ?>
+	<div class="container">
+		<div class="row">
+			<div class="col text-center mb-4">
+				<h3>Pengumuman Penerimaan Siswa Baru</h3>
+			</div>
+		</div>
+		<div class="row mb-5">
+			<div class="col">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Nama</th>
+							<th scope="col">Asal Sekolah</th>
+							<th scope="col">Satatus</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+						$no = 1;
+						foreach ($getSiswa as $item) : ?>
+							<tr>
+								<th scope="row"><?= $no++ ?></th>
+								<td><?= $item['nama'] ?></td>
+								<td><?= $item['asal_sekolah']; ?></td>
+								<td>
+									<?php if ($item['nilai_un'] >= 60) { ?>
+										<p>LULUS</p>
+									<?php } else { ?>
+										<P>TIDAK LULUS</P>
+									<?php } ?>
+								</td>
+							</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+<?php } ?>
 
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

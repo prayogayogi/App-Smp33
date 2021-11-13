@@ -4,8 +4,15 @@
 			<div class="row mb-2">
 				<div class="col-sm-6">
 					<h1 class="m-0 text-dark">Data Pendaftaran Siswa</h1>
-					<a href="<?= base_url('Admin/AssetSekolahController/open') ?>" class="badge badge-success mt-2" onclick="return confirm('Yakin Ingin bukak Pendaftaran.?')">Buka Pendaftaran</a>
-					<a href="<?= base_url('Admin/AssetSekolahController/tutup') ?>" class="badge badge-warning ml-2 mt-2" onclick="return confirm('Yakin Ingin Tutup Pendaftaran.?')">Tutup Pendaftaran</a>
+					<?php if ($open['status'] == 'open') { ?>
+						<a href="<?= base_url('Admin/AssetSekolahController/tutup/') . 'open' ?>" class="badge badge-warning ml-2 mt-2" onclick="return confirm('Yakin Ingin Tutup Pendaftaran.?')">Tutup Pendaftaran</a>
+					<?php } elseif ($open['status'] == 'close') { ?>
+						<a href="<?= base_url('Admin/AssetSekolahController/open/') . 'close' ?>" class="badge badge-success mt-2" onclick="return confirm('Yakin Ingin bukak Pendaftaran.?')">Buka Pendaftaran</a>
+					<?php } ?>
+					<div class="daf  d-flex justify-content-end">
+						<a href="<?= base_url('Admin/AssetSekolahController/buka_pengumuman/') . 'not' ?>" class="badge badge-danger mr-3">Buka pengumuman</a>
+						<a href="<?= base_url('Admin/AssetSekolahController/tutup_pengumuman/') . 'publish' ?>" class="badge badge-warning">Tutup pengumuman</a>
+					</div>
 				</div>
 				<div class="col-sm-6">
 					<ol class="breadcrumb float-sm-right">
@@ -60,7 +67,6 @@
 																<?php } ?>
 															</td>
 															<td class="text-center">
-
 																<div calass="btn-group">
 																	<div class="dropdown">
 																		<button class="btn btn-primary dropdown-toggle mr-1 mb-1" type="button" data-toggle="dropdown">
