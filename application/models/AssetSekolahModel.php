@@ -254,7 +254,7 @@ class AssetSekolahModel extends CI_Model
 
 			if ($this->upload->do_upload('foto')) {
 				$files = $this->upload->data('file_name', TRUE);
-				$this->db->set($files);
+				$this->db->set(['foto' => $files]);
 			} else {
 				echo "error";
 			}

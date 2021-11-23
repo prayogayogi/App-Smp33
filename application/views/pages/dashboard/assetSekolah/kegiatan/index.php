@@ -44,7 +44,7 @@
 															<td class="text-center"><?= $no++ ?></td>
 															<td><?= $data['judul']; ?></td>
 															<td class="text-center">
-																<img src="<?= base_url('/assets/assetGambar/Kegiatan/') . $data['photo'] ?>" alt="administrator" width="40px" class="rounded">
+																<img src="<?= base_url('/assets/assetGambar/kegiatan/') . $data['photo'] ?>" alt="administrator" width="40px" class="rounded">
 															</td>
 															<td><?= date("d/ m/ Y", $data['created_at']) ?></td>
 															<td class="text-center">

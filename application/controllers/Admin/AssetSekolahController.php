@@ -181,7 +181,7 @@ class AssetSekolahController extends CI_Controller
 		$data['dataMoreInformasi'] = $this->FrontModel->fotoOunerPost($slug)->row_array();
 		$this->load->view('includes/Admin/header', $data);
 		$this->load->view('includes/Admin/sidebar', $data);
-		$this->load->view('pages/dashboard/assetSekolah/informasi/MoreInformasi', $data);
+		$this->load->view('pages/dashboard/assetSekolah/informasi/moreInformasi', $data);
 		$this->load->view('includes/Admin/footer');
 	}
 
