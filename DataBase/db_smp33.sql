@@ -198,4 +198,4 @@ CREATE TABLE `userapp` (
 INSERT INTO `userapp` (`id`, `nama`, `email`, `alamat`, `foto_userapp`, `deskripsi`, `roles`, `password`) VALUES
 (1,	'Azan ansory',	'azan@gmail.com',	'Kepahiyang, bengkulu Indonesia',	'person_9.jpg',	'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',	1,	'$2y$10$MrcGOY9TGTVldl6BCm3Tx.qfAoELF6DhyXZHNmawmBF7NRPhvpYOK');
 
--- 2022-01-14 14:14:30
+-- 2022-01-14 14:40:38
