@@ -175,6 +175,10 @@
 	</div>
 <?php endforeach; ?>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="http://cdn.ckeditor.com/4.6.2/standard-all/ckeditor.js"></script>
 <script>
-	CKEDITOR.replace('isi');
+	CKEDITOR.replace('isi',{
+	filebrowserUploadUrl: "<?= base_url('Admin/AssetSekolahController/upload_image')?>"
+	});
 </script>
